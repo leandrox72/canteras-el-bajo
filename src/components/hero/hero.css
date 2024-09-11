@@ -1,0 +1,119 @@
+.hero {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    flex-wrap: nowrap;
+}
+
+.hero__data {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self: flex-start;
+    padding: var(--v-pad) var(--h-pad); 
+    position: relative; 
+    z-index: 500;
+}
+
+.hero__data h1 {
+    font-family: "Bebas Neue", sans-serif;
+    text-transform: uppercase;
+    font-size: 10rem;
+    line-height: .9;
+    letter-spacing: 2px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.hero__data h1 span {
+    color: var(--test);
+    user-select: none;
+}
+
+.hero__data p {
+    color: #ccc;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    max-width: 400px;
+    font-weight: 700;
+}
+
+.hero__data .button__p {
+    margin-bottom: 0;
+}
+
+.hero__data .button {
+    position: absolute;
+    bottom: var(--v-pad);
+    left: var(--h-pad);
+}
+
+.hero__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+}
+
+.hero__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 100;
+}
+
+.hero__bg-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .5;
+    z-index: 200;
+}
+
+.hero__carousel {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 500;
+    overflow: hidden;
+    background: #111;
+    padding: 1rem 0;
+}
+
+.hero__carousel-cont {
+    display: flex;
+    gap: 2rem;
+}
+
+.hero__carousel h4 {
+    color: #fff;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-wrap: nowrap;
+    font-family: "Bebas Neue", sans-serif; 
+    letter-spacing: 2px;
+    line-height: 1;
+    margin-top: .5rem;
+}
+
+@media screen and (max-width: 1240px) {
+    .hero__data h1 {
+        font-size: 8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .hero, .hero__bg {
+        height: 90vh;
+    }
+
+    .hero__data h1 {
+        font-size: 4rem;
+    }
+}

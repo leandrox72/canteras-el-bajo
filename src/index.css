@@ -1,0 +1,121 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fff;
+  font-family: "Red Hat Display", sans-serif;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--border);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fff;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+
+::-moz-selection { 
+  color: #fff;
+  background: var(--border);
+}
+
+::selection {
+  color: #111;
+  background: var(--test);
+}
+
+.section__h2 {
+  font-family: "Bebas Neue", sans-serif; 
+  text-transform: uppercase;
+  font-size: 4rem;
+  line-height: .95;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 1rem;
+}
+
+.section__h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  font-weight: 800;
+}
+
+:root {
+  --h-pad: 3rem;
+  --v-pad: 3rem;
+  --border-size: 4px;
+
+  --bg: #191919;
+  --border: #191919;
+
+  --pri: #52BF82;
+  --sec: #DEDCFF;
+  --acc: #2D8F81;
+
+  --test: #CDF564;
+  --test-2: #2D9180;
+  --test-3: #2B434B;
+}
+
+@media screen and (max-width: 1240px) {
+  .section__h2 {
+    font-size: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --h-pad: 2rem;
+    --v-pad: 2rem;
+  }
+
+  .section__h2 {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section__h2 {
+    font-size: 3rem;
+    letter-spacing: 1px;
+  }
+
+  .section__h3 {
+    margin-bottom: .5rem;
+    font-size: 1rem;
+  }
+
+  :root {
+    --border-size: 3px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    --h-pad: 1rem;
+    --v-pad: 2rem;
+    --border-size: 2px;
+  }
+}

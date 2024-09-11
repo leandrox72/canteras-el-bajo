@@ -1,0 +1,26 @@
+.pagesHero {
+    width: 100%;
+    background: #fff;
+    position: relative;
+    margin-top: 70px;
+}
+
+.pagesHero__title {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagesHero__title h2 {
+    font-size: 15vw;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", sans-serif; 
+}
+
+@media screen and (max-width: 1024px) {
+    .pagesHero {
+        margin-top: 64px;
+    }
+}

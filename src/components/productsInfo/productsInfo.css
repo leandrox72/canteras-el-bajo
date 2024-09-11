@@ -1,0 +1,59 @@
+.productsInfo {
+    width: 100%;
+    height: fit-content;
+    border-bottom: var(--border-size) solid var(--border);
+    display: flex;
+    flex-direction: column;
+}
+
+.productsInfo__menu {
+    width: 100%;
+    display: flex;
+    padding: var(--v-pad) var(--h-pad);
+    list-style: none;
+    border-bottom: var(--border-size) solid var(--border);
+    background: var(--bg);
+    gap: 2rem;
+}
+
+.productsInfo__menu-item {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    color: #fff;
+    transition: .5s ease;
+}
+
+.prod__active {
+    color: var(--test);
+}
+
+.productsInfo__menu-item:hover {
+    color: var(--test);
+}
+
+.productsInfo__data {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: var(--v-pad) var(--h-pad);
+    background: var(--bg);
+}
+
+.productsInfo__data h3 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: "Bebas Neue", sans-serif;
+    line-height: 1.5;
+    color: var(--test);
+}
+
+.productsInfo__data p {
+    color: #ccc;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    font-weight: 600;
+    max-width: 800px;
+}
