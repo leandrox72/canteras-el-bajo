@@ -17,7 +17,7 @@
     display: flex;
     justify-content: space-evenly;
     gap: var(--h-pad);
-    padding: 6rem var(--h-pad);
+    padding: var(--v-pad) var(--h-pad);
     align-items: center;
 }
 
@@ -75,6 +75,7 @@
     .about__data {
         flex-direction: column;
         gap: 0;
+        padding: calc(var(--v-pad) + 1rem) var(--h-pad);
     }
 
     .about__data-h2 {

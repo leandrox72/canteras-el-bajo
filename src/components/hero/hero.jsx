@@ -1,30 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './hero.css'
 import { Foto3 } from '../../constants/images'
-import { animate, motion, useMotionValue } from 'framer-motion'
-import { carouselData } from '../../constants/data'
-import useMeasure from 'react-use-measure'
+import { motion  } from 'framer-motion'
 
 const Hero = () => {
-
-  let [ref, { width }] = useMeasure()
-  
-  const xTranslation = useMotionValue(0)
-
-  useEffect(() => {
-    let controls;
-    let finalPosition = -width / 2;
-
-    controls = animate(xTranslation, [0, finalPosition], {
-      ease: 'linear',
-      duration: 25,
-      repeat: Infinity,
-      repeatType: "loop",
-      repeatDelay: 0,
-    });
-
-    return controls.stop
-  }, [xTranslation, width])
 
   return (
     <section className='hero'>
@@ -47,13 +26,6 @@ const Hero = () => {
       <div className='hero__bg'>
         <span className='hero__bg-overlay'/>
         <img src={Foto3} />
-      </div>
-      <div className='hero__carousel' >
-        <motion.div className='hero__carousel-cont' ref={ref} style={{x: xTranslation}}>
-          {[...carouselData, ...carouselData].map((item, idx) => (
-            <h4 key={idx}>{item}</h4>
-          ))}
-        </motion.div>
       </div>
     </section>
   )

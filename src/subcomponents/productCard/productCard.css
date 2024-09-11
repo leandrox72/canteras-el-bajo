@@ -4,6 +4,7 @@
     cursor: pointer;
     position: relative;
     user-select: none;
+    background: var(--test-3);
 }
 
 .productCard__img {
