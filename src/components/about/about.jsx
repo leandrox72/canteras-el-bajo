@@ -9,9 +9,22 @@ const About = ({ title, text, alt }) => {
         <div className='about__data-h2'>
           <h2 className='section__h2'>{title}</h2>
         </div>
-        <div className='about__data-p'>
+        <motion.div 
+          className='about__data-p'
+          initial={{
+            opacity: 0,
+            y: 32,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: .5 
+          }}
+        >
           <p>{text}</p>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

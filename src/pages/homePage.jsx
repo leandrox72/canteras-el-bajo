@@ -29,7 +29,6 @@ const HomePage = () => {
               garantizando productos superiores. 
               Con nosotros, obtienes la garantía de estar trabajando 
               con los mejores en la industria.'
-        alt={true}
       />
       <DualSection 
         h3='Nosotros'

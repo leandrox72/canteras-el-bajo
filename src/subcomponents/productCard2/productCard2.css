@@ -1,0 +1,34 @@
+.productCard2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    background: #fff;
+}
+
+.productCard2 img {
+    width: 100%;
+    height: 30vw;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: calc(var(--border-size) / 1) solid var(--border);
+    border-top: var(--border-size) solid #111;
+    border-bottom: var(--border-size) solid #111;
+}
+
+.productCard2:nth-child(1) img {
+    border-left: none;
+}
+
+.productCard2:nth-child(4) img {
+    border-right: none;
+}
+
+.productCard2 h4 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #111;
+    font-family: "Bebas Neue", sans-serif; 
+    padding: 0 1rem;
+}

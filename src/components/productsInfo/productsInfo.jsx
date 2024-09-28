@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './productsInfo.css'
 import { useLocation } from 'react-router-dom'
 import { products } from '../../constants/data'
+import { ProductCard2 } from '../../subcomponents'
 
 const ProductsInfo = () => {
 
@@ -21,11 +22,13 @@ const ProductsInfo = () => {
     <section className='productsInfo'>
       <ul className='productsInfo__menu'>
         {products.map((prod) => (
-          <li 
-            className={product == prod ? 'productsInfo__menu-item prod__active' : 'productsInfo__menu-item'}
-            key={prod.id}
-            onClick={() => setProduct(prod)}
-          >{prod.name}</li>
+          <div>
+            <ProductCard2 
+              title={prod.name}
+              img={prod.img}
+              key={prod.id}
+            />
+          </div>
         ))}
       </ul>
       <div className='productsInfo__data'>

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './navbar.css'
 import { pages } from '../../constants/data'
 import { useNavigate } from 'react-router-dom'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const Navbar = ({ passActive, setLoading }) => {
 
@@ -23,6 +24,7 @@ const Navbar = ({ passActive, setLoading }) => {
     }
     else {
         setChange(false)
+        setOpen(false)
     }
   }
 
@@ -31,31 +33,39 @@ const Navbar = ({ passActive, setLoading }) => {
   return (
     <nav className={!change && passActive == 3 ? 'navbar navbar__hide' : 'navbar'}>
       <h3 className={passActive == 3 ? 'navbar__logo logo__active' : 'navbar__logo'} onClick={() => loading('/')}>Canteras El Bajo</h3>
-      <ul className='navbar__links'>
-        {pages.map((link) => (
-            <li 
-              key={link.id} 
-              className={passActive == link.id ? 'navbar__links-link link__active' : 'navbar__links-link'}
-              onClick={() => loading(link.href)}
-            >{link.name}</li>
-        ))}
-      </ul>
-      <div className={open ? 'hamburger hamburger__open' : 'hamburger'} onClick={() => setOpen(!open)}>
-        <span />
-        <span />
-        <span />
+      <div className={open ? 'menu menu__open' : 'menu'} onClick={() => setOpen(!open)}>
+        <h4>Menu</h4>
       </div>
-      <div className={open ? 'navbar__overlay-show navbar__overlay' : 'navbar__overlay'}>
-        <ul className='navbar__overlay-links'>
-          {pages.map((link) => (
-              <li 
-                key={link.id} 
-                className={passActive == link.id ? 'navbar__overlay-links_link link__active' : 'navbar__overlay-links_link'}
-                onClick={() => loading(link.href)}
-              >{link.name}</li>
-          ))}
-        </ul>
-      </div>
+      <AnimatePresence mode='wait'>
+        {open && (
+          <motion.div 
+            className='navbar__overlay'
+            initial={{
+              x: 650
+            }}
+            animate={{
+              x: 0
+            }}
+            exit={{
+              x: 650
+            }}
+            transition={{
+              duration: .25,
+              ease: 'easeInOut'
+            }}
+          >
+            <ul className='navbar__overlay-links'>
+              {pages.map((link) => (
+                <li 
+                  key={link.id} 
+                  className={passActive == link.id ? 'navbar__overlay-links_link link__active' : 'navbar__overlay-links_link'}
+                  onClick={() => loading(link.href)}
+                >{link.name}</li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   )
 }
