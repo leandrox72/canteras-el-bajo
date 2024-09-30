@@ -41,8 +41,8 @@ a {
 }
 
 ::selection {
-  color: #111;
-  background: var(--test);
+  color: #fff;
+  background: var(--pri);
 }
 
 .section__h2 {
@@ -70,9 +70,9 @@ a {
   --bg: #191919;
   --border: #191919;
 
-  --pri: #52BF82;
-  --sec: #DEDCFF;
-  --acc: #2D8F81;
+  --pri: #2A424A;
+  --sec: #8F9B9F;
+  --acc: #452A4A;
 
   --test: #CDF564;
   --test-2: #2D9180;

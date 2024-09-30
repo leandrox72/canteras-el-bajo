@@ -11,17 +11,8 @@
     height: 30vw;
     object-fit: cover;
     margin-bottom: 1rem;
-    border: calc(var(--border-size) / 1) solid var(--border);
     border-top: var(--border-size) solid #111;
     border-bottom: var(--border-size) solid #111;
-}
-
-.productCard2:nth-child(1) img {
-    border-left: none;
-}
-
-.productCard2:nth-child(4) img {
-    border-right: none;
 }
 
 .productCard2 h4 {

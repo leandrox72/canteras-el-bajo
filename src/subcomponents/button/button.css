@@ -40,7 +40,7 @@
 }
 
 .button:hover .button__p {
-    color: var(--test);
+    color: #fff;
 }
 
 .button:hover .button__bg {

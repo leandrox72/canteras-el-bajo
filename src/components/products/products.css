@@ -25,10 +25,6 @@
     background: repeating-linear-gradient(45deg, var(--border), var(--border) 5px, transparent 5px, transparent 10px);
 }
 
-.products__data:hover {
-    background: var(--test);
-}
-
 .products__cards {
     display: grid;
     grid-template-rows: 50% 50%;
@@ -46,10 +42,6 @@
         flex-direction: column-reverse;
     }
     
-    .products__data {
-        min-height: 300px;
-    }
-
     .products__cards {
         grid-template-rows: auto;
     }

@@ -17,10 +17,6 @@
     background: #fff;
 }
 
-.dual__data:hover {
-    background: var(--test);
-}
-
 .dual__img {
     width: 50%;
     background: var(--test-3);
@@ -34,6 +30,10 @@
 
 .dual__alt {
     flex-direction: row-reverse;
+}
+
+.dual__alt .dual__img {
+    background: var(--sec);
 }
 
 @media screen and (max-width: 768px) {

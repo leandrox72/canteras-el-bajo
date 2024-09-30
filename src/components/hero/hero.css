@@ -22,14 +22,14 @@
     text-transform: uppercase;
     font-size: 10rem;
     line-height: .9;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
     font-weight: 800;
     color: #fff;
+    user-select: none;
 }
 
 .hero__data h1 span {
-    color: var(--test);
-    user-select: none;
+    color: var(--sec);
 }
 
 .hero__data p {

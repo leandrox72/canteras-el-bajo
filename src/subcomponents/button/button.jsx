@@ -1,7 +1,5 @@
 import React from 'react'
 import './button.css'
-import { IoIosArrowForward } from "react-icons/io";
-import { MdArrowForwardIos } from "react-icons/md";
 import { Link, useNavigate } from 'react-router-dom';
 
 

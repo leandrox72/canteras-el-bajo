@@ -3,6 +3,7 @@ import './productsInfo.css'
 import { useLocation } from 'react-router-dom'
 import { products } from '../../constants/data'
 import { ProductCard2 } from '../../subcomponents'
+import { motion } from 'framer-motion'
 
 const ProductsInfo = () => {
 
@@ -22,7 +23,7 @@ const ProductsInfo = () => {
     <section className='productsInfo'>
       <ul className='productsInfo__menu'>
         {products.map((prod) => (
-          <div>
+          <div onClick={() => setProduct(prod)}>
             <ProductCard2 
               title={prod.name}
               img={prod.img}
@@ -32,8 +33,18 @@ const ProductsInfo = () => {
         ))}
       </ul>
       <div className='productsInfo__data'>
-        <h3>{product?.name}</h3>
-        <p>{product?.desc}</p>
+        <motion.h3
+          key={product?.title}
+          initial={{opacity: 0, y: 75}}
+          animate={{opacity: 1, y: 0}}
+          transition={{duration: 1}}
+        >{product?.name}</motion.h3>
+        <motion.p
+          key={product?.desc}
+          initial={{opacity: 0, y: 75}}
+          animate={{opacity: 1, y: 0}}
+          transition={{duration: 1}}
+        >{product?.desc}</motion.p>
       </div>
     </section>
   )

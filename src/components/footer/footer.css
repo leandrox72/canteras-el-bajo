@@ -1,8 +1,7 @@
 .footer {
     width: 100%;
-    height: 500px;
     display: flex;
-    background: #111;
+    background: #fff;
     border-top: var(--border-size) solid var(--border);
     padding: var(--v-pad) var(--h-pad);
 }
@@ -19,6 +18,6 @@
 .footer__data p {
     font-size: 1.5rem;
     line-height: 1.5;
-    font-weight: 600;
-    color: #fff;
+    font-weight: 700;
+    color: #111;
 }

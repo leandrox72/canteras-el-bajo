@@ -24,7 +24,6 @@ const Navbar = ({ passActive, setLoading }) => {
     }
     else {
         setChange(false)
-        setOpen(false)
     }
   }
 

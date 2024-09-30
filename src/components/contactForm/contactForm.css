@@ -2,5 +2,4 @@
     display: flex;
     width: 100%;
     padding: var(--v-pad) var(--h-pad);
-    border-bottom: var(--border-size) solid var(--border);
 }

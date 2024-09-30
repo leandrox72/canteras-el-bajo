@@ -1,6 +1,7 @@
 import React from 'react'
 import './dualSection.css'
 import { SectionH2, SectionH3, Button } from '../../subcomponents'
+import { motion } from 'framer-motion'
 
 const DualSection = ({ h3, h2, btn, href, setLoading, img, alt }) => {
   return (
@@ -13,7 +14,19 @@ const DualSection = ({ h3, h2, btn, href, setLoading, img, alt }) => {
         <Button text={btn} href={href} setLoading={setLoading}/>
       </div>
       <div className='dual__img'>
-        <img src={img} />
+        <motion.img 
+          src={img}
+          alt='img'
+          initial={{
+            opacity: 0,
+          }}
+          whileInView={{
+            opacity: 1,
+          }}
+          transition={{
+            duration: 1 
+          }} 
+        />
       </div>
     </section>
   )
