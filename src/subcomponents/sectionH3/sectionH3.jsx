@@ -17,7 +17,6 @@ const SectionH3 = ({ title }) => {
       transition={{ duration: .5 }}
     >
       <h3>{title}</h3>
-      <span className='sectionH3__span'/>
     </motion.div>
   )
 }

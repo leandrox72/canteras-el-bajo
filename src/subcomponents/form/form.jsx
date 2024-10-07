@@ -55,7 +55,7 @@ const Form = () => {
       <input 
         type='text'
         name='user__name'
-        placeholder='Nombre'
+        placeholder='nombre'
         className='form__input'
         value={values.name}
         onChange={handleChange}
@@ -64,7 +64,7 @@ const Form = () => {
       <input 
         type='email'
         name='user__email'
-        placeholder='Email'
+        placeholder='email'
         className='form__input'
         value={values.email}
         onChange={handleChange}
@@ -75,9 +75,8 @@ const Form = () => {
       />
       <p></p>
       <textarea 
-        type='email'
         name='user__msg'
-        placeholder='Mensaje'
+        placeholder='mensaje'
         className='form__textarea'
         value={values.msg}
         onChange={handleChange}

@@ -3,15 +3,18 @@ import images from "./images"
 const pages = [
     {
         id: 0,
-        name: "Nosotros",
+        title: "Nosotros",
+        subtitle: "Quienes Somos",
         href: "/nosotros"
     },{
         id: 1,
-        name: "Productos",
+        title: "Productos",
+        subtitle: "Que Ofrecemos",
         href: "/productos"
     },{
         id: 2,
-        name: "Contacto",
+        title: "Contacto",
+        subtitle: "Hablemos",
         href: "/contacto"
 }]
 
@@ -49,19 +52,19 @@ const products = [{
 
 const gallery = [{
     id: 0,
-    img: images.Foto1,
+    img: images.Foto2,
 },{
     id: 1,
-    img: images.Foto14,
+    img: images.Foto4,
 },{
     id: 2,
-    img: images.Foto20,
+    img: images.Foto9,
 },{
     id: 3,
-    img: images.Foto5,
+    img: images.Foto24,
 },{
     id: 4,
-    img: images.Foto12,
+    img: images.Foto30,
 }]
 
 const footerData = [{

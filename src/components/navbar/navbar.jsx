@@ -31,9 +31,14 @@ const Navbar = ({ passActive, setLoading }) => {
 
   return (
     <nav className={!change && passActive == 3 ? 'navbar navbar__hide' : 'navbar'}>
-      <h3 className={passActive == 3 ? 'navbar__logo logo__active' : 'navbar__logo'} onClick={() => loading('/')}>Canteras El Bajo</h3>
+      <h3 className={passActive == 3 ? 'navbar__logo logo__active' : 'navbar__logo'} onClick={() => {loading('/'), setOpen(false)}}>Canteras El Bajo</h3>
       <div className={open ? 'menu menu__open' : 'menu'} onClick={() => setOpen(!open)}>
         <h4>Menu</h4>
+      </div>
+      <div className={open ? 'menu__mobile menu__mobile-open' : 'menu__mobile'} onClick={() => setOpen(!open)}>
+        <span />
+        <span />
+        <span />
       </div>
       <AnimatePresence mode='wait'>
         {open && (
@@ -50,16 +55,17 @@ const Navbar = ({ passActive, setLoading }) => {
             }}
             transition={{
               duration: .25,
-              ease: 'easeInOut'
+              ease: 'easeIn'
             }}
           >
             <ul className='navbar__overlay-links'>
               {pages.map((link) => (
-                <li 
-                  key={link.id} 
+                <li key={link.id} onClick={() => loading(link.href)}
                   className={passActive == link.id ? 'navbar__overlay-links_link link__active' : 'navbar__overlay-links_link'}
-                  onClick={() => loading(link.href)}
-                >{link.name}</li>
+                >
+                  <h4>{link.title}</h4><span />
+                  <p>/{link.subtitle}</p>
+                </li>
               ))}
             </ul>
           </motion.div>

@@ -15,8 +15,12 @@
     flex-direction: column;
     justify-content: space-between;
     transition: .5s ease;
-    min-height: 480px;
+    min-height: 520px;
     background: #fff;
+}
+
+.products__data:hover {
+    background: var(--acc);
 }
 
 .test__div {

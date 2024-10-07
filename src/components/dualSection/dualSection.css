@@ -13,8 +13,12 @@
     padding: var(--v-pad) var(--h-pad);
     justify-content: space-between;
     transition: .25s ease;
-    min-height: 480px;
+    min-height: 520px;
     background: #fff;
+}
+
+.dual__data:hover {
+    background: var(--acc);
 }
 
 .dual__img {

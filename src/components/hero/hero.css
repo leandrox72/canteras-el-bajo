@@ -20,8 +20,8 @@
 .hero__data h1 {
     font-family: "Bebas Neue", sans-serif;
     text-transform: uppercase;
-    font-size: 10rem;
-    line-height: .9;
+    font-size: 12vw;
+    line-height: .8;
     letter-spacing: 4px;
     font-weight: 800;
     color: #fff;
@@ -29,7 +29,7 @@
 }
 
 .hero__data h1 span {
-    color: var(--sec);
+    color: var(--acc);
 }
 
 .hero__data p {
