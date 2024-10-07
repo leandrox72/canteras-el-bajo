@@ -4,7 +4,8 @@ import ProductCard from "./productCard/productCard";
 import ProductCard2 from "./productCard2/productCard2";
 import SectionH2 from "./sectionH2/sectionH2";
 import SectionH3 from "./sectionH3/sectionH3";
+import Gallery from "./gallery/gallery";
 
 export {
-    Button, Form, ProductCard, ProductCard2, SectionH2, SectionH3
+    Button, Form, ProductCard, ProductCard2, SectionH2, SectionH3, Gallery
 }

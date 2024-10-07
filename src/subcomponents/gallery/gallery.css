@@ -1,0 +1,32 @@
+.gallery {
+    width: 100%;
+    height: 45vw;
+    min-height: 400px;
+    position: relative;
+    background: var(--sec);
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery__btns {
+    position: absolute;
+    bottom: var(--v-pad);
+    right: var(--h-pad);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.gallery__btn {
+    height: 76px;
+    width: 76px;
+    border-radius: 50%;
+    background: #fff;
+    border: var(--border-size) solid var(--border);
+    cursor: pointer;
+}
