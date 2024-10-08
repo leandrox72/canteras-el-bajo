@@ -8,6 +8,8 @@ const PagesHero = ({ title, imgs }) => {
     <section className='pagesHero'>
       <div className='pagesHero__title'>
         <h2>{title}</h2>
+        <h2>{title}</h2>
+        <h2>{title}</h2>
       </div>
       {imgs && (
         <Gallery imgs={imgs} />

@@ -12,12 +12,16 @@
     align-items: center;
     justify-content: center;
     border-bottom: var(--border-size) solid var(--border);
+    overflow-x: hidden;
+    gap: 4rem;
 }
 
 .pagesHero__title h2 {
     font-size: 15vw;
     text-transform: uppercase;
     font-family: "Bebas Neue", sans-serif; 
+    user-select: none;
+    white-space:nowrap;
 }
 
 @media screen and (max-width: 1024px) {

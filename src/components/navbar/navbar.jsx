@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import './navbar.css'
-import { pages } from '../../constants/data'
 import { useNavigate } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
+import { NavbarOverlay } from '../../subcomponents'
 
 const Navbar = ({ passActive, setLoading }) => {
 
@@ -15,7 +15,7 @@ const Navbar = ({ passActive, setLoading }) => {
 
     setTimeout(() => {
       navigate(href)
-   },500)
+   }, 500)
   }
 
   const scrollChange = () => {
@@ -42,33 +42,7 @@ const Navbar = ({ passActive, setLoading }) => {
       </div>
       <AnimatePresence mode='wait'>
         {open && (
-          <motion.div 
-            className='navbar__overlay'
-            initial={{
-              x: 650
-            }}
-            animate={{
-              x: 0
-            }}
-            exit={{
-              x: 650
-            }}
-            transition={{
-              duration: .25,
-              ease: 'easeIn'
-            }}
-          >
-            <ul className='navbar__overlay-links'>
-              {pages.map((link) => (
-                <li key={link.id} onClick={() => loading(link.href)}
-                  className={passActive == link.id ? 'navbar__overlay-links_link link__active' : 'navbar__overlay-links_link'}
-                >
-                  <h4>{link.title}</h4><span />
-                  <p>/{link.subtitle}</p>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+          <NavbarOverlay passActive={passActive} setLoading={setLoading}/>
         )}
       </AnimatePresence>
     </nav>
