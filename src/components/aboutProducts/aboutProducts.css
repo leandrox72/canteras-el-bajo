@@ -1,0 +1,17 @@
+.aboutProducts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--v-pad);
+    margin-bottom: -4px;
+}
+
+.aboutProducts .section__h2 {
+    padding-left: var(--h-pad);
+}
+
+.aboutProducts__products {
+    width: 100%;
+    display: flex;
+    margin-top: var(--v-pad);
+}

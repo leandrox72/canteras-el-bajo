@@ -26,14 +26,11 @@ const HomePage = () => {
       <About 
         title='Liderando el mercado con calidad insuperable'
         text='Cada material que extraemos refleja nuestro compromiso con la excelencia, 
-              garantizando productos superiores. 
-              Con nosotros, obtienes la garantía de estar trabajando 
-              con los mejores en la industria.'
-        alt={true}
+              garantizando productos superiores.'
       />
       <DualSection 
         h3='Quienes Somos'
-        h2='Nuestra Empresa'
+        h2='Conoce a Nuestra Empresa'
         img={images.Foto1}
         btn='Nuestra Empresa'
         href='/nosotros'
@@ -47,7 +44,7 @@ const HomePage = () => {
       />
       <DualSection 
         h3='Contacto' 
-        h2='Hablemos' 
+        h2='Ponte en Contacto con Nosotros' 
         img={images.Foto17}
         btn='Hablemos'
         href='/contacto'

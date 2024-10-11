@@ -10,7 +10,7 @@ const Products = ({ setLoading }) => {
       <div className='products__data'>
         <div>
           <SectionH3 title='Productos'/>
-          <SectionH2 text='Nuestros Productos'/>
+          <SectionH2 text='Descubre lo que Ofrecemos'/>
         </div>
         <div>
           <Button text='Ver Productos' href='/productos' setLoading={setLoading}/>

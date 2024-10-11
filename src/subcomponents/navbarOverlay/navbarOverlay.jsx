@@ -39,7 +39,7 @@ const NavbarOverlay = ({ passActive, setLoading }) => {
             className={passActive == link.id ? 'navbar__overlay-links_link link__active' : 'navbar__overlay-links_link'}
           >
             <h4>{link.title}</h4><span />
-            <p>/{link.subtitle}</p>
+            <p>|{link.subtitle}</p>
           </li>
         ))}
       </ul>

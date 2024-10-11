@@ -8,6 +8,7 @@ import DualSection from "./dualSection/dualSection";
 
 import PagesHero from "./pagesHero/pagesHero";
 import Info from "./info/info";
+import AboutProducts from "./aboutProducts/aboutProducts";
 import ProductHero from "./productHero/productHero";
 import ProductsInfo from "./productsInfo/productsInfo";
 import AboutHero from "./aboutHero/aboutHero";
@@ -17,5 +18,5 @@ import ContactForm from "./contactForm/contactForm";
 export {
     Navbar, Hero, Products, About, Footer, Loading, DualSection,
 
-    PagesHero, Info, ProductHero, ProductsInfo, AboutHero, ContactHero, ContactForm
+    PagesHero, Info, AboutProducts, ProductHero, ProductsInfo, AboutHero, ContactHero, ContactForm
 }

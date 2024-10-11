@@ -24,7 +24,8 @@ const DualSection = ({ h3, h2, btn, href, setLoading, img, alt }) => {
             opacity: 1,
           }}
           transition={{
-            duration: 1 
+            duration: 1, 
+            delay: .25
           }} 
         />
       </div>

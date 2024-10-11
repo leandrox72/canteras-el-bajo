@@ -1,9 +1,10 @@
 .gallery {
     width: 100%;
-    height: 45vw;
+    height: 42vw;
     min-height: 400px;
     position: relative;
     background: var(--sec);
+    user-select: none;
 }
 
 .gallery img {
@@ -23,10 +24,15 @@
 }
 
 .gallery__btn {
-    height: 76px;
-    width: 76px;
+    height: 56px;
+    width: 56px;
     border-radius: 50%;
     background: #fff;
     border: var(--border-size) solid var(--border);
     cursor: pointer;
+    transition: .25s;
+}
+
+.gallery__btn:hover {
+    background: var(--acc);
 }

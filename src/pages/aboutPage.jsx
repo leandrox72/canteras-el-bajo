@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Navbar, PagesHero, Info, Products, DualSection, Footer, Loading } from '../components'
+import { Navbar, PagesHero, Info, AboutProducts, Products, DualSection, Footer, Loading } from '../components'
 import { gallery } from '../constants/data';
 import images from '../constants/images';
 
@@ -19,9 +19,11 @@ const AboutPage = () => {
       <Navbar passActive={active} setLoading={setLoading}/>
       <PagesHero title='Canteras El Bajo' imgs={gallery} />
       <Info 
-        text='Nuestra empresa es una referente de la industria de la
-              construccion argentina gracias a nuestros mas de 20 años de experiencia.'/>
-      <Products setLoading={setLoading} />
+        text='Canteras El Bajo es una empresa con 20 años de experiencia en la 
+        extracción de áridos y piedras, colaborando en numerosos proyectos junto a 
+        otras empresas del sector. Nuestra trayectoria destaca por la calidad, fiabilidad 
+        y compromiso en cada proyecto realizado.'/>
+      <AboutProducts />
       <Info 
         text='Nuestra empresa es una referente de la industria de la
               construccion argentina gracias a nuestros mas de 20 años de experiencia.'/>

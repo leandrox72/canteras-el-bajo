@@ -6,20 +6,52 @@
     background: #fff;
 }
 
-.productCard2 img {
+
+.productCard2__cont {
     width: 100%;
     height: 30vw;
-    object-fit: cover;
-    margin-bottom: 1rem;
-    border-top: var(--border-size) solid #111;
-    border-bottom: var(--border-size) solid #111;
+    border-top: var(--border-size) solid var(--border);
+    border-bottom: var(--border-size) solid var(--border);
+    border-right: var(--border-size) solid var(--border);
+    position: relative;
+    overflow: hidden;
+    background: var(--pri);
 }
 
-.productCard2 h4 {
-    font-size: 2rem;
-    letter-spacing: 1px;
-    font-weight: 600;
-    color: #111;
-    font-family: "Bebas Neue", sans-serif; 
-    padding: 0 1rem;
+.productCard2:nth-child(2) .productCard2__cont,
+.productCard2:nth-child(4) .productCard2__cont {
+    background: var(--sec);
+}
+
+
+
+.productCard2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+}
+
+.productCard2:last-child .productCard2__img {
+    border-right: none;
+}
+
+.productCard2__title {
+    position: absolute;
+    bottom: -20%;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: var(--acc);
+    transition: .5s ease;
+}
+
+.productCard2__title h4 {
+    color: var(--border);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.productCard2:hover .productCard2__title {
+    bottom: 0;
 }
