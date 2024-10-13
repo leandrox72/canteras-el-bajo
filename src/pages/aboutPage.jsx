@@ -24,9 +24,7 @@ const AboutPage = () => {
         otras empresas del sector. Nuestra trayectoria destaca por la calidad, fiabilidad 
         y compromiso en cada proyecto realizado.'/>
       <AboutProducts />
-      <Info 
-        text='Nuestra empresa es una referente de la industria de la
-              construccion argentina gracias a nuestros mas de 20 años de experiencia.'/>
+      
       <DualSection 
         h3='Contacto' 
         h2='Hablemos' 
