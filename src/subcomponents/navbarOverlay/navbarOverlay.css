@@ -4,11 +4,11 @@
     right: 0;
     width: 40%;
     height: 100vh;
-    background: #fff;
+    background: var(--acc);
     display: flex;
     align-items: center;
     z-index: 1250;
-    padding: 0 6rem;
+    padding: 0 4rem;
     border-left: var(--border-size) solid var(--border);
 }
 
@@ -36,15 +36,15 @@
 
 .navbar__overlay-links_link h4 {
     font-family: "Bebas Neue", sans-serif;
-    font-size: 4rem;
-    font-weight: 500;
+    font-size: 5rem;
+    font-weight: 800;
     letter-spacing: 2px;
     line-height: 1;
     transition: .25s ease;
 }
 
 .navbar__overlay-links_link span {
-    height: 4px;
+    height: 6px;
     width: 100%;
     background: #000;
 }
@@ -56,17 +56,13 @@
     letter-spacing: 2px;
 }
 
-.navbar__overlay-links_link:hover {
-    background: var(--acc);
-}
-
 .navbar__overlay-links_link:hover h4 {
     letter-spacing: 4px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1240px) {
     .navbar__overlay {
-        width: 60%;
+        width: 50%;
     }
 }
 
@@ -75,9 +71,14 @@
         width: 100%;
         justify-content: center;
         padding: 0;
+        border: none;
     }
 
     .navbar__overlay-links {
         width: fit-content;
+    }
+
+    .navbar__overlay-links_link h4 {
+        font-size: 4rem;
     }
 }

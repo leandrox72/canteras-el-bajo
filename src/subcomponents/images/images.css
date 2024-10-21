@@ -1,0 +1,9 @@
+.image {
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 33%;
+    flex-shrink: 0;
+    background: var(--sec);
+    object-fit: cover;
+}

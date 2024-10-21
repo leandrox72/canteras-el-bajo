@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Navbar, PagesHero, ProductsInfo, DualSection, Footer, Loading } from '../components'
-import { products } from '../constants/data';
+import { Navbar, PagesTitle, ProductsInfo, Carousel, DualSection, Footer, Loading } from '../components'
 import images from '../constants/images';
+import { gallery } from '../constants/data';
 
 const ProductsPage = () => {
 
@@ -11,13 +11,14 @@ const ProductsPage = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false)
+      window.scrollTo({ top: 0, left: 0 });
     }, 500)
   })
 
   return (
     <>
       <Navbar passActive={active} setLoading={setLoading}/>
-      <PagesHero title='Productos' imgs={products}/>
+      <PagesTitle title='Productos' />
       <ProductsInfo />
       <DualSection 
         h3='Contacto' 

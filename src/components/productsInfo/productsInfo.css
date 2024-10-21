@@ -6,13 +6,6 @@
     flex-direction: column;
 }
 
-.productsInfo__menu {
-    width: 100%;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    list-style: none;
-}
-
 .productsInfo__data {
     display: flex;
     flex-direction: column;

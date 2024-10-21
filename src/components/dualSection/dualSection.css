@@ -58,7 +58,7 @@
 
 @media screen and (max-width: 480px) {
     .dual__data {
-        min-height: 220px;
+        min-height: 240px;
     }
 
     .dual__img {

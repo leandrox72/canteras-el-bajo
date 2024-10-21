@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Navbar, PagesHero, Info, AboutProducts, Products, DualSection, Footer, Loading } from '../components'
+import { Navbar, PagesTitle, Carousel, Info, AboutProducts, DualSection, Footer, Loading } from '../components'
 import { gallery } from '../constants/data';
 import images from '../constants/images';
 
@@ -11,20 +11,21 @@ const AboutPage = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false)
+      window.scrollTo({ top: 0, left: 0 });
     }, 500)
   })
 
   return (
     <>
       <Navbar passActive={active} setLoading={setLoading}/>
-      <PagesHero title='Canteras El Bajo' imgs={gallery} />
+      <PagesTitle title='Nosotros' />
+      <Carousel imgs={gallery} length='5' />
       <Info 
         text='Canteras El Bajo es una empresa con 20 años de experiencia en la 
         extracción de áridos y piedras, colaborando en numerosos proyectos junto a 
         otras empresas del sector. Nuestra trayectoria destaca por la calidad, fiabilidad 
         y compromiso en cada proyecto realizado.'/>
       <AboutProducts />
-      
       <DualSection 
         h3='Contacto' 
         h2='Hablemos' 

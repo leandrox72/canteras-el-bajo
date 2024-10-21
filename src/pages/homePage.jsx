@@ -10,6 +10,7 @@ const HomePage = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false)
+      window.scrollTo({ top: 0, left: 0 });
     }, 500)
   })
 
@@ -27,6 +28,7 @@ const HomePage = () => {
         title='Liderando el mercado con calidad insuperable'
         text='Cada material que extraemos refleja nuestro compromiso con la excelencia, 
               garantizando productos superiores.'
+        alt={true}
       />
       <DualSection 
         h3='Quienes Somos'

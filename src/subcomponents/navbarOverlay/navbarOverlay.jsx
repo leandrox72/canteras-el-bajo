@@ -20,13 +20,13 @@ const NavbarOverlay = ({ passActive, setLoading }) => {
     <motion.div 
       className='navbar__overlay'
       initial={{
-        x: 650
+        x: 650,
       }}
       animate={{
-        x: 0
+        x: 0,
       }}
       exit={{
-        x: 650
+        x: 650,
       }}
       transition={{
         duration: .25,

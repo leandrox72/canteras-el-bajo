@@ -50,22 +50,13 @@ const products = [{
                Contamos con dos medidas: 10-30mm y 6-10mm.`
 }]
 
-const gallery = [{
-    id: 0,
-    img: images.Foto2,
-},{
-    id: 1,
-    img: images.Foto4,
-},{
-    id: 2,
-    img: images.Foto9,
-},{
-    id: 3,
-    img: images.Foto24,
-},{
-    id: 4,
-    img: images.Foto30,
-}]
+const gallery = [
+    images.Foto2,
+    images.Foto4,
+    images.Foto9,
+    images.Foto24,
+    images.Foto30,
+]
 
 const footerData = [{
         line1 : "Cordoba",

@@ -6,7 +6,8 @@ import SectionH2 from "./sectionH2/sectionH2";
 import SectionH3 from "./sectionH3/sectionH3";
 import Gallery from "./gallery/gallery";
 import NavbarOverlay from "./navbarOverlay/navbarOverlay";
+import Images from "./images/images";
 
 export {
-    Button, Form, ProductCard, ProductCard2, SectionH2, SectionH3, Gallery, NavbarOverlay
+    Button, Form, ProductCard, ProductCard2, SectionH2, SectionH3, Gallery, NavbarOverlay, Images
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import './productCard.css'
 import { useNavigate } from 'react-router-dom'
+import { FaArrowDown } from "react-icons/fa";
 
 const ProductCard = ({ id, name, img, setLoading }) => {
 
@@ -22,7 +23,12 @@ const ProductCard = ({ id, name, img, setLoading }) => {
       </div>
       <div className='productCard__data'>
         <h4>{name}</h4>
-        <p>Conocer Mas</p>
+        <div className='productCard__data-btn'>
+          <p>Ver</p>
+          <div className='btn__icon-cont'>
+            <FaArrowDown className='btn__icon'/>
+          </div>
+        </div>
       </div>
     </div>
   )

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import './productsInfo.css'
 import { useLocation } from 'react-router-dom'
 import { products } from '../../constants/data'
-import { ProductCard2 } from '../../subcomponents'
 import { motion } from 'framer-motion'
 
 const ProductsInfo = () => {
@@ -21,17 +20,6 @@ const ProductsInfo = () => {
 
   return (
     <section className='productsInfo'>
-      <ul className='productsInfo__menu'>
-        {products.map((prod) => (
-          <div onClick={() => setProduct(prod)}>
-            <ProductCard2 
-              title={prod.name}
-              img={prod.img}
-              key={prod.id}
-            />
-          </div>
-        ))}
-      </ul>
       <div className='productsInfo__data'>
         <motion.h3
           key={product?.title}

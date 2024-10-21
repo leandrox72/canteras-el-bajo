@@ -54,7 +54,7 @@
 
 @media screen and (max-width: 480px) {
     .products__data {
-        min-height: 220px;
+        min-height: 240px;
     }
 
     .products__cards {
