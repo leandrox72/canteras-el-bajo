@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './carousel.css'
 import { Images } from '../../subcomponents'
 import { motion, useMotionValue } from 'framer-motion'
+import { FaArrowDown } from "react-icons/fa";
 
 const DRAG_BUFFER = 50;
 
@@ -12,12 +13,13 @@ const OPTIONS = {
     damping: 100,
 }
 
-const Carousel = ({ imgs, length }) => {
+const Carousel = ({ imgs }) => {
 
   const [ index, setIndex ] = useState(0);
   const [ dragging, setDragging ] = useState(false);
 
   const dragX = useMotionValue(0);
+  const length = imgs.length;
 
   const onDragStart = () => {
     setDragging(true);
@@ -28,11 +30,20 @@ const Carousel = ({ imgs, length }) => {
 
     const x = dragX.get();
 
-    if (x <= -DRAG_BUFFER && index < length - 3) {
+    if (x <= -DRAG_BUFFER && index < length - 1) {
         setIndex((pv) => pv + 1)
     }
     else if (x >= DRAG_BUFFER && index > 0) {
         setIndex((pv) => pv - 1)
+    }
+  };
+
+  const changeIndex = (direction) => {
+    if (Array.isArray(imgs) && length > 0) {
+      setIndex((prevIndex) => {
+        const newIndex = (prevIndex + direction + length) % length;
+        return newIndex;
+      });
     }
   };
 
@@ -49,7 +60,7 @@ const Carousel = ({ imgs, length }) => {
             x: dragX,
         }}
         animate={{
-            translateX: `-${index * 33}%`,
+            translateX: `calc(-${index * 100}% + var(--border-size) / 2)`,
         }}
         transition={OPTIONS}
         onDragStart={onDragStart}
@@ -57,6 +68,16 @@ const Carousel = ({ imgs, length }) => {
       >
         <Images imgs={imgs}/>
       </motion.div>
+      <div className='carousel__btns'>
+        <div className='carousel__btns-cont'>
+          <div className='carousel__btn' onClick={() => changeIndex(-1)}>
+            <FaArrowDown className='carousel__btn-icon'/>
+          </div>
+          <div className='carousel__btn' onClick={() => changeIndex(1)}>
+            <FaArrowDown className='carousel__btn-icon'/>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

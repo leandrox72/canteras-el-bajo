@@ -19,7 +19,7 @@ const AboutPage = () => {
     <>
       <Navbar passActive={active} setLoading={setLoading}/>
       <PagesTitle title='Nosotros' />
-      <Carousel imgs={gallery} length='5' />
+      <Carousel imgs={gallery} />
       <Info 
         text='Canteras El Bajo es una empresa con 20 años de experiencia en la 
         extracción de áridos y piedras, colaborando en numerosos proyectos junto a 
