@@ -8,12 +8,12 @@
 }
 
 .carousel__cont {
-    width: 100%;
-    height: 100%;
+    width: 100%; 
+    height: 40vw;
+    min-height: 360px;
     display: flex;
     align-items: center;
     cursor: grab;
-    height: 40vw;
 }
 
 .carousel__cont:active {
@@ -22,7 +22,7 @@
 
 .carousel__btns {
     width: 100%;
-    padding: 2rem var(--h-pad);
+    padding: 2rem var(--h-pad) 0 var(--h-pad);
     display: flex;
     justify-content: flex-end;
     position: relative;
@@ -63,4 +63,41 @@
 
 .carousel__btn:last-child .carousel__btn-icon {
     transform: rotateZ(270deg);
+}
+
+@media screen and (max-width: 768px) {
+
+    .carousel__btns {
+        padding: 1rem var(--h-pad) 0 var(--h-pad);
+    }
+
+    .carousel__btns-cont {
+        gap: .75rem;
+    }
+
+    .carousel__btn {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+
+    .carousel__btn-icon {
+        height: .75rem;
+        width: .75rem;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .carousel__btns-cont {
+        gap: .5rem;
+    }
+
+    .carousel__btn {
+        height: 2.25rem;
+        width: 2.25rem;
+    }
+
+    .carousel__btn-icon {
+        height: .65rem;
+        width: .65rem;
+    }
 }

@@ -1,6 +1,5 @@
 .pagesHero {
     width: 100%;
-
     position: relative;
     margin-top: 66px;
 }
@@ -23,6 +22,14 @@
     white-space: nowrap;
     margin-bottom: -2.5%;
     padding: 0 2rem;
+}
+
+.pagesHero__alt {
+    background: var(--border);
+}
+
+.pagesHero__alt span {
+    color: #fff;
 }
 
 @media screen and (max-width: 1024px) {

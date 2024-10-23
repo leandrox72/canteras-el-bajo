@@ -18,7 +18,7 @@ const ProductsPage = () => {
   return (
     <>
       <Navbar passActive={active} setLoading={setLoading}/>
-      <PagesTitle title='Productos' />
+      <PagesTitle title='Productos' alt={true} />
       <ProductsInfo />
       <DualSection 
         h3='Contacto' 

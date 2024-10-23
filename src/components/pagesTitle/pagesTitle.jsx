@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import './pagesTitle.css'
 
-const PagesTitle = ({ title }) => {
+const PagesTitle = ({ title, alt }) => {
 
   const containerRef = useRef(null);
   const textRef = useRef(null);
@@ -44,7 +44,7 @@ const PagesTitle = ({ title }) => {
   }
 
   return (
-    <section className='pagesHero'>
+    <section className={alt ? 'pagesHero pagesHero__alt' : 'pagesHero'}>
       <div className='pagesHero__title' ref={containerRef}>
         <span ref={textRef}>
           {title}

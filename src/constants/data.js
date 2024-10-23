@@ -23,7 +23,7 @@ const products = [{
         name : "Arena Fina",
         img : images.Foto13,
         desc: `Nuestra arena fina tiene como propiedad fundamental
-               dar resistenciam dureza y durabilidad. Los granos pasan
+               dar resistencia, dureza y durabilidad. Los granos pasan
                por un tamiz que hace que sus particulas tengan el tamaño 
                fino ideal para uso mas comun en trabajos generales de 
                construccion.`

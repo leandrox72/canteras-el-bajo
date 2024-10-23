@@ -24,7 +24,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--acc);
+    background-color: var(--border);
     opacity: 0;
     transition: .25s ease;
     padding: 2rem;
@@ -38,12 +38,14 @@
     letter-spacing: 2px;
     font-size: 3rem;
     line-height: 1;
+    color: var(--acc);
 }
 
 .productCard__data p {
     font-size: 1.2rem;
     font-weight: 700;
     text-transform: uppercase;
+    color: var(--acc);
 }
 
 .productCard:hover .productCard__data {
@@ -60,7 +62,7 @@
 
 .btn__icon-cont {
     border-radius: 50%;
-    border: 2px solid var(--border);
+    border: 2px solid var(--acc);
     width: 2rem;
     height: 2rem;
     display: flex;
@@ -75,12 +77,12 @@
 }
 
 .productCard:hover .btn__icon-cont {
-    background: var(--border);
+    background: var(--acc);
 }
 
 .productCard:hover .btn__icon {
     transform: rotateZ(270deg);
-    color: var(--acc);
+    color: var(--border);
 }
 
 
