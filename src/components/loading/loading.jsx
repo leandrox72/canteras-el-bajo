@@ -1,12 +1,24 @@
 import React from 'react'
 import './loading.css'
+import { motion } from 'framer-motion'
 
-const Loading = ({ change }) => {
+const Loading = () => {
   return (
-    <div className={change ? 'loading loading__change' : 'loading'}>
-      <div />
-      <div />
-    </div>
+    <motion.div 
+      className='loading'
+      initial={{
+        opacity: 1,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      exit={{
+        opacity: 1,
+      }}
+      transition={{
+        duration: 1,
+      }}
+    />
   )
 }
 

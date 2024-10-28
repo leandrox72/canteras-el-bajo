@@ -2,6 +2,7 @@
     width: 100%;
     position: relative;
     margin-top: 66px;
+    background: #fff;
 }
 
 .pagesHero__title {
@@ -21,7 +22,7 @@
     user-select: none;
     white-space: nowrap;
     margin-bottom: -2.5%;
-    padding: 0 2rem;
+    padding: 0 4rem;
 }
 
 .pagesHero__alt {

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { Navbar, PagesTitle, Carousel, Info, AboutProducts, DualSection, Footer, Loading } from '../components'
+import { Navbar, PagesTitle, Carousel, Info, CompanyInfo, DualSection, Footer, Loading } from '../components'
 import { gallery } from '../constants/data';
 import images from '../constants/images';
+import { AnimatePresence } from 'framer-motion';
 
 const AboutPage = () => {
 
@@ -25,7 +26,15 @@ const AboutPage = () => {
         extracción de áridos y piedras, colaborando en numerosos proyectos junto a 
         otras empresas del sector. Nuestra trayectoria destaca por la calidad, fiabilidad 
         y compromiso en cada proyecto realizado.'/>
-      <AboutProducts />
+      <DualSection 
+        h3='Productos'
+        h2='Descubre lo que ofrecemos'
+        img={images.Foto16}
+        btn='Ver Productos'
+        href='/productos'
+        setLoading={setLoading}
+      />
+      <CompanyInfo />
       <DualSection 
         h3='Contacto' 
         h2='Hablemos' 
@@ -36,7 +45,9 @@ const AboutPage = () => {
         alt={true}
       />
       <Footer />
-      <Loading change={loading ? false : true}/>
+      <AnimatePresence mode='wait'>
+        {loading && (<Loading />)}
+      </AnimatePresence>  
     </>
   )
 }

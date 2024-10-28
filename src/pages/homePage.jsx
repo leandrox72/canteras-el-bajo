@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { Navbar, Hero, Products, About, Footer, Loading, DualSection } from '../components'
+import { Navbar, Hero, About, Footer, Loading, DualSection } from '../components'
 import images from '../constants/images';
+import { AnimatePresence } from 'framer-motion';
 
 const HomePage = () => {
 
@@ -23,7 +24,14 @@ const HomePage = () => {
         text='Nuestra empresa es un referente en la industria Argentina, con una multitud de proyectos
               encabezados por nosotros.'
       />
-      <Products setLoading={setLoading} />
+      <DualSection 
+        h3='Productos'
+        h2='Descubre lo que ofrecemos'
+        img={images.Foto16}
+        btn='Ver Productos'
+        href='/productos'
+        setLoading={setLoading}
+      />
       <About 
         title='Liderando el mercado con calidad insuperable'
         text='Cada material que extraemos refleja nuestro compromiso con la excelencia, 
@@ -53,7 +61,9 @@ const HomePage = () => {
         setLoading={setLoading}
       />
       <Footer />
-      <Loading change={loading ? false : true}/>
+      <AnimatePresence mode='wait'>
+        {loading && (<Loading />)}
+      </AnimatePresence>  
     </>
   )
 }

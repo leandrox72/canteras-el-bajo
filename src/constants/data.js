@@ -1,3 +1,4 @@
+import { title } from "framer-motion/client"
 import images from "./images"
 
 const pages = [
@@ -50,6 +51,37 @@ const products = [{
                Contamos con dos medidas: 10-30mm y 6-10mm.`
 }]
 
+const generalData = [
+    [
+        {
+            id : 0,
+            name : "Arena Fina",
+        },{
+            id : 1,
+            name : "Arena Gruesa",
+        },{
+            id : 2,
+            name : "Arena Comun",
+        },{
+            id : 3,
+            name : "Grancilla",
+        }
+    ],[
+        {
+            id: 0,
+            line: "Telefono: +54 351 631-8714",
+        },{
+            id: 1,
+            line: "Mail: canteraselbajo@gmail.com",
+        }
+    ],[
+        {
+            id: 0,
+            line: "Cordoba, Argentina"
+        }
+    ]
+]
+
 const gallery = [
     images.Foto2,
     images.Foto4,
@@ -69,17 +101,7 @@ const footerData = [{
         line2: "Todos los derechos reservados"
 }]
 
-const carouselData = [
-    'Canteras El Bajo',
-    'Excelencia',
-    '20 años de Experiencia',
-    'Lideres',
-    'Arena Fina',
-    'Arena Gruesa',
-    'Arena Comun',
-    'Grancilla'
-]
 
 export {
-    pages, products, footerData, gallery, carouselData
+    pages, products, footerData, gallery, generalData
 }

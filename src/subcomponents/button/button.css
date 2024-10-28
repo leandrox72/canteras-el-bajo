@@ -16,12 +16,11 @@
 }
 
 .button__p {
-    font-size: 1.5rem;
-    font-weight: 800;
+    font-size: 1.75rem;
+    font-weight: 500;
     margin-bottom: 0;
     color: var(--border);
     z-index: 10;
-    text-transform: uppercase;
 }
 
 .button:hover .button__bg {

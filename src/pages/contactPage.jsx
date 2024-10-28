@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Navbar, PagesTitle, Footer, Loading, ContactForm } from '../components'
+import { AnimatePresence } from 'framer-motion';
 
 const ContactPage = () => {
 
@@ -19,7 +20,9 @@ const ContactPage = () => {
       <PagesTitle title='Contacto'/>
       <ContactForm />
       <Footer />
-      <Loading change={loading ? false : true}/>
+      <AnimatePresence mode='wait'>
+        {loading && (<Loading />)}
+      </AnimatePresence>  
     </>
   )
 }

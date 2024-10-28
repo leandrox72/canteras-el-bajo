@@ -20,6 +20,17 @@ const ProductsInfo = () => {
 
   return (
     <section className='productsInfo'>
+      <div className='productsInfo__tabs'>
+        {products.map((prod) => (
+          <div 
+            className='productsInfo__tabs-tab' 
+            key={prod.id}
+            onClick={() => setProduct(prod)}
+          >
+            <h4>{prod.name}</h4>
+          </div>
+        ))}
+      </div>
       <div className='productsInfo__data'>
         <motion.h3
           key={product?.title}

@@ -4,10 +4,9 @@ import ProductCard from "./productCard/productCard";
 import ProductCard2 from "./productCard2/productCard2";
 import SectionH2 from "./sectionH2/sectionH2";
 import SectionH3 from "./sectionH3/sectionH3";
-import Gallery from "./gallery/gallery";
 import NavbarOverlay from "./navbarOverlay/navbarOverlay";
 import Images from "./images/images";
 
 export {
-    Button, Form, ProductCard, ProductCard2, SectionH2, SectionH3, Gallery, NavbarOverlay, Images
+    Button, Form, ProductCard, ProductCard2, SectionH2, SectionH3, NavbarOverlay, Images
 }

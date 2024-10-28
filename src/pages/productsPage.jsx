@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Navbar, PagesTitle, ProductsInfo, Carousel, DualSection, Footer, Loading } from '../components'
+import { Navbar, PagesTitle, ProductsInfo, DualSection, Footer, Loading } from '../components'
 import images from '../constants/images';
-import { gallery } from '../constants/data';
+import { AnimatePresence } from 'framer-motion';
 
 const ProductsPage = () => {
 
@@ -18,7 +18,7 @@ const ProductsPage = () => {
   return (
     <>
       <Navbar passActive={active} setLoading={setLoading}/>
-      <PagesTitle title='Productos' alt={true} />
+      <PagesTitle title='Productos' />
       <ProductsInfo />
       <DualSection 
         h3='Contacto' 
@@ -29,7 +29,9 @@ const ProductsPage = () => {
         setLoading={setLoading}
       />
       <Footer />
-      <Loading change={loading ? false : true}/>
+      <AnimatePresence mode='wait'>
+        {loading && (<Loading />)}
+      </AnimatePresence>  
     </>
   )
 }

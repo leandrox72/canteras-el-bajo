@@ -6,21 +6,5 @@
     height: 100vh;
     display: flex;
     z-index: 5000;
-    transition: .5s ease;
-}
-
-.loading__change {
-    opacity: 0;
-    z-index: -1;
-}
-
-.loading div {
-    width: 50%;
-    height: 100%;
     background: var(--border);
-    transition: .5s ease;
-}
-
-.loading__change div {
-    height: 0;
 }

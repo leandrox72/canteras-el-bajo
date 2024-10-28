@@ -1,0 +1,57 @@
+.companyInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: var(--v-pad) 0;
+    border-top: var(--border-size) solid var(--border);
+    border-bottom: var(--border-size) solid var(--border);
+}
+
+.companyInfo .section__h2 {
+    padding-left: var(--h-pad);
+}
+
+.companyInfo__data {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 4rem;
+    padding: var(--v-pad) var(--h-pad);
+}
+
+.companyInfo__data-h4 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: .5rem;
+}
+
+.companyInfo__data-ul {
+    font-size: 2rem;
+    font-weight: 500;
+    list-style: none;
+    text-wrap: nowrap;
+}
+
+@media screen and (max-width: 1240px) {
+    .companyInfo__data-h4 {
+        font-size: 1.25rem;
+    }
+    .companyInfo__data-ul {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .companyInfo__data-h4 {
+        font-size: 1rem;
+    }
+    .companyInfo__data-ul {
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .companyInfo__data {
+        gap: 2rem;
+    }
+}

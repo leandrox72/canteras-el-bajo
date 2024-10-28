@@ -3,11 +3,10 @@ import './form.css'
 
 const Form = () => {
 
-  const initialValues = { user__name: "", user__email: "", user__msg: "" }
+  const initialValues = { user__name: "", user__email: "", user__matter: "", user__msg: "" }
   const [ values, setValues ] = useState(initialValues)
   const [ errors, setErrors ] = useState({})
   const [ submit, setSubmit ] = useState(false)
-  const [ product, setProduct ] = useState('')
   const [ sended, setSended ] = useState(false)
   const form = useRef()
 
@@ -34,15 +33,14 @@ const Form = () => {
     else if (!regex.test(values.user__email)) {
       errors.user__email = "Su e-mail debe ser valido"
     }
+    if(!values.user__matter) {
+      errors.user__matter = "Su asunto es requerido"
+    }
     if(!values.user__msg) {
       errors.user__msg = "Su mensaje es requerido"
     }
     return errors
   }
-
-  useEffect(() => {
-    setValues({...values, product: product})
-  },[product])
 
   useEffect(() => {
     if(Object.keys(errors).length === 0 && submit) {
@@ -71,9 +69,14 @@ const Form = () => {
       />
       <p className='form__error'>{ errors.user__email }</p>
       <input 
+        type='text'
+        name='user__matter'
+        placeholder='asunto'
         className='form__input'
+        value={values.matter}
+        onChange={handleChange}
       />
-      <p></p>
+      <p className='form__error'>{ errors.user__matter }</p>
       <textarea 
         name='user__msg'
         placeholder='mensaje'
