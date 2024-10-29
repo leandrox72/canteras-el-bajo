@@ -4,16 +4,21 @@ import images from "./images"
 const pages = [
     {
         id: 0,
+        title: "Inicio",
+        subtitle: "Pagina Principal",
+        href: "/"
+    },{
+        id: 1,
         title: "Nosotros",
         subtitle: "Quienes Somos",
         href: "/nosotros"
     },{
-        id: 1,
+        id: 2,
         title: "Productos",
         subtitle: "Que Ofrecemos",
         href: "/productos"
     },{
-        id: 2,
+        id: 3,
         title: "Contacto",
         subtitle: "Hablemos",
         href: "/contacto"

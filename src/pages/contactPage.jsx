@@ -5,7 +5,7 @@ import { AnimatePresence } from 'framer-motion';
 const ContactPage = () => {
 
   const [ loading, setLoading ] = useState(true);
-  const active = 2;
+  const active = 3;
 
   useEffect(() => {   
     setTimeout(() => {

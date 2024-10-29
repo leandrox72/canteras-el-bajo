@@ -14,8 +14,8 @@
 .companyInfo__data {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 4rem;
+    justify-content: flex-end;
+    gap: 5rem;
     padding: var(--v-pad) var(--h-pad);
 }
 
@@ -39,6 +39,9 @@
     .companyInfo__data-ul {
         font-size: 1.5rem;
     }
+    .companyInfo__data {
+        gap: 4rem;
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -48,10 +51,14 @@
     .companyInfo__data-ul {
         font-size: 1.25rem;
     }
+    .companyInfo__data {
+        gap: 3rem;
+    }
 }
 
 @media screen and (max-width: 768px) {
     .companyInfo__data {
         gap: 2rem;
+        justify-content: flex-start;
     }
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './navbar.css'
 import { useNavigate } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
-import { NavbarOverlay } from '../../subcomponents'
+import { NavbarOverlay } from '../../components'
 
 const Navbar = ({ passActive, setLoading }) => {
 
@@ -30,7 +30,7 @@ const Navbar = ({ passActive, setLoading }) => {
   window.addEventListener('scroll', scrollChange);
 
   return (
-    <nav className={!change && passActive == 3 ? 'navbar navbar__hide' : 'navbar'}>
+    <nav className={!change && passActive == 0 ? 'navbar navbar__hide' : 'navbar'}>
       <h3 className={passActive == 3 ? 'navbar__logo logo__active' : 'navbar__logo'} onClick={() => {loading('/'), setOpen(false)}}>Canteras El Bajo</h3>
       <div className={open ? 'menu menu__open' : 'menu'} onClick={() => setOpen(!open)}>
         <h4>Menu</h4>

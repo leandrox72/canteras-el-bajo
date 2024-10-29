@@ -6,7 +6,7 @@ import { AnimatePresence } from 'framer-motion';
 const ProductsPage = () => {
 
   const [ loading, setLoading ] = useState(true);
-  const active = 1;
+  const active = 2;
 
   useEffect(() => {
     setTimeout(() => {

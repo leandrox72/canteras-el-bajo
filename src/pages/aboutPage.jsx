@@ -7,7 +7,7 @@ import { AnimatePresence } from 'framer-motion';
 const AboutPage = () => {
 
   const [ loading, setLoading ] = useState(true);
-  const active = 0;
+  const active = 1;
 
   useEffect(() => {
     setTimeout(() => {
