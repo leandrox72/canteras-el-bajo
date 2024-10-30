@@ -33,6 +33,16 @@
     color: #fff;
 }
 
+.pagesTitle__loading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-right: var(--border-size) solid var(--border);
+    border-bottom: var(--border-size) solid var(--border);
+    background: var(--sec);
+}
+
+
 @media screen and (max-width: 1024px) {
     .pagesHero {
         margin-top: 64px;

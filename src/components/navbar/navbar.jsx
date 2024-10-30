@@ -33,7 +33,7 @@ const Navbar = ({ passActive, setLoading }) => {
     <nav className={!change && passActive == 0 ? 'navbar navbar__hide' : 'navbar'}>
       <h3 className={passActive == 3 ? 'navbar__logo logo__active' : 'navbar__logo'} onClick={() => {loading('/'), setOpen(false)}}>Canteras El Bajo</h3>
       <div className={open ? 'menu menu__open' : 'menu'} onClick={() => setOpen(!open)}>
-        <h4>Menu</h4>
+        <h4>{open ? 'Cerrar' : 'Menu'}</h4>
       </div>
       <div className={open ? 'menu__mobile menu__mobile-open' : 'menu__mobile'} onClick={() => setOpen(!open)}>
         <span />

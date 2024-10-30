@@ -4,7 +4,7 @@ import { Images } from '../../subcomponents'
 import { motion, useMotionValue } from 'framer-motion'
 import { FaArrowDown } from "react-icons/fa";
 
-const DRAG_BUFFER = 50;
+const DRAG_BUFFER = 20;
 
 const OPTIONS = {
     type: "spring",

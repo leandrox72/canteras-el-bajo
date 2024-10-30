@@ -19,7 +19,7 @@ const AboutPage = () => {
   return (
     <>
       <Navbar passActive={active} setLoading={setLoading}/>
-      <PagesTitle title='Nosotros' />
+      <PagesTitle title='Nosotros' loading={loading} />
       <Carousel imgs={gallery} />
       <Info 
         text='Canteras El Bajo es una empresa con 20 años de experiencia en la 
