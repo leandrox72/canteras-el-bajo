@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './navbar.css'
 import { useNavigate } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
@@ -42,7 +42,7 @@ const Navbar = ({ passActive, setLoading }) => {
       </div>
       <AnimatePresence mode='wait'>
         {open && (
-          <NavbarOverlay passActive={passActive} setLoading={setLoading}/>
+          <NavbarOverlay passActive={passActive} setLoading={setLoading} open={open} />
         )}
       </AnimatePresence>
     </nav>

@@ -10,7 +10,7 @@ const NavbarOverlay = ({ passActive, setLoading }) => {
     <motion.div 
       className='navbar__overlay'
       initial={{
-        height: 0,
+        height: "66px",
         y: -4
       }}
       animate={{
@@ -18,11 +18,10 @@ const NavbarOverlay = ({ passActive, setLoading }) => {
         y: 0
       }}
       exit={{
-        height: 0,
-        y: -4
+        height: "67px",
       }}
       transition={{
-        duration: .75,
+        duration: .5,
       }}
     >
       <ul className='navbar__overlay-links'>

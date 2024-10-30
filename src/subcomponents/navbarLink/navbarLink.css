@@ -1,6 +1,7 @@
 .navbarLink {
     cursor: pointer;
     width: fit-content;
+    position: relative;
 }
 
 .navbarLink h4 {
@@ -18,6 +19,13 @@
 
 .navbarLink:hover h4 {
     letter-spacing: 4px;
+}
+
+.navbarLink__transition {
+    position: absolute;
+    width: 110%;
+    height: 100%;
+    background: var(--acc);
 }
 
 @media screen and (max-width: 768px) {

@@ -6,17 +6,16 @@ const Loading = () => {
   return (
     <motion.div 
       className='loading'
-      initial={{
-        opacity: 1,
+      hidden={{
+        opacity: 0,
       }}
-      animate={{
+      show={{
         opacity: 1,
+        transition: .5,
       }}
       exit={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 1,
+        opacity: 0,
+        transition: .25,
       }}
     />
   )
