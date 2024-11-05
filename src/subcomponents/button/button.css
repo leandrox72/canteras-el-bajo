@@ -52,7 +52,7 @@
 
 .button:hover .button__icon {
     transform: rotateZ(270deg);
-    color: var(--acc);
+    color: var(--pri);
 }
 
 @media screen and (max-width: 1024px) {

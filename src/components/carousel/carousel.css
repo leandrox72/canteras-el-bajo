@@ -54,7 +54,7 @@
 }
 
 .carousel__btn:hover {
-    background: var(--acc);
+    background: var(--pri);
 }
 
 .carousel__btn:first-child .carousel__btn-icon {

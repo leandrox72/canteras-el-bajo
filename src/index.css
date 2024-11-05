@@ -22,7 +22,7 @@ a {
 
 ::selection {
   color: #000;
-  background: var(--acc);
+  background: var(--pri);
 }
 
 .section__h2 {
@@ -50,13 +50,11 @@ a {
   --bg: #000;
   --border: #000;
 
-  --pri: #005C53;
-  --sec: #042940;
-  --acc: #DBF227;
+  --pri: #DBF227;
 
-  --test: #CDF564;
-  --test-2: #2D9180;
-  --test-3: #2B434B;
+  --sec-1: #005C53;
+  --sec-2: #042940;
+  --sec-3: #042940;
 }
 
 @media screen and (max-width: 1240px) {

@@ -2,13 +2,15 @@
     width: 100%;
     display: flex;
     padding: var(--v-pad) var(--h-pad);
+}
 
+.info__border {
     border-bottom: var(--border-size) solid var(--border);
 }
 
 .info p {
     color: #000;
-    font-size: 4rem;
+    font-size: 5rem;
     line-height: 1.1;
     font-weight: 500;
 }

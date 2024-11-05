@@ -19,12 +19,12 @@
 }
 
 .dual__data:hover {
-    background: var(--acc);
+    background: var(--pri);
 }
 
 .dual__img {
     width: 50%;
-    background: var(--test-3);
+    background: var(--sec-2);
 }
 
 .dual__img img {
@@ -38,7 +38,7 @@
 }
 
 .dual__alt .dual__img {
-    background: var(--sec);
+    background: var(--sec-1);
 }
 
 @media screen and (max-width: 768px) {

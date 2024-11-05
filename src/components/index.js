@@ -11,11 +11,11 @@ import PagesTitle from "./pagesTitle/pagesTitle";
 import Carousel from "./carousel/carousel";
 import Info from "./info/info";
 import CompanyInfo from "./companyInfo/companyInfo";
-import ProductsInfo from "./productsInfo/productsInfo";
+import ProductInfo from "./productInfo/productInfo";
 import ContactForm from "./contactForm/contactForm";
 
 export {
     Navbar, NavbarOverlay, Hero, Products, About, Footer, Loading, DualSection,
 
-    PagesTitle, Carousel, Info, CompanyInfo, ProductsInfo, ContactForm
+    PagesTitle, Carousel, Info, CompanyInfo, ProductInfo, ContactForm
 }
