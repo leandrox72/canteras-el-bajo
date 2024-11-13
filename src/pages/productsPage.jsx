@@ -8,7 +8,7 @@ import { products } from '../constants/data';
 const ProductsPage = () => {
 
   const [ loading, setLoading ] = useState(true);
-  const [ product, setProduct ] = useState(products[0])
+  const [ product, setProduct ] = useState()
   const [ open, setOpen ] = useState(false)
   const active = 2;
 
@@ -36,9 +36,7 @@ const ProductsPage = () => {
         que ofrecemos a nuestros clientes.'
       />
       <Products setOpen={setOpen} openAndSelect={openAndSelect} />
-      <AnimatePresence mode='wait'>
-        {open && (<ProductInfo product={product} setOpen={setOpen}/>)}
-      </AnimatePresence>
+      <ProductInfo product={product} open={open} setOpen={setOpen}/>
       <DualSection 
         h3='Contacto' 
         h2='Hablemos' 

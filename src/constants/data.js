@@ -28,11 +28,26 @@ const products = [{
         id : 0,
         name : "Arena Fina",
         img : images.Foto13,
-        desc: `Nuestra arena fina tiene como propiedad fundamental
-               dar resistencia, dureza y durabilidad. Los granos pasan
-               por un tamiz que hace que sus particulas tengan el tamaño 
-               fino ideal para uso mas comun en trabajos generales de 
-               construccion.`
+        desc: `La arena fina es un material granulado de textura suave y uniforme, 
+               caracterizado por su grano pequeño y sus propiedades versátiles. En la 
+               construcción, se utiliza ampliamente como componente en mezclas de 
+               mortero y cemento, proporcionando una base uniforme y estable que mejora 
+               la adherencia y resistencia de la estructura. Ideal para acabados, 
+               enlucidos y trabajos de albañilería, su consistencia asegura una aplicación 
+               fluida y permite obtener superficies lisas y de alta calidad. Los granos 
+               pasan por un tamiz que hace que sus particulas tengan el tamaño fino 
+               ideal para uso mas comun en trabajos generales de construccion.`,
+        info: [{
+                title: "Tamaño del Grano:",
+                value: "0-2 mm"
+            },{
+                title: "Usos:",
+                value: "Morteros, Hormigon, Yeso etc"
+            },{
+                title: "Beneficios:",
+                value: "Suave, fácil de mezclar"
+            }
+        ]
     },{
         id : 1,
         name : "Arena Gruesa",
@@ -40,20 +55,53 @@ const products = [{
         desc: `Nuestra arena gruesa esta compuesta por fragmenots sueltos de
                piedras minerales con un tamaño maximo de 5mm. Utilizado en la 
                preparacion de la mezcla para asentar los ladrillos y en la
-               preparacion del concreto de las construccions en humedo.`
+               preparacion del concreto de las construccions en humedo.`,
+        info: [{
+                title: "Tamaño del Grano:",
+                value: "2-5 mm"
+            },{
+                title: "Usos:",
+                value: "Concretos resistentes, Drenajes etc"
+            },{
+                title: "Beneficios:",
+                value: "Resistente, buen drenaje"
+            }
+        ]
     },{
         id : 2,
         name : "Arena Comun",
         img : images.Foto23,
         desc: `Nuestra arena comun se caracteriza por tener granos mas grandes
                y asperos que la arena fina. Debido a su textura ligeramente mas
-               gruesa, sus granos proporcionan una mayor resistencia y estabilidad.`
+               gruesa, sus granos proporcionan una mayor resistencia y estabilidad.`,
+        info: [{
+                title: "Tamaño del Grano:",
+                value: "Mixto"
+            },{
+                title: "Usos:",
+                value: "Morteros, Concretos, Rellenos etc"
+            },{
+                title: "Beneficios:",
+                value: "Versátil, económico"
+            }
+        ]
     },{
         id : 3,
         name : "Grancilla",
         img : images.Foto19,
         desc: `Nuestra grancilla es el arido de agregado grueso mas utilizado.
-               Contamos con dos medidas: 10-30mm y 6-10mm.`
+               Contamos con dos medidas: 10-30mm y 6-10mm.`,
+        info: [{
+                title: "Tamaño del Grano:",
+                value: "6-10mm | 10-30mm"
+            },{
+                title: "Usos:",
+                value: "Bases, Drenajes, Decoración etc"
+            },{
+                title: "Beneficios:",
+                value: "Resistente, duradero"
+            }
+        ]
 }]
 
 const generalData = [

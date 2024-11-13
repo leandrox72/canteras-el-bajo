@@ -66,6 +66,19 @@ const Carousel = ({ imgs }) => {
         onDragStart={onDragStart}
         onDragEnd={onDragEnd}
       >
+        <motion.div 
+          className='carousel__loading'
+          initial={{
+            x: 0,
+          }}
+          transition={{
+            delay: .5,
+            transition: 2,
+          }}
+          animate={{
+            x: "-100%",
+          }}
+        />
         <Images imgs={imgs}/>
       </motion.div>
       <div className='carousel__btns'>

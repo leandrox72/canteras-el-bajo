@@ -19,6 +19,7 @@
     font-size: 1.25rem;
     font-weight: 500;
     width: fit-content;
+    border-bottom: 2px solid #fff;
 }
 
 .productCard__img {
@@ -42,7 +43,7 @@
 }
 
 .productCard:hover .productCard__data p {
-    border-bottom: 2px solid var(--border);
+    border-color: var(--border);
 }
 
 .productCard:last-child .productCard__img {

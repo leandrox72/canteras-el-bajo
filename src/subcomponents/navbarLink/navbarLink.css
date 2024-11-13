@@ -28,6 +28,12 @@
     background: var(--acc);
 }
 
+@media screen and (max-height: 768px ) {
+    .navbarLink h4 {
+        font-size: 6rem;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .navbarLink h4 {
         font-size: 6rem;

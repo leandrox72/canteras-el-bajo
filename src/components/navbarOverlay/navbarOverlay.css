@@ -21,6 +21,13 @@
     width: 100%;
 }
 
+@media screen and (max-height: 640px) {
+    .navbar__overlay-links {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .navbar__overlay-links {
         gap: .5rem;

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import './pagesTitle.css'
+import { motion } from 'framer-motion';
 
 const PagesTitle = ({ title, alt, loading }) => {
 
@@ -45,7 +46,20 @@ const PagesTitle = ({ title, alt, loading }) => {
 
   return (
     <section className={alt ? 'pagesHero pagesHero__alt' : 'pagesHero'}>
-      <div className='pagesTitle__loading' />
+      <motion.div 
+        className='pagesTitle__loading' 
+        initial={{
+          x: 0,
+        }}
+        transition={{
+          delay: .5,
+          transition: 2,
+        }}
+        animate={{
+          x: "100%",
+
+        }}
+      />
       <div className='pagesHero__title' ref={containerRef}>
         <span ref={textRef}>
           {title}

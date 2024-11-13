@@ -4,6 +4,5 @@
     flex-shrink: 0;
     background: var(--sec);
     background-size: cover;
-    border-bottom: var(--border-size) solid var(--border);
     border-right: var(--border-size) solid var(--border);
 }
