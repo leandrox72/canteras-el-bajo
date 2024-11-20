@@ -1,12 +1,12 @@
 import React from 'react'
 import './productCard.css'
 
-const ProductCard = ({ id, name, img, openAndSelect }) => {
+const ProductCard = ({ id, name, img, select }) => {
 
   return (
     <div 
       className='productCard'
-      onClick={() => openAndSelect(id)}
+      onClick={() => select(id)}
     >
       <div className='productCard__img'>
         <span />

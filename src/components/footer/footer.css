@@ -22,7 +22,7 @@
     color: #111;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
     .footer__data p {
         font-size: 1rem;
     }

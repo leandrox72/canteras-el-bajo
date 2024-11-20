@@ -1,35 +1,30 @@
 .hero {
     width: 100%;
     height: 100vh;
-    display: grid;
+    display: flex;
     flex-wrap: nowrap;
 }
 
 .hero__data {
     width: 100%;
-    height: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-self: flex-start;
-    padding: var(--v-pad) var(--h-pad); 
+    align-items: flex-start;
+    justify-content: center;
     position: relative; 
     z-index: 500;
 }
 
-.hero__data h1 {
-    font-family: "Bebas Neue", sans-serif;
+.hero__data span {
     text-transform: uppercase;
-    font-size: 12vw;
-    line-height: .9;
-    letter-spacing: 4px;
+    font-family: "Bebas Neue", sans-serif; 
+    line-height: 1;
     font-weight: 800;
-    color: #fff;
     user-select: none;
-}
-
-.hero__data h1 span {
+    white-space: nowrap;
+    margin-bottom: -2.5%;
+    padding: 0 2rem;
     color: var(--pri);
+    letter-spacing: 2px;
 }
 
 .hero__data p {
@@ -70,7 +65,7 @@
     width: 100%;
     height: 100%;
     background: #000;
-    opacity: .5;
+    opacity: .3;
     z-index: 200;
 }
 
@@ -106,6 +101,7 @@
         font-size: 8rem;
     }
 }
+
 
 @media screen and (max-width: 768px) {
 

@@ -1,7 +1,6 @@
 import Navbar from "./navbar/navbar";
 import NavbarOverlay from "./navbarOverlay/navbarOverlay";
 import Hero from "./hero/hero";
-import Products from "./products/products";
 import About from "./about/about";
 import Footer from "./footer/footer";
 import Loading from "./loading/loading";
@@ -15,7 +14,7 @@ import ProductInfo from "./productInfo/productInfo";
 import ContactForm from "./contactForm/contactForm";
 
 export {
-    Navbar, NavbarOverlay, Hero, Products, About, Footer, Loading, DualSection,
+    Navbar, NavbarOverlay, Hero, About, Footer, Loading, DualSection,
 
     PagesTitle, Carousel, Info, CompanyInfo, ProductInfo, ContactForm
 }
