@@ -52,10 +52,14 @@ const products = [{
         id : 1,
         name : "Arena Gruesa",
         img : images.Foto17,
-        desc: `Nuestra arena gruesa esta compuesta por fragmenots sueltos de
-               piedras minerales con un tamaño maximo de 5mm. Utilizado en la 
-               preparacion de la mezcla para asentar los ladrillos y en la
-               preparacion del concreto de las construccions en humedo.`,
+        desc: `La arena gruesa es un material granular de granos más grandes y texturizados, 
+               ampliamente valorado en la construcción por su capacidad para aportar resistencia 
+               y estabilidad a diversas mezclas. Es un componente esencial en la elaboración de 
+               concreto y hormigón, donde su granulometría mejora la cohesión y reduce el riesgo 
+               de fisuras. Además, se emplea en la nivelación de superficies, bases de pavimentos 
+               y como relleno estructural en proyectos de gran envergadura. Su estructura permite 
+               una mejor ventilación y drenaje, convirtiéndola en una elección ideal para trabajos
+               que requieren alta durabilidad y robustez.`,
         info: [{
                 title: "Tamaño del Grano:",
                 value: "2-5 mm"
@@ -71,9 +75,12 @@ const products = [{
         id : 2,
         name : "Arena Comun",
         img : images.Foto23,
-        desc: `Nuestra arena comun se caracteriza por tener granos mas grandes
-               y asperos que la arena fina. Debido a su textura ligeramente mas
-               gruesa, sus granos proporcionan una mayor resistencia y estabilidad.`,
+        desc: `La arena común es un material de grano intermedio utilizado ampliamente en la 
+               construcción por su versatilidad y disponibilidad. Se emplea en diversas aplicaciones, 
+               como la elaboración de morteros para albañilería, rellenos, y nivelación de superficies. 
+               Su textura y granulometría equilibrada ofrecen una base confiable para proyectos básicos 
+               y acabados generales. Es ideal para trabajos cotidianos que requieren un material 
+               funcional y eficiente para lograr estructuras sólidas y uniformes.`,
         info: [{
                 title: "Tamaño del Grano:",
                 value: "Mixto"
@@ -89,8 +96,12 @@ const products = [{
         id : 3,
         name : "Grancilla",
         img : images.Foto19,
-        desc: `Nuestra grancilla es el arido de agregado grueso mas utilizado.
-               Contamos con dos medidas: 10-30mm y 6-10mm.`,
+        desc: `La grancilla, también conocida como grava fina, es un material pétreo compuesto por 
+               fragmentos pequeños y angulares. Es esencial en la construcción, especialmente para 
+               la fabricación de concreto y pavimentos, donde aporta resistencia mecánica y estabilidad 
+               estructural. Su granulometría permite una excelente compactación, haciéndola ideal para 
+               cimentaciones, bases de carreteras y drenajes. Gracias a su dureza y durabilidad, la 
+               grancilla es indispensable en proyectos que exigen un soporte robusto y de larga vida útil.`,
         info: [{
                 title: "Tamaño del Grano:",
                 value: "6-10mm | 10-30mm"

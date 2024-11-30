@@ -8,11 +8,10 @@
     border-bottom: var(--border-size) solid var(--border);
 }
 
-.info p {
+.info span {
     color: #000;
-    font-size: 5rem;
+    font-size: 4vw;
     line-height: 1.1;
-    font-weight: 500;
 }
 
 @media screen and (max-width: 1240px) {
@@ -26,6 +25,12 @@
     .info p {
         font-size: 2rem;
         font-weight: 400;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .info span {
+        font-size: 1.5rem;
     }
 }
 

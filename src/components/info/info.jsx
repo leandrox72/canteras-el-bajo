@@ -4,7 +4,7 @@ import './info.css'
 const Info = ({ text, border }) => {
   return (
     <section className={border ? 'info info__border' : 'info'}>
-      <p>{text}</p>
+      <span>{text}</span>
     </section>
   )
 }

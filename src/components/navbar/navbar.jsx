@@ -38,7 +38,12 @@ const Navbar = ({ passActive, setLoading }) => {
           <li 
             key={link.id} 
             onClick={() => passActive != link.id && loading(link.href)}>
-              <p style={{ fontStyle: passActive == link.id ? 'oblique' : ''}}>{link.title}</p>
+              <p 
+                style={{ 
+                  fontStyle: passActive == link.id && 'oblique',
+                  color: passActive == link.id ? '#000' : '#555'
+                }}
+              >{link.title}</p>
           </li>
         ))}
       </ul>

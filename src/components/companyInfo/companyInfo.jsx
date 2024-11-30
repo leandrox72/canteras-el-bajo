@@ -1,13 +1,14 @@
 import React from 'react'
 import './companyInfo.css'
-import { SectionH2 } from '../../subcomponents'
+import { SectionH2, SectionH3 } from '../../subcomponents'
 import { generalData } from '../../constants/data'
 
 const CompanyInfo = () => {
 
   return (
     <section className='companyInfo'>
-      <SectionH2 text='Informacion'/>
+      <SectionH3 title='Informacion' />
+      <SectionH2 text='Informacion General'/>
       <div className='companyInfo__data'>
         <div>
           <h4 className='companyInfo__data-h4'>Productos</h4>

@@ -20,9 +20,9 @@ const HomePage = () => {
       <Navbar passActive={active} setLoading={setLoading}/>
       <Hero />
       <About 
-        title='20 años de experiencia y excelencia'
-        text='Nuestra empresa es un referente en la industria Argentina, con una multitud de proyectos
-              encabezados por nosotros.'
+        title='Liderando el mercado con calidad insuperable'
+        text='Cada material que extraemos refleja nuestro compromiso con la excelencia, 
+              garantizando productos superiores.'
       />
       <DualSection 
         h3='Productos'
@@ -33,9 +33,9 @@ const HomePage = () => {
         setLoading={setLoading}
       />
       <About 
-        title='Liderando el mercado con calidad insuperable'
-        text='Cada material que extraemos refleja nuestro compromiso con la excelencia, 
-              garantizando productos superiores.'
+        title='20 años de experiencia y excelencia'
+        text='Nuestra empresa es un referente en la industria Argentina, con una multitud de 
+              proyectos encabezados por nosotros.'
         alt={true}
       />
       <DualSection 

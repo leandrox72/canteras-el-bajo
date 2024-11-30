@@ -50,36 +50,40 @@ const Form = () => {
 
   return (
     <form className='form' ref={form}>
+      <p>nombre</p>
       <input 
         type='text'
         name='user__name'
-        placeholder='nombre'
+        placeholder='su nombre'
         className='form__input'
         value={values.name}
         onChange={handleChange}
       />
       <p className='form__error'>{ errors.user__name }</p>
+      <p>email</p>
       <input 
         type='email'
         name='user__email'
-        placeholder='email'
+        placeholder='su email'
         className='form__input'
         value={values.email}
         onChange={handleChange}
       />
       <p className='form__error'>{ errors.user__email }</p>
+      <p>asunto</p>
       <input 
         type='text'
         name='user__matter'
-        placeholder='asunto'
+        placeholder='su asunto'
         className='form__input'
         value={values.matter}
         onChange={handleChange}
       />
       <p className='form__error'>{ errors.user__matter }</p>
+      <p>mensaje</p>
       <textarea 
         name='user__msg'
-        placeholder='mensaje'
+        placeholder='su mensaje'
         className='form__textarea'
         value={values.msg}
         onChange={handleChange}

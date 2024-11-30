@@ -16,8 +16,9 @@
 }
 
 .button__p {
-    font-size: 1.75rem;
-    font-weight: 500;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
     margin-bottom: 0;
     color: var(--border);
     z-index: 10;
