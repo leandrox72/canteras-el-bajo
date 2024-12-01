@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
+import Button from '../button/button'
+import emailjs from '@emailjs/browser';
 import './form.css'
 
 const Form = () => {
@@ -43,14 +45,21 @@ const Form = () => {
   }
 
   useEffect(() => {
-    if(Object.keys(errors).length === 0 && submit) {
-      console.log(values)
+    if (Object.keys(errors).length === 0 && submit) {
+      emailjs.send(import.meta.env.VITE_SERVICE_KEY, import.meta.env.VITE_TEMPLATE_KEY, values, import.meta.env.VITE_PUBLIC_KEY)
+      .then((result) => {
+        console.log(result.text)
+        setSended(true)
+      }, (error) => {
+        console.log(error.text)
+        setSended(false)
+      })
     }
   },[errors])
 
   return (
     <form className='form' ref={form}>
-      <p>nombre</p>
+      <p>nombre completo</p>
       <input 
         type='text'
         name='user__name'
@@ -89,8 +98,8 @@ const Form = () => {
         onChange={handleChange}
       />
       <p className='form__error'>{ errors.user__msg }</p>
-      <div className='form__btn' onClick={handleSubmit}>
-        <h1>Enviar</h1>
+      <div onClick={handleSubmit}>
+        <Button text='Enviar'/>
       </div>
     </form>
   )
