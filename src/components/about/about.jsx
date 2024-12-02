@@ -7,7 +7,7 @@ const About = ({ title, text, alt }) => {
     <section className={alt ? 'about about__alt' : 'about about__std'}>
       <div className={alt ? 'about__data about__data-alt' : 'about__data'}>
         <div className='about__data-h2'>
-          <h2 className='section__h2'>{title}</h2>
+          <h2 className='sectionH2'>{title}</h2>
         </div>
         <motion.div 
           className='about__data-p'

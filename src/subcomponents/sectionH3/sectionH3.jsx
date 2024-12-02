@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 const SectionH3 = ({ title }) => {
   return (
-    <motion.div 
+    <motion.h3 
       className='sectionH3'
       initial={{ 
         opacity: 0,
@@ -16,8 +16,8 @@ const SectionH3 = ({ title }) => {
        }}
       transition={{ duration: .5 }}
     >
-      <h3>{title}</h3>
-    </motion.div>
+      {title}
+    </motion.h3>
   )
 }
 

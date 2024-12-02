@@ -5,7 +5,6 @@
     padding: var(--v-pad) 0;
     border-top: var(--border-size) solid var(--border);
     border-bottom: var(--border-size) solid var(--border);
-    background: #000;
 }
 
 .companyInfo .sectionH3 {
@@ -13,9 +12,8 @@
 }
 
 
-.companyInfo .section__h2 {
+.companyInfo .sectionH2 {
     padding-left: var(--h-pad);
-    color: #fff;
 }
 
 .companyInfo__data {
@@ -38,7 +36,7 @@
     font-weight: 500;
     list-style: none;
     text-wrap: nowrap;
-    color: #ddd;
+    color: #000;
 }
 
 @media screen and (max-width: 1240px) {

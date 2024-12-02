@@ -32,7 +32,10 @@ const Navbar = ({ passActive, setLoading }) => {
 
   return (
     <nav className={!change && passActive == 0 ? 'navbar navbar__hide' : 'navbar'}>
-      <h3 className={passActive == 3 ? 'navbar__logo logo__active' : 'navbar__logo'} onClick={() => {loading('/'), setOpen(false)}}>Canteras El Bajo</h3>
+      <h3 
+        className={passActive == 3 ? 'navbar__logo logo__active' : 'navbar__logo'} 
+        onClick={() => {loading('/'), setOpen(false)}}
+      >Canteras El Bajo</h3>
       <ul className='navbar__links'>
         {pages.map((link) => (
           <li 

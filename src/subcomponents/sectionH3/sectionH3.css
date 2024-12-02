@@ -1,39 +1,27 @@
 .sectionH3 {
-    display: flex;
-    height: fit-content;
-    gap: 1rem;
-    align-items: center;
-    margin-bottom: .5rem; 
-}
-
-.sectionH3 h3 {
-    margin-bottom: 0rem;
     font-size: 1.5rem;
     text-transform: uppercase;
     line-height: 1;
     font-weight: 800;
     color: #555;
+    margin-bottom: .5rem; 
 }
 
-.sectionH3__span {
-    width: 100%;
-    height: 2px;
-    background: var(--border);
+@media screen and (max-width: 1240px) {
+    .sectionH3 {
+      font-size: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .sectionH3 {
+      font-size: 1.1rem;
+    }
 }
 
 @media screen and (max-width: 768px) {
     .sectionH3 {
-        margin-bottom: .5rem;
-    }
-
-    .sectionH3 h3 {
-        font-size: 1.25rem;
-        font-weight: 500;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .sectionH3 h3 {
-        font-size: 1rem;
+      font-size: 1rem;
+      margin-bottom: .5rem;
     }
 }
