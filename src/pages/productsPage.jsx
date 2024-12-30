@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Navbar, PagesTitle, Carousel, Info, DualSection, Footer, Loading, ProductInfo } from '../components'
+import { Navbar, PagesTitle, Carousel, Info, DualSection, Footer, Loading, Products } from '../components'
 import images from '../constants/images';
 import { AnimatePresence } from 'framer-motion';
 import { gallery2 } from '../constants/data';
@@ -8,6 +8,7 @@ const ProductsPage = () => {
 
   const [ loading, setLoading ] = useState(true);
   const active = 2;
+  const pageTitle = "Productos";
 
   useEffect(() => {
     setTimeout(() => {
@@ -18,7 +19,7 @@ const ProductsPage = () => {
 
   return (
     <>
-      <Navbar passActive={active} setLoading={setLoading}/>
+      <Navbar passActive={active} setLoading={setLoading} page={pageTitle}/>
       <PagesTitle title='Productos' />
       <Carousel imgs={gallery2} />
       <Info 
@@ -27,10 +28,10 @@ const ProductsPage = () => {
         completas. Aquí tienes nuestra selección de productos 
         que ofrecemos a nuestros clientes.'
       />
-      <ProductInfo />
+      <Products />
       <DualSection 
         h3='Contacto' 
-        h2='Hablemos' 
+        h2='Ponte en Contacto con Nosotros' 
         img={images.Foto17}
         btn='Hablemos'
         href='/contacto'

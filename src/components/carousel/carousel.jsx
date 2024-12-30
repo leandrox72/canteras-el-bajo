@@ -30,7 +30,7 @@ const Carousel = ({ imgs }) => {
 
     const x = dragX.get();
 
-    if (x <= -DRAG_BUFFER && index < length - 1) {
+    if (x <= - DRAG_BUFFER && index < length - 1) {
         setIndex((pv) => pv + 1)
     }
     else if (x >= DRAG_BUFFER && index > 0) {

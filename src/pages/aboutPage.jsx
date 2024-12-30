@@ -8,6 +8,7 @@ const AboutPage = () => {
 
   const [ loading, setLoading ] = useState(true);
   const active = 1;
+  const pageTitle = "Sobre Nosotros";
 
   useEffect(() => {
     setTimeout(() => {
@@ -18,7 +19,7 @@ const AboutPage = () => {
 
   return (
     <>
-      <Navbar passActive={active} setLoading={setLoading}/>
+      <Navbar passActive={active} setLoading={setLoading} page={pageTitle}/>
       <PagesTitle title='Nosotros' loading={loading} />
       <Carousel imgs={gallery} />
       <Info 
@@ -26,7 +27,7 @@ const AboutPage = () => {
         text='Somos una empresa con 20 años de experiencia en la 
         extracción de áridos y piedras, colaborando en numerosos proyectos junto a 
         otras empresas del sector. Nuestra trayectoria destaca por la calidad, fiabilidad 
-        y compromiso en cada proyecto realizado.'/>
+        y compromiso en cada proyecto.'/>
       <DualSection 
         h3='Productos'
         h2='Descubre lo que ofrecemos'
@@ -38,7 +39,7 @@ const AboutPage = () => {
       <CompanyInfo />
       <DualSection 
         h3='Contacto' 
-        h2='Hablemos' 
+        h2='Ponte en Contacto con Nosotros' 
         img={images.Foto17}
         btn='Hablemos'
         href='/contacto'

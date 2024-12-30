@@ -6,6 +6,7 @@ const ContactPage = () => {
 
   const [ loading, setLoading ] = useState(true);
   const active = 3;
+  const pageTitle = "Contacto";
 
   useEffect(() => {   
     setTimeout(() => {
@@ -16,7 +17,7 @@ const ContactPage = () => {
 
   return (
     <>
-      <Navbar passActive={active} setLoading={setLoading}/>
+      <Navbar passActive={active} setLoading={setLoading} page={pageTitle}/>
       <PagesTitle title='Contacto'/>
       <ContactForm />
       <Footer />

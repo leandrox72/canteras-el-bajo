@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import Button from '../button/button'
 import emailjs from '@emailjs/browser';
 import './form.css'
 
@@ -10,6 +9,7 @@ const Form = () => {
   const [ errors, setErrors ] = useState({})
   const [ submit, setSubmit ] = useState(false)
   const [ sended, setSended ] = useState(false)
+  const [ displayMsg, setDisplayMsg ] = useState(false)
   const form = useRef()
 
   const handleChange = (e) => {
@@ -50,12 +50,28 @@ const Form = () => {
       .then((result) => {
         console.log(result.text)
         setSended(true)
+        setDisplayMsg(true)
       }, (error) => {
         console.log(error.text)
         setSended(false)
+        setDisplayMsg(true)
       })
     }
   },[errors])
+
+  const renderMessage = () => {
+    if (!displayMsg || Object.keys(errors).length > 0 || !submit) return null;
+
+    const isSuccess = sended === true;
+    const message = isSuccess ? 'Se envio correctamente' : 'Ha ocurrido un error';
+    const modalClass = isSuccess ? 'modal__success' : 'modal__error';
+
+    return (
+      <div className={`form__modal ${modalClass}`}>
+        <p>{message}</p>
+      </div>
+    )
+  }
 
   return (
     <form className='form' ref={form}>
@@ -98,9 +114,12 @@ const Form = () => {
         onChange={handleChange}
       />
       <p className='form__error'>{ errors.user__msg }</p>
-      <div onClick={handleSubmit}>
-        <Button text='Enviar'/>
-      </div>
+      {sended !== true ? (
+        <div className='form__btn' onClick={handleSubmit}>
+          <p>Enviar</p>
+        </div>) : 
+        (<p>¡Muchas Gracias!</p>)}
+      {renderMessage()}
     </form>
   )
 }

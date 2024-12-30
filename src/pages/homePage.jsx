@@ -7,6 +7,7 @@ const HomePage = () => {
 
   const [ loading, setLoading ] = useState(true);
   const active = 0;
+  const pageTitle = "Inicio";
 
   useEffect(() => {
     setTimeout(() => {
@@ -17,7 +18,7 @@ const HomePage = () => {
 
   return (
     <>
-      <Navbar passActive={active} setLoading={setLoading}/>
+      <Navbar passActive={active} setLoading={setLoading} page={pageTitle} />
       <Hero />
       <About 
         title='Liderando el mercado con calidad insuperable'

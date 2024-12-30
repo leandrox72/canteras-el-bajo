@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './images.css'
 
 const Images = ({ imgs }) => {
+
   return (
     <>
       {imgs.map((img, idx) => (

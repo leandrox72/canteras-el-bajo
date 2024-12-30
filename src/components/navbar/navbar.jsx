@@ -5,7 +5,7 @@ import { AnimatePresence } from 'framer-motion'
 import { NavbarOverlay } from '../../components'
 import { pages } from '../../constants/data'
 
-const Navbar = ({ passActive, setLoading }) => {
+const Navbar = ({ passActive, setLoading, page }) => {
 
   const [ change, setChange ] = useState(false);
   const [ open, setOpen ] = useState(false);
@@ -32,10 +32,13 @@ const Navbar = ({ passActive, setLoading }) => {
 
   return (
     <nav className={!change && passActive == 0 ? 'navbar navbar__hide' : 'navbar'}>
-      <h3 
-        className={passActive == 3 ? 'navbar__logo logo__active' : 'navbar__logo'} 
-        onClick={() => {loading('/'), setOpen(false)}}
-      >Canteras El Bajo</h3>
+      <div className='navbar__cont'>
+        <h3 
+          className={passActive == 3 ? 'navbar__logo logo__active' : 'navbar__logo'} 
+          onClick={() => passActive != 0 && loading('/')}
+        >Canteras El Bajo</h3>
+        <p>{page}</p>
+      </div>
       <ul className='navbar__links'>
         {pages.map((link) => (
           <li 
@@ -44,7 +47,7 @@ const Navbar = ({ passActive, setLoading }) => {
               <p 
                 style={{ 
                   fontStyle: passActive == link.id && 'oblique',
-                  color: passActive == link.id ? '#000' : '#555'
+                  color: passActive == link.id ? '#000' : '#222'
                 }}
               >{link.title}</p>
           </li>

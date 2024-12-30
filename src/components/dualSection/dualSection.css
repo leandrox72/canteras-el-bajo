@@ -12,7 +12,7 @@
     flex-direction: column;
     padding: var(--v-pad) var(--h-pad);
     justify-content: space-between;
-    transition: .25s ease;
+    transition: .5s ease;
     height: 44vw;
     min-height: 480px;
     background: #fff;

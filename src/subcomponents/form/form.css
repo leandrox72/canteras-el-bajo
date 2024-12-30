@@ -29,3 +29,45 @@
     font-weight: 500;
 }
 
+.form__btn {
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid var(--border);
+    padding: .5rem 1rem;
+    transition: 0.25s ease;
+}
+
+.form__btn:hover {
+    background: var(--border);
+}
+
+.form__btn:active {
+    background: #222;
+}
+
+.form__btn:hover p {
+    color: #fff;
+}
+
+.form__btn p {
+    font-weight: 500;
+    transition: 0.25s ease;
+}
+
+.form__modal p {
+    font-weight: 500;
+}
+
+@media screen and (max-width: 1024px) {
+    .form {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .form {
+        width: 100%;
+    }
+}

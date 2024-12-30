@@ -1,4 +1,3 @@
-import { title } from "framer-motion/client"
 import images from "./images"
 
 const pages = [
@@ -27,7 +26,7 @@ const pages = [
 const products = [{
         id : 0,
         name : "Arena Fina",
-        img : images.Foto13,
+        img : images.Foto14,
         desc: `La arena fina es un material granulado de textura suave y uniforme, 
                caracterizado por su grano pequeño y sus propiedades versátiles. En la 
                construcción, se utiliza ampliamente como componente en mezclas de 
@@ -133,15 +132,15 @@ const generalData = [
     ],[
         {
             id: 0,
-            line: "Telefono: +54 351 631-8714",
+            line: "Telefono: +54 0351 876-2106",
         },{
             id: 1,
-            line: "Mail: canteraselbajo@gmail.com",
+            line: "Mail: gmcanteras@gmail.com",
         }
     ],[
         {
             id: 0,
-            line: "Cordoba, Argentina"
+            line: "Haedo 149, Alto Alberdi, Cordoba"
         }
     ]
 ]
@@ -173,8 +172,8 @@ const footerData = [{
         line1 : "Cordoba",
         line2 : "Argentina"
     }, {
-        line1 : "canteraselbajo@gmail.com",
-        line2 : "+54 351 631-8714"
+        line1 : "gmcanteras@gmail.com",
+        line2 : "+54 0351 876-2106"
     }, {
         line1: "Canteras El Bajo 2024",
         line2: "Todos los derechos reservados"
