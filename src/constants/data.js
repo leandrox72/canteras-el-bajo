@@ -37,13 +37,13 @@ const products = [{
                pasan por un tamiz que hace que sus particulas tengan el tamaño fino 
                ideal para uso mas comun en trabajos generales de construccion.`,
         info: [{
-                title: "Tamaño del Grano:",
+                title: "Tamaño del Grano",
                 value: "0-2 mm"
             },{
-                title: "Usos:",
+                title: "Usos",
                 value: "Morteros, Hormigon, Yeso etc"
             },{
-                title: "Beneficios:",
+                title: "Beneficios",
                 value: "Suave, fácil de mezclar"
             }
         ]
@@ -60,13 +60,13 @@ const products = [{
                una mejor ventilación y drenaje, convirtiéndola en una elección ideal para trabajos
                que requieren alta durabilidad y robustez.`,
         info: [{
-                title: "Tamaño del Grano:",
+                title: "Tamaño del Grano",
                 value: "2-5 mm"
             },{
-                title: "Usos:",
+                title: "Usos",
                 value: "Concretos resistentes, Drenajes etc"
             },{
-                title: "Beneficios:",
+                title: "Beneficios",
                 value: "Resistente, buen drenaje"
             }
         ]
@@ -81,13 +81,13 @@ const products = [{
                y acabados generales. Es ideal para trabajos cotidianos que requieren un material 
                funcional y eficiente para lograr estructuras sólidas y uniformes.`,
         info: [{
-                title: "Tamaño del Grano:",
+                title: "Tamaño del Grano",
                 value: "Mixto"
             },{
-                title: "Usos:",
+                title: "Usos",
                 value: "Morteros, Concretos, Rellenos etc"
             },{
-                title: "Beneficios:",
+                title: "Beneficios",
                 value: "Versátil, económico"
             }
         ]
@@ -102,13 +102,13 @@ const products = [{
                cimentaciones, bases de carreteras y drenajes. Gracias a su dureza y durabilidad, la 
                grancilla es indispensable en proyectos que exigen un soporte robusto y de larga vida útil.`,
         info: [{
-                title: "Tamaño del Grano:",
+                title: "Tamaño del Grano",
                 value: "6-10mm | 10-30mm"
             },{
-                title: "Usos:",
+                title: "Usos",
                 value: "Bases, Drenajes, Decoración etc"
             },{
-                title: "Beneficios:",
+                title: "Beneficios",
                 value: "Resistente, duradero"
             }
         ]

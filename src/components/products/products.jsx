@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './products.css'
 import { products } from '../../constants/data';
+import { Card } from '../../subcomponents';
 
 const Products = () => {
 
@@ -8,15 +9,14 @@ const Products = () => {
 
   return (
     <div className='products'>
-      <ul className='products__select'>
+      <ul className='products__cards'>
         {products.map((item) => (
-          <li 
-            key={item.id} 
-            className={item.id === product.id && 'active'}
-            onClick={() => setProduct(item)}
-          >
-              <span>{item.name}</span>
-          </li>
+          <Card
+            key={item.id}
+            product={item} 
+            setProduct={setProduct}
+            active={product.id === item.id && true}
+          />
         ))}
       </ul>
       <div className='products__data'>
@@ -24,7 +24,7 @@ const Products = () => {
         <div className='products__data-cont'>
           <ul className='info__cont'>
             {product.info.map((item, index) => (
-              <li key={index}><p>{item.title} {item.value}</p></li>
+              <li key={index}><p>{item.title}: {item.value}</p></li>
             ))}
           </ul>    
           <p className='desc'>{product.desc}</p>

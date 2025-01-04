@@ -11,8 +11,8 @@ const HomePage = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      setLoading(false)
       window.scrollTo({ top: 0, left: 0 });
+      setLoading(false)
     }, 500)
   },[])
 
