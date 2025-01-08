@@ -36,7 +36,7 @@ const AboutPage = () => {
         href='/productos'
         setLoading={setLoading}
       />
-      <CompanyInfo />
+      <CompanyInfo setLoading={setLoading} />
       <DualSection 
         h3='Contacto' 
         h2='Ponte en Contacto con Nosotros' 

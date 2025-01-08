@@ -9,7 +9,7 @@ import DualSection from "./dualSection/dualSection";
 import PagesTitle from "./pagesTitle/pagesTitle";
 import Carousel from "./carousel/carousel";
 import Info from "./info/info";
-import CompanyInfo from "./companyInfo/companyInfo";
+import CompanyInfo from "./infoColumns/infoColumns";
 import Products from "./products/products";
 import ContactForm from "./contactForm/contactForm";
 

@@ -161,13 +161,6 @@ const gallery2 = [
     images.Foto26,
 ]
 
-const productsImgs = [
-    images.Foto13,
-    images.Foto17,
-    images.Foto23,
-    images.Foto19,
-]
-
 const footerData = [{
         line1 : "Cordoba",
         line2 : "Argentina"
@@ -181,5 +174,5 @@ const footerData = [{
 
 
 export {
-    pages, products, footerData, gallery, gallery2, generalData, productsImgs
+    pages, products, footerData, gallery, gallery2, generalData
 }

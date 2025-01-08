@@ -1,4 +1,4 @@
-.companyInfo {
+.infoColumns {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -7,23 +7,23 @@
     border-bottom: var(--border-size) solid var(--border);
 }
 
-.companyInfo .sectionH3 {
+.infoColumns .sectionH3 {
     padding-left: var(--h-pad);
 }
 
 
-.companyInfo .sectionH2 {
+.infoColumns .sectionH2 {
     padding-left: var(--h-pad);
 }
 
-.companyInfo__data {
+.infoColumns__data {
     display: flex;
     flex-wrap: wrap;
     gap: 5rem;
     padding: var(--v-pad) var(--h-pad);
 }
 
-.companyInfo__data-h4 {
+.infoColumns__data-h4 {
     font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: .5rem;
@@ -31,40 +31,56 @@
     color: #555;
 }
 
-.companyInfo__data-ul {
+.infoColumns__data-ul, 
+.infoColumns__data-div {
+    max-width: 360px;
+}
+
+.infoColumns__data-ul li,
+.infoColumns__data-div p {
     font-size: 1.5rem;
     font-weight: 600;
     list-style: none;
-    text-wrap: nowrap;
+    color: #000;
+}
+
+.infoColumns__data-div {
+    text-wrap: wrap;
+}
+
+.infoColumns__data-div a,
+.infoColumns__data-div span {
+    text-decoration: underline;
+    cursor: pointer;
     color: #000;
 }
 
 @media screen and (max-width: 1240px) {
-    .companyInfo__data-h4 {
+    .infoColumns__data-h4 {
         font-size: 1.25rem;
     }
-    .companyInfo__data-ul {
+    .infoColumns__data-ul {
         font-size: 1.5rem;
     }
-    .companyInfo__data {
+    .infoColumns__data {
         gap: 4rem;
     }
 }
 
 @media screen and (max-width: 1024px) {
-    .companyInfo__data-h4 {
+    .infoColumns__data-h4 {
         font-size: 1rem;
     }
-    .companyInfo__data-ul {
+    .infoColumns__data-ul {
         font-size: 1.25rem;
     }
-    .companyInfo__data {
+    .infoColumns__data {
         gap: 3rem;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .companyInfo__data {
+    .infoColumns__data {
         gap: 2rem;
         justify-content: flex-start;
     }
