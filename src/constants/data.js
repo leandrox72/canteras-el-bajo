@@ -146,10 +146,10 @@ const generalData = [
 ]
 
 const gallery = [
-    images.Foto2,
-    images.Foto4,
+    images.Foto3,  
     images.Foto9,
-    images.Foto24,
+    images.Foto12,
+    images.Foto26,
     images.Foto30,
 ]
 
@@ -166,7 +166,7 @@ const footerData = [{
         line2 : "Argentina"
     }, {
         line1 : "gmcanteras@gmail.com",
-        line2 : "+54 0351 876-2106"
+        line2 : "+54 351 876-2106"
     }, {
         line1: "Canteras El Bajo 2024",
         line2: "Todos los derechos reservados"

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { Navbar, Hero, About, Footer, Loading, DualSection } from '../components'
+import { useEffect, useState } from 'react'
+import { Navbar, Hero, About, Footer, Loading, DualSection, Cta } from '../components'
 import images from '../constants/images';
 import { AnimatePresence } from 'framer-motion';
 
@@ -49,9 +49,9 @@ const HomePage = () => {
         alt={true}
       />
       <About 
-        title='20 años de experiencia y excelencia'
-        text='Nuestra empresa es un referente en la industria Argentina, con una multitud de proyectos
-              encabezados por nosotros.'
+        title='Infraestructura y Capacidad operativa'
+        text='Contamos con una infraestructura de vanguardia y un equipo altamente especializado 
+              para garantizar eficiencia en cada proyecto.'
       />
       <DualSection 
         h3='Contacto' 
@@ -62,6 +62,7 @@ const HomePage = () => {
         setLoading={setLoading}
       />
       <Footer />
+      <Cta />
       <AnimatePresence mode='wait'>
         {loading && (<Loading />)}
       </AnimatePresence>  

@@ -1,8 +1,7 @@
-import React from 'react'
 import './infoColumns.css'
 import { SectionH2, SectionH3 } from '../../subcomponents'
 import { generalData } from '../../constants/data'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router'
 
 const CompanyInfo = ({ setLoading }) => {
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './products.css'
 import { products } from '../../constants/data';
 import { Card } from '../../subcomponents';
@@ -9,14 +9,12 @@ const Products = () => {
 
   return (
     <div className='products'>
-      <ul className='products__cards'>
+      <ul className='products__items'>
         {products.map((item) => (
-          <Card
-            key={item.id}
-            product={item} 
-            setProduct={setProduct}
-            active={product.id === item.id && true}
-          />
+          <li 
+            className={product === item && 'active' }
+            onClick={() => setProduct(item)}
+          >{item.name}</li>
         ))}
       </ul>
       <div className='products__data'>

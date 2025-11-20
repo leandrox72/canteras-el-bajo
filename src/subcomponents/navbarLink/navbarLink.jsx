@@ -1,4 +1,3 @@
-import React from 'react'
 import './navbarLink.css'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'

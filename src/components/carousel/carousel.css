@@ -41,7 +41,7 @@
 
 .carousel__btns-cont {
     display: flex;
-    gap: 1rem;
+    gap: .5rem;
     align-items: center;
     justify-content: center;
 }
@@ -61,10 +61,15 @@
 .carousel__btn-icon {
     height: 1.25rem;
     width: 1.25rem;
+    transition: inherit;
 }
 
 .carousel__btn:hover {
-    background: var(--pri);
+    background: #000;
+}
+
+.carousel__btn:hover .carousel__btn-icon {
+    color: #fff;
 }
 
 .carousel__btn:first-child .carousel__btn-icon {

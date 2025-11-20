@@ -1,0 +1,38 @@
+.hero__slider {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: top;
+  transition: 1s ease-in-out; /* Ajusta el tiempo para que coincida con la mitad del intervalo */
+}
+
+.slide .fade__out {
+  opacity: 0;
+}
+
+.slide .fade__in {
+  opacity: 1;
+}
+
+.slide:nth-child(2) {
+  z-index: -1;
+}
+
+.slider__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .15;
+    z-index: 200;
+}

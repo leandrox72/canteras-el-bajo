@@ -15,10 +15,6 @@
     border-bottom: var(--border-size) solid var(--border);
 }
 
-.navbar:hover {
-    background: var(--pri);
-}
-
 .navbar__hide {
     transform: translateY(-100%);
     opacity: 0;
@@ -32,12 +28,20 @@
 .navbar__cont {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
+}
+
+.navbar__logo-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: -.5rem;
+    z-index: 1300;
+    user-select: none;
 }
 
 .navbar__logo {
     font-family: "Bebas Neue", sans-serif;
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: #111;
     letter-spacing: 2px;
     line-height: .5;
@@ -45,11 +49,12 @@
     font-weight: 800;
     cursor: pointer;
     z-index: 1300;
+    user-select: none;
 }
 
 .navbar__cont p {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1.25rem;
+    font-weight: 500;
 }
 
 .navbar__links {
@@ -67,10 +72,10 @@
 }
 
 .navbar__links li p {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     text-transform: uppercase;
     line-height: .9;
-    font-weight: 800;
+    font-weight: 700;
     color: #555;
     border-bottom: 2px solid transparent;
 }
@@ -89,19 +94,9 @@
 .menu h4 {
     font-size: 1.25rem;
     color: #111;
-    font-weight: 800;
+    font-weight: 700;
     transition: .25s ease;
     text-transform: uppercase;
-}
-
-@media screen and (max-width: 1620px) {
-    .navbar__logo {
-        font-size: 3rem;
-    }
-
-    .navbar__links li p {
-        font-size: 1.25rem;
-    }
 }
 
 @media screen and (max-width: 1620px) {
@@ -110,10 +105,6 @@
         letter-spacing: 2px;
         line-height: .5;
         margin-top: .2rem;
-    }
-
-    .navbar__cont p {
-        font-size: 1.25rem;
     }
 }
 
@@ -162,5 +153,16 @@
 
     .menu h4 {
         font-size: 1rem;
+    }
+
+    .navbar__logo-icon {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .navbar__logo {
+        display: none;
     }
 }

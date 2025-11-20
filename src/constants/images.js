@@ -28,15 +28,18 @@ import Foto27 from '../assets/imgs/foto27.jpg'
 import Foto28 from '../assets/imgs/foto28.jpg'
 import Foto29 from '../assets/imgs/foto29.jpg'
 import Foto30 from '../assets/imgs/foto30.jpg'
+import Logo from '../assets/canteraslogo.png'
 
 export {
     Foto1, Foto2, Foto3, Foto4, Foto5, Foto6, Foto7, Foto8, Foto9, Foto10,
     Foto11, Foto12, Foto13, Foto14, Foto15, Foto16, Foto17, Foto18, Foto19, Foto20,
     Foto21, Foto22, Foto23, Foto24, Foto25, Foto26, Foto27, Foto28, Foto29, Foto30,
+    Logo
 }
 
 export default {
     Foto1, Foto2, Foto3, Foto4, Foto5, Foto6, Foto7, Foto8, Foto9, Foto10,
     Foto11, Foto12, Foto13, Foto14, Foto15, Foto16, Foto17, Foto18, Foto19, Foto20,
     Foto21, Foto22, Foto23, Foto24, Foto25, Foto26, Foto27, Foto28, Foto29, Foto30,
+    Logo
 }

@@ -5,6 +5,7 @@ import About from "./about/about";
 import Footer from "./footer/footer";
 import Loading from "./loading/loading";
 import DualSection from "./dualSection/dualSection";
+import Cta from "./cta/cta";
 
 import PagesTitle from "./pagesTitle/pagesTitle";
 import Carousel from "./carousel/carousel";
@@ -14,7 +15,7 @@ import Products from "./products/products";
 import ContactForm from "./contactForm/contactForm";
 
 export {
-    Navbar, NavbarOverlay, Hero, About, Footer, Loading, DualSection,
+    Navbar, NavbarOverlay, Hero, About, Footer, Loading, DualSection, Cta,
 
     PagesTitle, Carousel, Info, CompanyInfo, Products, ContactForm,
 }

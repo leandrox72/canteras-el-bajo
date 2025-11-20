@@ -1,0 +1,47 @@
+.cta {
+    display: flex;
+    z-index: 1000;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.cta__data {
+    width: 4rem;
+    height: 4rem;
+    background: var(--sec-1);
+    cursor: pointer;
+    z-index: 1300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta__data-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #fff;
+}
+
+.cta__form {
+    width: 2rem;
+    height: 2rem;
+    color: var(--sec-1);
+    margin: -1rem;
+    position: absolute;
+    bottom: 50%;
+    right: 0;
+    z-index: 1250;
+}
+
+@media screen and (max-width: 640px) {
+    .cta__data {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .cta__data-icon {
+        width: 2rem;
+        height: 2rem;
+    }
+}

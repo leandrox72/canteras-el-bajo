@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './navbar.css'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router'
 import { AnimatePresence } from 'framer-motion'
 import { NavbarOverlay } from '../../components'
 import { pages } from '../../constants/data'
+import { Logo } from '../../constants/images'
 
 const Navbar = ({ passActive, setLoading, page }) => {
 
@@ -33,6 +34,7 @@ const Navbar = ({ passActive, setLoading, page }) => {
   return (
     <nav className={!change && passActive == 0 ? 'navbar navbar__hide' : 'navbar'}>
       <div className='navbar__cont'>
+        <img src={Logo} className='navbar__logo-icon'/>
         <h3 
           className={passActive == 3 ? 'navbar__logo logo__active' : 'navbar__logo'} 
           onClick={() => passActive != 0 && loading('/')}

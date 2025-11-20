@@ -13,9 +13,9 @@
     padding: var(--v-pad) var(--h-pad);
     justify-content: space-between;
     transition: .5s ease;
-    height: 44vw;
+    height: 40vw;
     min-height: 480px;
-    background: #fff;
+    background: #F0F5F5;
 }
 
 .dual__data:hover {
@@ -24,7 +24,7 @@
 
 .dual__img {
     width: 50%;
-    background: var(--sec-2);
+    background: var(--sec-1);
 }
 
 .dual__img img {
@@ -38,7 +38,7 @@
 }
 
 .dual__alt .dual__img {
-    background: var(--sec-1);
+    background: var(--sec-2);
 }
 
 @media screen and (max-width: 768px) {

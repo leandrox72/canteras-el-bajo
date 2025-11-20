@@ -6,7 +6,7 @@
 
 body {
   background: #fff;
-  font-family: "Figtree", sans-serif;
+  font-family: "Poppins", sans-serif;
   width: 100%;
 }
 
@@ -20,8 +20,8 @@ a {
 }
 
 ::selection {
-  color: #000;
-  background: var(--pri);
+  color: #fff;
+  background: var(--sec-1);
 }
 
 :root {
@@ -29,14 +29,14 @@ a {
   --v-pad: 3rem;
   --border-size: 4px;
 
-  --bg: #000;
-  --border: #000;
+  --bg: #0D0D0D;
+  --border: #0D0D0D;
 
-  --pri: #DBF227;
+  --pri: #dfdfdf;
 
-  --sec-1: #005C53;
-  --sec-2: #042940;
-  --sec-3: #042940;
+  --sec-1: #253B40;
+  --sec-2: #98A4A6;
+  --sec-3: #D9D4CC;
 }
 
 @media screen and (max-width: 1240px) {

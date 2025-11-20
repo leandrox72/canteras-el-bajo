@@ -1,6 +1,6 @@
 import React from 'react'
 import './button.css'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router';
 import { FaArrowDown } from "react-icons/fa";
 
 const Button = ({ text, href, setLoading }) => {

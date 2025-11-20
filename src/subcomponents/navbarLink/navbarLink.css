@@ -19,6 +19,7 @@
 
 .navbarLink:hover h4 {
     letter-spacing: 4px;
+    color: var(--sec-1);
 }
 
 .navbarLink__transition {

@@ -1,4 +1,3 @@
-import React from 'react'
 import './navbarOverlay.css'
 import { motion } from 'framer-motion'
 import { pages } from '../../constants/data'

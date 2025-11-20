@@ -1,4 +1,3 @@
-import React from 'react'
 import './sectionH3.css'
 import { motion } from 'framer-motion'
 
