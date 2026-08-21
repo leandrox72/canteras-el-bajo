@@ -3,6 +3,7 @@
     height: 100vh;
     display: flex;
     flex-wrap: nowrap;
+    overflow: hidden;
 }
 
 .hero__data {
@@ -11,14 +12,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    position: relative; 
+    position: relative;
     z-index: 500;
     overflow: hidden;
 }
 
 .hero__data span {
     text-transform: uppercase;
-    font-family: "Bebas Neue", sans-serif; 
+    font-family: "Bebas Neue", sans-serif;
     line-height: .8;
     font-weight: 800;
     font-size: 16vw;
@@ -55,8 +56,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .hero, 
-    .hero__bg {
+    .hero {
         height: 90vh;
     }
 
