@@ -83,12 +83,12 @@ const Carousel = ({ imgs }) => {
       </motion.div>
       <div className='carousel__btns'>
         <div className='carousel__btns-cont'>
-          <div className='carousel__btn' onClick={() => changeIndex(-1)}>
+          <button type='button' className='carousel__btn' onClick={() => changeIndex(-1)}>
             <FaArrowDown className='carousel__btn-icon'/>
-          </div>
-          <div className='carousel__btn' onClick={() => changeIndex(1)}>
+          </button>
+          <button type='button' className='carousel__btn' onClick={() => changeIndex(1)}>
             <FaArrowDown className='carousel__btn-icon'/>
-          </div>
+          </button>
         </div>
       </div>
     </div>

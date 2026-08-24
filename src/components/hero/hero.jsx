@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section className='hero'>
       <div className='hero__data'>
-        <span>CANTERAS EL BAJO</span>
+        <h1>CANTERAS EL BAJO</h1>
       </div>
       <HeroSlider imgs={gallery} />
     </section>

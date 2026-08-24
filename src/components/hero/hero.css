@@ -17,7 +17,9 @@
     overflow: hidden;
 }
 
-.hero__data span {
+.hero__data h1 {
+    display: inline-block;
+    margin: 0;
     text-transform: uppercase;
     font-family: "Bebas Neue", sans-serif;
     line-height: .8;
@@ -48,7 +50,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .hero__data span {
+    .hero__data h1 {
         font-size: 26vw;
         text-wrap: wrap;
         text-align: center;
@@ -58,10 +60,5 @@
 @media screen and (max-width: 768px) {
     .hero {
         height: 90vh;
-    }
-
-    .hero__data h1 {
-        font-size: 4rem;
-        letter-spacing: 2px;
     }
 }

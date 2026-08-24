@@ -1,4 +1,3 @@
-import React from 'react'
 import './dualSection.css'
 import { SectionH2, SectionH3, Button } from '../../subcomponents'
 import { motion } from 'framer-motion'
@@ -17,6 +16,7 @@ const DualSection = ({ h3, h2, btn, href, setLoading, img, alt }) => {
         <motion.img 
           src={img}
           alt='img'
+          loading='lazy'
           initial={{
             opacity: 0,
           }}

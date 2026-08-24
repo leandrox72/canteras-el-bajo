@@ -61,9 +61,9 @@ const PagesTitle = ({ title, alt, loading }) => {
         }}
       />
       <div className='pagesHero__title' ref={containerRef}>
-        <span ref={textRef}>
+        <h1 ref={textRef}>
           {title}
-        </span>
+        </h1>
       </div>
     </section>
   )

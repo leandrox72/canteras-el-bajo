@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react'
 import './images.css'
 
 const Images = ({ imgs }) => {
