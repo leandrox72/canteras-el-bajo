@@ -28,7 +28,7 @@ import Foto27 from '../assets/imgs/foto27.jpg'
 import Foto28 from '../assets/imgs/foto28.jpg'
 import Foto29 from '../assets/imgs/foto29.jpg'
 import Foto30 from '../assets/imgs/foto30.jpg'
-import Logo from '../assets/canteraslogo.png'
+import Logo from '../assets/imgs/canteraslogo.png'
 
 export {
     Foto1, Foto2, Foto3, Foto4, Foto5, Foto6, Foto7, Foto8, Foto9, Foto10,

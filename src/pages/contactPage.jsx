@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import { Helmet } from 'react-helmet-async';
 import { Navbar, PagesTitle, Footer, Loading, ContactForm } from '../components'
 import { AnimatePresence } from 'framer-motion';
 
@@ -17,6 +18,14 @@ const ContactPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Contacto | Canteras El Bajo</title>
+        <meta
+          name='description'
+          content="Ponte en contacto con nosotros"
+        />
+      </Helmet>
+
       <Navbar passActive={active} setLoading={setLoading} page={pageTitle}/>
       <PagesTitle title='Contacto'/>
       <ContactForm />

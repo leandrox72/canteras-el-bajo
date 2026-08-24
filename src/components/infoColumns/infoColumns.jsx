@@ -33,8 +33,8 @@ const CompanyInfo = ({ setLoading }) => {
         <div>
           <h4 className='infoColumns__data-h4'>Contacto</h4>
           <div className='infoColumns__data-div'>
-            <p>Puedes comunicarte por <a href="mailto:gmcanteras@gmail.com" target='_blank'> 
-              correo electrónico</a>, <a href='https://wa.me/5403518762106' target="_blank">teléfono</a> o 
+            <p>Puedes comunicarte por <a href="mailto:gmcanteras@gmail.com" target="_blank" rel="noopener noreferrer"> 
+              correo electrónico</a>, <a href='https://wa.me/5403518762106' target="_blank" rel="noopener noreferrer">teléfono</a> o 
               a travez de nuestro <span onClick={() => loading('/contacto')}>formulario</span></p>
           </div>
         </div>

@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import './products.css'
 import { products } from '../../constants/data';
-import { Card } from '../../subcomponents';
 
 const Products = () => {
 
@@ -14,6 +13,7 @@ const Products = () => {
           <li 
             className={product === item && 'active' }
             onClick={() => setProduct(item)}
+            key={item.id}
           >{item.name}</li>
         ))}
       </ul>

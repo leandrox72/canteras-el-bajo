@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import { Helmet } from 'react-helmet-async';
 import { Navbar, PagesTitle, Carousel, Info, DualSection, Footer, Loading, Products } from '../components'
 import images from '../constants/images';
 import { AnimatePresence } from 'framer-motion';
@@ -19,6 +20,15 @@ const ProductsPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Productos | Canteras El Bajo</title>
+        <meta
+          name='description'
+          content="Trabajamos con vos de principio a fin, para transformar 
+          sus visiones en obras completas"
+        />
+      </Helmet>
+      
       <Navbar passActive={active} setLoading={setLoading} page={pageTitle}/>
       <PagesTitle title='Productos' />
       <Carousel imgs={gallery2} />

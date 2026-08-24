@@ -81,7 +81,7 @@ const Form = () => {
         name='user__name'
         placeholder='su nombre'
         className='form__input'
-        value={values.name}
+        value={values.user__name}
         onChange={handleChange}
       />
       <p className='form__error'>{ errors.user__name }</p>
@@ -91,7 +91,7 @@ const Form = () => {
         name='user__email'
         placeholder='su email'
         className='form__input'
-        value={values.email}
+        value={values.user__email}
         onChange={handleChange}
       />
       <p className='form__error'>{ errors.user__email }</p>
@@ -101,7 +101,7 @@ const Form = () => {
         name='user__matter'
         placeholder='su asunto'
         className='form__input'
-        value={values.matter}
+        value={values.user__matter}
         onChange={handleChange}
       />
       <p className='form__error'>{ errors.user__matter }</p>
@@ -110,7 +110,7 @@ const Form = () => {
         name='user__msg'
         placeholder='su mensaje'
         className='form__textarea'
-        value={values.msg}
+        value={values.user__msg}
         onChange={handleChange}
       />
       <p className='form__error'>{ errors.user__msg }</p>

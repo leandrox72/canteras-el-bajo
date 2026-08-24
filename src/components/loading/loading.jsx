@@ -1,4 +1,3 @@
-import React from 'react'
 import './loading.css'
 import { motion } from 'framer-motion'
 

@@ -132,7 +132,7 @@ const generalData = [
     ],[
         {
             id: 0,
-            line: "Telefono: +54 0351 876-2106",
+            line: "Telefono: +54 351 876-2106",
         },{
             id: 1,
             line: "Mail: gmcanteras@gmail.com",

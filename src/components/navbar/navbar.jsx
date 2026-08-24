@@ -5,6 +5,7 @@ import { AnimatePresence } from 'framer-motion'
 import { NavbarOverlay } from '../../components'
 import { pages } from '../../constants/data'
 import { Logo } from '../../constants/images'
+import { useEffect } from 'react'
 
 const Navbar = ({ passActive, setLoading, page }) => {
 
@@ -28,6 +29,12 @@ const Navbar = ({ passActive, setLoading, page }) => {
         setChange(false)
     }
   }
+
+  useEffect(() => {
+    const scrollChange = () => setChange(window.scrollY >= 150);
+    window.addEventListener('scroll', scrollChange);
+    return () => window.removeEventListener('scroll', scrollChange)
+  }, []);
 
   window.addEventListener('scroll', scrollChange);
 

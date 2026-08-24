@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import { Helmet } from 'react-helmet-async';
 import { Navbar, PagesTitle, Carousel, Info, CompanyInfo, DualSection, Footer, Loading } from '../components'
 import { gallery } from '../constants/data';
 import images from '../constants/images';
@@ -19,6 +20,11 @@ const AboutPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Nosotros | Canteras El Bajo</title>
+        <meta name='description' content="Somos una empresa con 20 años de experiencia en la extracción de áridos y piedras, destacando por calidad y fiabilidad."/>
+      </Helmet>
+      
       <Navbar passActive={active} setLoading={setLoading} page={pageTitle}/>
       <PagesTitle title='Nosotros' loading={loading} />
       <Carousel imgs={gallery} />

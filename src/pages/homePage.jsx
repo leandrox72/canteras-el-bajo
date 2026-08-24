@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet-async';
 import { Navbar, Hero, About, Footer, Loading, DualSection, Cta } from '../components'
 import images from '../constants/images';
 import { AnimatePresence } from 'framer-motion';
+import { localBusinessSchema } from '../constants/seoData';
 
 const HomePage = () => {
 
@@ -18,6 +20,15 @@ const HomePage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Canteras El Bajo</title>
+        <meta name='description' content="Liderando el mercado con calidad insuperable"/>
+
+        <script type='application/ld+json'>
+          {JSON.stringify(localBusinessSchema)}
+        </script>
+      </Helmet>
+      
       <Navbar passActive={active} setLoading={setLoading} page={pageTitle} />
       <Hero />
       <About 
