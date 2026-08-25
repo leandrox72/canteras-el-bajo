@@ -73,8 +73,9 @@
 .info__cont li {
     display: flex;
     text-wrap: nowrap;
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #111;
 }
 
 .info__cont li p span {

@@ -22,7 +22,7 @@ const Products = () => {
         <div className='products__data-cont'>
           <ul className='info__cont'>
             {product.info.map((item, index) => (
-              <li key={index}><p><span>{item.title}</span>: {item.value}</p></li>
+              <li key={index}><p><span>{item.title}:</span> {item.value}</p></li>
             ))}
           </ul>    
           <p className='desc'>{product.desc}</p>
