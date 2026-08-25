@@ -41,7 +41,7 @@ const Navbar = ({ passActive, setLoading, page }) => {
   return (
     <nav className={!change && passActive == 0 ? 'navbar navbar__hide' : 'navbar'}>
       <div className='navbar__cont'>
-        <img src={Logo} className='navbar__logo-icon'/>
+        <img src={Logo} className='navbar__logo-icon' alt='canteras-el-bajo-logo'/>
         <h3 
           className={passActive == 3 ? 'navbar__logo logo__active' : 'navbar__logo'} 
           onClick={() => passActive != 0 && loading('/')}
