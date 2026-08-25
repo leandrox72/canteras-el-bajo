@@ -7,7 +7,8 @@ import { gallery2 } from '../constants/data';
 
 const ProductsPage = () => {
 
-  const [ loading, setLoading ] = useState(true);
+  const [loading, setLoading] = useState(true);
+  const [startVisible, setStartVisible] = useState(true);
   const active = 2;
   const pageTitle = "Productos";
 
@@ -15,6 +16,7 @@ const ProductsPage = () => {
     setTimeout(() => {
       window.scrollTo({ top: 0, left: 0 });
       setLoading(false)
+      setStartVisible(false)
     }, 500)
   },[])
 
@@ -49,7 +51,7 @@ const ProductsPage = () => {
       />
       <Footer />
       <AnimatePresence mode='wait'>
-        {loading && (<Loading />)}
+        {loading && (<Loading startVisible={startVisible}/>)}
       </AnimatePresence>  
     </>
   )

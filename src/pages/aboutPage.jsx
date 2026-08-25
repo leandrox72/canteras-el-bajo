@@ -7,7 +7,8 @@ import { AnimatePresence } from 'framer-motion';
 
 const AboutPage = () => {
 
-  const [ loading, setLoading ] = useState(true);
+  const [loading, setLoading] = useState(true);
+  const [startVisible, setStartVisible] = useState(true);
   const active = 1;
   const pageTitle = "Sobre Nosotros";
 
@@ -15,6 +16,7 @@ const AboutPage = () => {
     setTimeout(() => {
       window.scrollTo({ top: 0, left: 0 });
       setLoading(false)
+      setStartVisible(false)
     }, 500)
   },[])
 
@@ -54,7 +56,7 @@ const AboutPage = () => {
       />
       <Footer />
       <AnimatePresence mode='wait'>
-        {loading && (<Loading />)}
+        {loading && (<Loading startVisible={startVisible}/>)}
       </AnimatePresence>  
     </>
   )

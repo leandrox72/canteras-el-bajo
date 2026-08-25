@@ -5,7 +5,8 @@ import { AnimatePresence } from 'framer-motion';
 
 const ContactPage = () => {
 
-  const [ loading, setLoading ] = useState(true);
+  const [loading, setLoading] = useState(true);
+  const [startVisible, setStartVisible] = useState(true);
   const active = 3;
   const pageTitle = "Contacto";
 
@@ -13,6 +14,7 @@ const ContactPage = () => {
     setTimeout(() => {
       window.scrollTo({ top: 0, left: 0 });
       setLoading(false)
+      setStartVisible(false)
     }, 500)
   },[])
 
@@ -31,7 +33,7 @@ const ContactPage = () => {
       <ContactForm />
       <Footer />
       <AnimatePresence mode='wait'>
-        {loading && (<Loading />)}
+        {loading && (<Loading startVisible={startVisible}/>)}
       </AnimatePresence>  
     </>
   )

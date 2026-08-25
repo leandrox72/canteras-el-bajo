@@ -36,8 +36,6 @@ const Navbar = ({ passActive, setLoading, page }) => {
     return () => window.removeEventListener('scroll', scrollChange)
   }, []);
 
-  window.addEventListener('scroll', scrollChange);
-
   return (
     <nav className={!change && passActive == 0 ? 'navbar navbar__hide' : 'navbar'}>
       <div className='navbar__cont'>

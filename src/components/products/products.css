@@ -28,6 +28,7 @@
 .products__items li {
     cursor: pointer;
     font-size: 1.1rem;
+    line-height: 1.25;
 }
 
 .products__items .active {
@@ -76,6 +77,12 @@
     font-weight: 600;
 }
 
+.info__cont li p span {
+    color: var(--sec-2);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
 @media screen and (max-width: 1240px) {
     .products__data-cont {
         margin-top: 1rem;
@@ -119,9 +126,12 @@
     .products__data h2 {
         font-size: 4rem;
     }
+}
 
-    .products__cards {
-        grid-template-columns: 50% 50%;
-        height: fit-content;
+@media screen and (max-width: 640px) {
+    .products__items {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: .5rem;
     }
 }

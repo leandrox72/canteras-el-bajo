@@ -7,7 +7,8 @@ import { localBusinessSchema } from '../constants/seoData';
 
 const HomePage = () => {
 
-  const [ loading, setLoading ] = useState(true);
+  const [loading, setLoading] = useState(true);
+  const [startVisible, setStartVisible] = useState(true);
   const active = 0;
   const pageTitle = "Inicio";
 
@@ -15,6 +16,7 @@ const HomePage = () => {
     setTimeout(() => {
       window.scrollTo({ top: 0, left: 0 });
       setLoading(false)
+      setStartVisible(false);
     }, 500)
   },[])
 
@@ -75,7 +77,7 @@ const HomePage = () => {
       <Footer />
       <Cta />
       <AnimatePresence mode='wait'>
-        {loading && (<Loading />)}
+        {loading && (<Loading startVisible={startVisible}/>)}
       </AnimatePresence>  
     </>
   )

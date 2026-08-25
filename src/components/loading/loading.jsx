@@ -1,20 +1,20 @@
 import './loading.css'
 import { motion } from 'framer-motion'
 
-const Loading = () => {
+const Loading = ({ startVisible }) => {
   return (
     <motion.div 
       className='loading'
-      hidden={{
-        opacity: 0,
+      initial={{
+        opacity: startVisible ? 1 : 0,
       }}
-      show={{
+      animate={{
         opacity: 1,
-        transition: .5,
+        transition: { duration: 0.5 },
       }}
       exit={{
         opacity: 0,
-        transition: .25,
+        transition: { duration: 0.5 },
       }}
     />
   )
