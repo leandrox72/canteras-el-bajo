@@ -112,7 +112,56 @@ const products = [{
                 value: "Resistente, duradero"
             }
         ]
-}]
+  }, {
+    id : 4,
+    name : "Ripio",
+    img : null,
+    desc: "Descripcion...",
+    info: [{
+            title: "Item 1",
+            value: null
+        },{
+            title: "Item 2",
+            value: null
+        },{
+            title: "Item 3",
+            value: null
+        }
+    ]
+  },{
+    id : 5,
+    name : "Suelo Arena",
+    img : null,
+    desc: "Descripcion...",
+    info: [{
+            title: "Item 1",
+            value: null
+        },{
+            title: "Item 2",
+            value: null
+        },{
+            title: "Item 3",
+            value: null
+        }
+    ]
+  },{
+    id : 6,
+    name : "Blinder",
+    img : null,
+    desc: "Descripcion...",
+    info: [{
+            title: "Item 1",
+            value: null
+        },{
+            title: "Item 2",
+            value: null
+        },{
+            title: "Item 3",
+            value: null
+        }
+    ]
+  }
+]
 
 const generalData = [
     [

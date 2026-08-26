@@ -13,8 +13,8 @@ const ProductsPage = () => {
   const pageTitle = "Productos";
 
   useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo({ top: 0, left: 0 });
+    window.scrollTo({ top: 0, left: 0 });
+    setTimeout(() => { 
       setLoading(false)
       setStartVisible(false)
     }, 500)

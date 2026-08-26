@@ -30,12 +30,15 @@
 }
 
 .form__btn {
+    font-family: "Poppins", sans-serif;
     cursor: pointer;
     width: 100%;
     display: flex;
     justify-content: center;
+    border: none;
+    background: transparent;
     border-bottom: 2px solid var(--border);
-    padding: .5rem 1rem;
+    padding: .75rem 1rem;
     transition: 0.25s ease;
 }
 
@@ -44,10 +47,11 @@
 }
 
 .form__btn:active {
-    background: #222;
+    background: var(--active);
 }
 
-.form__btn:hover p {
+.form__btn:hover p,
+.form__btn:active p {
     color: #fff;
 }
 

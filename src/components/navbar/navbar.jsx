@@ -13,21 +13,12 @@ const Navbar = ({ passActive, setLoading, page }) => {
   const [ open, setOpen ] = useState(false);
   const navigate = useNavigate()
 
-  const loading = ( href ) => {
+  const loading = (href) => {
     setLoading(true)
 
     setTimeout(() => {
       navigate(href)
    }, 500)
-  }
-
-  const scrollChange = () => {
-    if (window.scrollY >= 150) {
-        setChange(true)
-    }
-    else {
-        setChange(false)
-    }
   }
 
   useEffect(() => {

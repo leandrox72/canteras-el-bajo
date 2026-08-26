@@ -65,10 +65,16 @@
 }
 
 .carousel__btn:hover {
-    background: #000;
+    background: var(--border);
 }
 
-.carousel__btn:hover .carousel__btn-icon {
+.carousel__btn:active {
+    background: var(--active);
+    border-color: var(--active);
+}
+
+.carousel__btn:hover .carousel__btn-icon,
+.carousel__btn:active .carousel__btn-icon{
     color: #fff;
 }
 

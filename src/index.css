@@ -37,6 +37,8 @@ a {
   --sec-1: #253B40;
   --sec-2: #98A4A6;
   --sec-3: #D9D4CC;
+
+  --active: #222;
 }
 
 @media screen and (max-width: 1240px) {

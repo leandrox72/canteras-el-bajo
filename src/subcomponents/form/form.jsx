@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import emailjs from '@emailjs/browser';
 import './form.css'
 
@@ -115,9 +115,9 @@ const Form = () => {
       />
       <p className='form__error'>{ errors.user__msg }</p>
       {sended !== true ? (
-        <div className='form__btn' onClick={handleSubmit}>
+        <button className='form__btn' onClick={handleSubmit} type='button'>
           <p>Enviar</p>
-        </div>) : 
+        </button>) : 
         (<p>¡Muchas Gracias!</p>)}
       {renderMessage()}
     </form>

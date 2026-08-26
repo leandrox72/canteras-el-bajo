@@ -13,8 +13,8 @@ const AboutPage = () => {
   const pageTitle = "Sobre Nosotros";
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0 });
     setTimeout(() => {
-      window.scrollTo({ top: 0, left: 0 });
       setLoading(false)
       setStartVisible(false)
     }, 500)

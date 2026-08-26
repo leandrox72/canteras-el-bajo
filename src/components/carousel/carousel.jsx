@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './carousel.css'
 import { Images } from '../../subcomponents'
 import { motion, useMotionValue } from 'framer-motion'
@@ -15,58 +15,77 @@ const OPTIONS = {
 
 const Carousel = ({ imgs }) => {
 
-  const [ index, setIndex ] = useState(0);
-  const [ dragging, setDragging ] = useState(false);
-
-  const dragX = useMotionValue(0);
   const length = imgs.length;
 
-  const onDragStart = () => {
-    setDragging(true);
-  };
+  // Clonamos la ultima imagen al principio y la primera al final.
+  // Estos "clones" son los que permiten el salto invisible cuando
+  // se llega a una punta del carrusel.
+  const extendedImgs = [imgs[length - 1], ...imgs, imgs[0]];
+
+  // index 1 = primera imagen real. index 0 y length+1 son los clones.
+  const [ index, setIndex ] = useState(1);
+  const [ isInstant, setIsInstant ] = useState(false);
+
+  const dragX = useMotionValue(0);
+
+  const clamp = (value) => Math.min(Math.max(value, 0), length + 1);
 
   const onDragEnd = () => {
-    setDragging(false);
-
     const x = dragX.get();
 
-    if (x <= - DRAG_BUFFER && index < length - 1) {
-        setIndex((pv) => pv + 1)
+    if (x <= -DRAG_BUFFER) {
+      setIndex((prev) => clamp(prev + 1))
     }
-    else if (x >= DRAG_BUFFER && index > 0) {
-        setIndex((pv) => pv - 1)
+    else if (x >= DRAG_BUFFER) {
+      setIndex((prev) => clamp(prev - 1))
     }
   };
 
   const changeIndex = (direction) => {
-    if (Array.isArray(imgs) && length > 0) {
-      setIndex((prevIndex) => {
-        const newIndex = (prevIndex + direction + length) % length;
-        return newIndex;
-      });
+    setIndex((prev) => clamp(prev + direction))
+  };
+
+  // Cuando termina la animacion, si quedamos parados sobre un clon,
+  // saltamos sin transicion a la imagen real equivalente. Como el
+  // clon y la imagen real son visualmente identicos, el salto es invisible.
+  const handleAnimationComplete = () => {
+    if (index === 0) {
+      setIsInstant(true);
+      setIndex(length);
+    }
+    else if (index === length + 1) {
+      setIsInstant(true);
+      setIndex(1);
     }
   };
 
+  useEffect(() => {
+    if (isInstant) {
+      const id = requestAnimationFrame(() => setIsInstant(false));
+      return () => cancelAnimationFrame(id);
+    }
+  }, [isInstant]);
+
   return (
     <div className='carousel'>
-      <motion.div 
+      <motion.div
         className='carousel__cont'
         drag='x'
         dragConstraints={{
             left: 0,
             right: 0,
-        }}  
+        }}
         style={{
             x: dragX,
         }}
         animate={{
             translateX: `calc(-${index * 100}% + var(--border-size) / 2)`,
         }}
-        transition={OPTIONS}
-        onDragStart={onDragStart}
+        transition={isInstant ? { duration: 0 } : OPTIONS}
+        onAnimationComplete={handleAnimationComplete}
         onDragEnd={onDragEnd}
       >
-        <motion.div 
+        <motion.div
           className='carousel__loading'
           initial={{
             x: 0,
@@ -79,7 +98,7 @@ const Carousel = ({ imgs }) => {
             x: "-100%",
           }}
         />
-        <Images imgs={imgs}/>
+        <Images imgs={extendedImgs}/>
       </motion.div>
       <div className='carousel__btns'>
         <div className='carousel__btns-cont'>
