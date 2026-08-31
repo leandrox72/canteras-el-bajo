@@ -27,14 +27,14 @@ const products = [{
         id : 0,
         name : "Arena Fina",
         img : images.Foto14,
-        desc: `La arena fina es un material granulado de textura suave y uniforme, 
-               caracterizado por su grano pequeño y sus propiedades versátiles. En la 
-               construcción, se utiliza ampliamente como componente en mezclas de 
-               mortero y cemento, proporcionando una base uniforme y estable que mejora 
-               la adherencia y resistencia de la estructura. Ideal para acabados, 
-               enlucidos y trabajos de albañilería, su consistencia asegura una aplicación 
-               fluida y permite obtener superficies lisas y de alta calidad. Los granos 
-               pasan por un tamiz que hace que sus particulas tengan el tamaño fino 
+        desc: `La arena fina es un material granulado de textura suave y uniforme,
+               caracterizado por su grano pequeño y sus propiedades versátiles. En la
+               construcción, se utiliza ampliamente como componente en mezclas de
+               mortero y cemento, proporcionando una base uniforme y estable que mejora
+               la adherencia y resistencia de la estructura. Ideal para acabados,
+               enlucidos y trabajos de albañilería, su consistencia asegura una aplicación
+               fluida y permite obtener superficies lisas y de alta calidad. Los granos
+               pasan por un tamiz que hace que sus particulas tengan el tamaño fino
                ideal para uso mas comun en trabajos generales de construccion.`,
         info: [{
                 title: "Tamaño del Grano",
@@ -51,12 +51,12 @@ const products = [{
         id : 1,
         name : "Arena Gruesa",
         img : images.Foto17,
-        desc: `La arena gruesa es un material granular de granos más grandes y texturizados, 
-               ampliamente valorado en la construcción por su capacidad para aportar resistencia 
-               y estabilidad a diversas mezclas. Es un componente esencial en la elaboración de 
-               concreto y hormigón, donde su granulometría mejora la cohesión y reduce el riesgo 
-               de fisuras. Además, se emplea en la nivelación de superficies, bases de pavimentos 
-               y como relleno estructural en proyectos de gran envergadura. Su estructura permite 
+        desc: `La arena gruesa es un material granular de granos más grandes y texturizados,
+               ampliamente valorado en la construcción por su capacidad para aportar resistencia
+               y estabilidad a diversas mezclas. Es un componente esencial en la elaboración de
+               concreto y hormigón, donde su granulometría mejora la cohesión y reduce el riesgo
+               de fisuras. Además, se emplea en la nivelación de superficies, bases de pavimentos
+               y como relleno estructural en proyectos de gran envergadura. Su estructura permite
                una mejor ventilación y drenaje, convirtiéndola en una elección ideal para trabajos
                que requieren alta durabilidad y robustez.`,
         info: [{
@@ -74,11 +74,11 @@ const products = [{
         id : 2,
         name : "Arena Comun",
         img : images.Foto23,
-        desc: `La arena común es un material de grano intermedio utilizado ampliamente en la 
-               construcción por su versatilidad y disponibilidad. Se emplea en diversas aplicaciones, 
-               como la elaboración de morteros para albañilería, rellenos, y nivelación de superficies. 
-               Su textura y granulometría equilibrada ofrecen una base confiable para proyectos básicos 
-               y acabados generales. Es ideal para trabajos cotidianos que requieren un material 
+        desc: `La arena común es un material de grano intermedio utilizado ampliamente en la
+               construcción por su versatilidad y disponibilidad. Se emplea en diversas aplicaciones,
+               como la elaboración de morteros para albañilería, rellenos, y nivelación de superficies.
+               Su textura y granulometría equilibrada ofrecen una base confiable para proyectos básicos
+               y acabados generales. Es ideal para trabajos cotidianos que requieren un material
                funcional y eficiente para lograr estructuras sólidas y uniformes.`,
         info: [{
                 title: "Tamaño del Grano",
@@ -95,11 +95,11 @@ const products = [{
         id : 3,
         name : "Grancilla",
         img : images.Foto19,
-        desc: `La grancilla, también conocida como grava fina, es un material pétreo compuesto por 
-               fragmentos pequeños y angulares. Es esencial en la construcción, especialmente para 
-               la fabricación de concreto y pavimentos, donde aporta resistencia mecánica y estabilidad 
-               estructural. Su granulometría permite una excelente compactación, haciéndola ideal para 
-               cimentaciones, bases de carreteras y drenajes. Gracias a su dureza y durabilidad, la 
+        desc: `La grancilla, también conocida como grava fina, es un material pétreo compuesto por
+               fragmentos pequeños y angulares. Es esencial en la construcción, especialmente para
+               la fabricación de concreto y pavimentos, donde aporta resistencia mecánica y estabilidad
+               estructural. Su granulometría permite una excelente compactación, haciéndola ideal para
+               cimentaciones, bases de carreteras y drenajes. Gracias a su dureza y durabilidad, la
                grancilla es indispensable en proyectos que exigen un soporte robusto y de larga vida útil.`,
         info: [{
                 title: "Tamaño del Grano",
@@ -112,54 +112,6 @@ const products = [{
                 value: "Resistente, duradero"
             }
         ]
-  }, {
-    id : 4,
-    name : "Ripio",
-    img : null,
-    desc: "Descripcion...",
-    info: [{
-            title: "Item 1",
-            value: null
-        },{
-            title: "Item 2",
-            value: null
-        },{
-            title: "Item 3",
-            value: null
-        }
-    ]
-  },{
-    id : 5,
-    name : "Suelo Arena",
-    img : null,
-    desc: "Descripcion...",
-    info: [{
-            title: "Item 1",
-            value: null
-        },{
-            title: "Item 2",
-            value: null
-        },{
-            title: "Item 3",
-            value: null
-        }
-    ]
-  },{
-    id : 6,
-    name : "Blinder",
-    img : null,
-    desc: "Descripcion...",
-    info: [{
-            title: "Item 1",
-            value: null
-        },{
-            title: "Item 2",
-            value: null
-        },{
-            title: "Item 3",
-            value: null
-        }
-    ]
   }
 ]
 
@@ -195,7 +147,7 @@ const generalData = [
 ]
 
 const gallery = [
-    images.Foto3,  
+    images.Foto3,
     images.Foto9,
     images.Foto12,
     images.Foto26,

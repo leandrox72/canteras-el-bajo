@@ -5,6 +5,7 @@
     background-size: cover;
     display: flex;
     flex-direction: column;
+    background: #fff;
 }
 
 .products__cards {
@@ -26,7 +27,7 @@
 }
 
 .products__items button {
-    color: #000;
+    color: var(--sec-2);
     transition-property: color;
     transition-duration: 0.25s;
     cursor: pointer;
@@ -47,6 +48,7 @@
 
 .products__items .active {
     font-weight: 600;
+    color: #000;
 }
 
 .products__data {
@@ -62,7 +64,7 @@
 }
 
 .products__data h2 {
-    font-family: "Bebas Neue", sans-serif; 
+    font-family: "Bebas Neue", sans-serif;
     text-transform: uppercase;
     font-size: 7rem;
     line-height: .95;
@@ -109,7 +111,7 @@
     .products__data-cont {
         margin-top: 1rem;
     }
-    
+
     .products__data h2 {
         font-size: 6rem;
     }

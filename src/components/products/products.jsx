@@ -16,18 +16,21 @@ const Products = () => {
 
     setActiveTab(item.name);
     setLoading(true);
-    
+
     setTimeout(() => {
       setProduct(item);
       setLoading(false);
     }, 500)
   }
-  
+
   return (
-    <div className='products'>
+    <div
+      className='products'
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+    >
       <ul className='products__items'>
         {products.map((i) => (
-          <button 
+          <button
             className={i.name === activeTab && 'active' }
             onClick={() => handleProductChange(i)}
             key={i.id}

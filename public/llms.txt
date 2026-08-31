@@ -1,0 +1,19 @@
+# Canteras El Bajo
+
+## Descripción del Negocio
+Empresa referente en la industria argentina con 20 años de experiencia y excelencia. Nos especializamos en la extracción, procesamiento y provisión de materiales para la construcción e industria.
+
+## Productos y Servicios
+* Provisión de materiales a granel.
+* Venta y cotización de materiales por tonelada.
+
+## Información de Contacto y Ubicación
+* Dirección: Haedo 149, X5002JKC, Ciudad de Córdoba, Provincia de Córdoba, Argentina.
+* Teléfono: 0351 876-2106
+* Horario: Abierto hasta las 14:00 hs.
+
+## Enlaces del Sitio
+* [Página principal e información institucional](https://canteraselbajo.com.ar/)
+* [Informacion institucional](https://canteraselbajo.com.ar/nosotros)
+* [Informacion general de materiales trabajados](https://canteraselbajo.com.ar/productos)
+* [Formulario web para consultas y presupuestos](https://canteraselbajo.com.ar/contacto)

@@ -5,6 +5,7 @@
     justify-content: center;
     gap: var(--border-size);
     background: var(--border);
+    transition: .5s ease;
 }
 
 .dual__data {

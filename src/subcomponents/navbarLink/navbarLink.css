@@ -11,10 +11,12 @@
     letter-spacing: 2px;
     line-height: 1;
     transition: .25s ease;
+    color: #333;
 }
 
 .link__active h4 {
     font-style: oblique;
+    color: #000;
 }
 
 .navbarLink:hover h4 {

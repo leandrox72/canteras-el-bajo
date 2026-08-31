@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async';
-import { Navbar, PagesTitle, Carousel, Info, CompanyInfo, DualSection, Footer, Loading } from '../components'
+import { Navbar, PagesTitle, Carousel, Info, CompanyInfo, DualSection, Footer, Loading , Cta} from '../components'
 import { gallery } from '../constants/data';
 import images from '../constants/images';
 import { AnimatePresence } from 'framer-motion';
@@ -55,6 +55,7 @@ const AboutPage = () => {
         alt={true}
       />
       <Footer />
+      <Cta />
       <AnimatePresence mode='wait'>
         {loading && (<Loading startVisible={startVisible}/>)}
       </AnimatePresence>  
