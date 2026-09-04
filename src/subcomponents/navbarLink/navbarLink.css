@@ -2,6 +2,8 @@
     cursor: pointer;
     width: fit-content;
     position: relative;
+    background: none;
+    border: none;
 }
 
 .navbarLink h4 {

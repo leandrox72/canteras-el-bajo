@@ -2,6 +2,7 @@
     width: 100%;
     display: flex;
     padding: var(--v-pad) var(--h-pad);
+    background: #fff;
 }
 
 .info__border {

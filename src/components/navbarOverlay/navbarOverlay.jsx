@@ -24,15 +24,19 @@ const NavbarOverlay = ({ passActive, setLoading }) => {
       }}
     >
       <ul className='navbar__overlay-links'>
-        {pages.map((link) => (
-          <NavbarLink 
-            key={link.id}
-            id={link.id}
-            title={link.title}
-            href={link.href}
-            setLoading={setLoading}
-            passActive={passActive}   
-          />
+        {pages.map((link, idx) => (
+          <motion.li
+            key={idx}
+          >
+            <NavbarLink 
+              key={link.id}
+              id={link.id}
+              title={link.title}
+              href={link.href}
+              setLoading={setLoading}
+              passActive={passActive}   
+            />
+          </motion.li>
         ))}
       </ul>
     </motion.div>

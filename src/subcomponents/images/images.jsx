@@ -5,12 +5,10 @@ const Images = ({ imgs }) => {
   return (
     <>
       {imgs.map((img, idx) => (
-        <div 
+        <img 
           key={idx}
           className='image'
-          style={{
-            backgroundImage: `url(${img})`
-          }}
+          src={img}
         />
       ))}
     </>

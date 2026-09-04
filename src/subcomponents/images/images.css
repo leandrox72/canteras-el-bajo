@@ -3,6 +3,9 @@
     width: 100%;
     flex-shrink: 0;
     background: var(--sec);
-    background-size: cover;
+    object-fit: cover;
+    object-position: top;
     border-right: var(--border-size) solid var(--border);
+    user-select: none;
+    -webkit-user-drag: none;
 }

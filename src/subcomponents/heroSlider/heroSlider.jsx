@@ -1,13 +1,13 @@
 import './heroSlider.css'
 import { useState, useEffect, useRef } from 'react'
+import { motion } from 'framer-motion';
 
 const HeroSlider = ({ imgs, interval = 5000 }) => {
-
   const [ currentIndex, setCurrentIndex ] = useState(0);
   const [ nextIndex, setNextIndex ] = useState(1);
   const [ fade, setFade ] = useState(false)
-
   const imgsRef = useRef(imgs);
+
   useEffect(() => {
     imgsRef.current = imgs
   }, [imgs]);
@@ -24,14 +24,14 @@ const HeroSlider = ({ imgs, interval = 5000 }) => {
 
   useEffect(() => {
     let fadeTimeout;
-    
+
     const timer = setInterval(() => {
       setFade(true);
       fadeTimeout = setTimeout(() => {
         const len = imgsRef.current.length
         setCurrentIndex((prevIndex) => (prevIndex + 1) % len);
         setNextIndex((prevIndex) => (prevIndex + 1) % len);
-        setFade(false);      
+        setFade(false);
       }, interval / 2)
     }, interval)
 
@@ -44,13 +44,14 @@ const HeroSlider = ({ imgs, interval = 5000 }) => {
   return (
     <div className='hero__slider'>
       <span className='slider__overlay'/>
-      <div
+      <img
         className={`slide ${fade ? 'fade__out' : 'fade__in'}`}
-        style={{ backgroundImage: `url(${imgs[currentIndex]})` }}
+        style={{ opacity = fade ? '1' : '0'}}
+        src={imgs[currentIndex]}
       />
-      <div
+      <img
         className='slide'
-        style={{ backgroundImage: `url(${imgs[nextIndex]})` }}
+        src={imgs[nextIndex]}
       />
     </div>
   )

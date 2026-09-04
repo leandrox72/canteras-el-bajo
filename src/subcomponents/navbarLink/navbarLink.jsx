@@ -15,9 +15,10 @@ const NavbarLink = ({ id, title, href, setLoading, passActive }) => {
   }
 
   return (
-    <motion.li 
+    <motion.button 
       className={passActive == id ? 'navbarLink link__active' : 'navbarLink'} 
       key={id}
+      type='button'
       onClick={() => {passActive != id && loading(href)}}
       initial={{
         opacity: 0
@@ -32,25 +33,8 @@ const NavbarLink = ({ id, title, href, setLoading, passActive }) => {
         opacity: 0,
       }}
     >
-      <motion.div 
-        className='navbarLink__transition'
-        initial={{
-          opacity: 1
-        }}
-        animate={{
-          opacity: 1,
-          x: "100%",
-          transition: {
-            delay: .5 + id * .2,
-          }
-        }}
-        exit={{
-          opacity: 1,
-          x: "100%"
-        }}
-      />
       <h4>{title}</h4>
-    </motion.li>
+    </motion.button>
   )
 }
 

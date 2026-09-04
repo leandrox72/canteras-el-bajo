@@ -30,11 +30,14 @@ const Navbar = ({ passActive, setLoading, page }) => {
   return (
     <nav className={!change && passActive == 0 ? 'navbar navbar__hide' : 'navbar'}>
       <div className='navbar__cont'>
-        <img src={Logo} className='navbar__logo-icon' alt='canteras-el-bajo-logo'/>
-        <h3 
-          className={passActive == 3 ? 'navbar__logo logo__active' : 'navbar__logo'} 
+        <button
+          type='button'
           onClick={() => passActive != 0 && loading('/')}
-        >Canteras El Bajo</h3>
+          disabled={passActive == 0}
+        >
+          <img src={Logo} className='navbar__logo-icon' alt='canteras-el-bajo-logo'/>
+          <h3 className='navbar__logo'>Canteras El Bajo</h3>
+        </button>
         <p>{page}</p>
       </div>
       <ul className='navbar__links'>
@@ -51,9 +54,9 @@ const Navbar = ({ passActive, setLoading, page }) => {
           </li>
         ))}
       </ul>
-      <div className={open ? 'menu menu__open' : 'menu'} onClick={() => setOpen(!open)}>
+      <button className={open ? 'menu menu__open' : 'menu'} onClick={() => setOpen(!open)} type='button'>
         <h4>{open ? 'Cerrar' : 'Menu'}</h4>
-      </div>
+      </button>
       <AnimatePresence mode='wait'>
         {open && (
           <NavbarOverlay passActive={passActive} setLoading={setLoading} open={open} />

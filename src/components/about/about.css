@@ -4,7 +4,7 @@
     display: flex;
     border-top: var(--border-size) solid var(--border);
     border-bottom: var(--border-size) solid var(--border);
-    background: #F8F6F3;
+    background: #fff;
 }
 
 .about__alt {

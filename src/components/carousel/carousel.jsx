@@ -9,8 +9,8 @@ const DRAG_BUFFER = 20;
 const OPTIONS = {
     type: "spring",
     mass: 1,
-    stiffness: 500,
-    damping: 100,
+    stiffness: 2500,
+    damping: 200,
 }
 
 const Carousel = ({ imgs }) => {
