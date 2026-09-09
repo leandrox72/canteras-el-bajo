@@ -1,58 +1,42 @@
 import './heroSlider.css'
-import { useState, useEffect, useRef } from 'react'
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react'
 
 const HeroSlider = ({ imgs, interval = 5000 }) => {
-  const [ currentIndex, setCurrentIndex ] = useState(0);
-  const [ nextIndex, setNextIndex ] = useState(1);
-  const [ fade, setFade ] = useState(false)
-  const imgsRef = useRef(imgs);
 
-  useEffect(() => {
-    imgsRef.current = imgs
-  }, [imgs]);
+  const [ currentIndex, setCurrentIndex ] = useState(0)
 
+  // Precarga todas las imágenes para evitar parpadeos en el primer ciclo
   useEffect(() => {
-    const preloadImages = () => {
-      imgs.forEach((image) => {
-        const img = new Image();
-        img.src = image;
-      });
-    };
-    preloadImages()
-  },[imgs])
+    imgs.forEach((src) => {
+      const img = new Image()
+      img.src = src
+    })
+  }, [imgs])
 
+  // Avanza el índice cada "interval" ms. Al ser un único estado,
+  // no hay nada que se pueda desincronizar entre renders.
   useEffect(() => {
-    let fadeTimeout;
+    if (!imgs || imgs.length < 2) return
 
     const timer = setInterval(() => {
-      setFade(true);
-      fadeTimeout = setTimeout(() => {
-        const len = imgsRef.current.length
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % len);
-        setNextIndex((prevIndex) => (prevIndex + 1) % len);
-        setFade(false);
-      }, interval / 2)
+      setCurrentIndex((prev) => (prev + 1) % imgs.length)
     }, interval)
 
-    return () => {
-      clearInterval(timer)
-      clearTimeout(fadeTimeout)
-    }
-  }, [interval])
+    return () => clearInterval(timer)
+  }, [imgs, interval])
 
   return (
     <div className='hero__slider'>
-      <span className='slider__overlay'/>
-      <img
-        className={`slide ${fade ? 'fade__out' : 'fade__in'}`}
-        style={{ opacity = fade ? '1' : '0'}}
-        src={imgs[currentIndex]}
-      />
-      <img
-        className='slide'
-        src={imgs[nextIndex]}
-      />
+      <span className='slider__overlay' />
+      {imgs.map((src, idx) => (
+        <img
+          key={src}
+          src={src}
+          alt=''
+          className='slide'
+          style={{ opacity: idx === currentIndex ? 1 : 0 }}
+        />
+      ))}
     </div>
   )
 }
