@@ -6,7 +6,8 @@ import SectionH3 from "./sectionH3/sectionH3";
 import Images from "./images/images";
 import HeroSlider from "./heroSlider/heroSlider";
 import Curtain from "./curtain/curtain";
+import MultiStep from "./multiStep/multiStep";
 
 export {
-    Button, NavbarLink, Form, SectionH2, SectionH3, Images, HeroSlider, Curtain
+    Button, NavbarLink, Form, SectionH2, SectionH3, Images, HeroSlider, Curtain, MultiStep
 }

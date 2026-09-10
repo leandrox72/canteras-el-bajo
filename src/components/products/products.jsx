@@ -26,7 +26,6 @@ const Products = () => {
   return (
     <div
       className='products'
-      transition={{ duration: 0.5, ease: "easeInOut" }}
     >
       <ul className='products__items'>
         {products.map((i) => (

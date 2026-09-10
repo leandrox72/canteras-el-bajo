@@ -13,9 +13,9 @@ import Info from "./info/info";
 import CompanyInfo from "./infoColumns/infoColumns";
 import Products from "./products/products";
 import ContactForm from "./contactForm/contactForm";
+import BudgetMultiStep from "./budgetMultiStep/budgetMultiStep";
 
 export {
     Navbar, NavbarOverlay, Hero, About, Footer, Loading, DualSection, Cta,
-
-    PagesTitle, Carousel, Info, CompanyInfo, Products, ContactForm,
+    PagesTitle, Carousel, Info, CompanyInfo, Products, ContactForm, BudgetMultiStep,
 }

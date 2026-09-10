@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router'
-import { HomePage, ProductsPage, AboutPage, ContactPage } from './pages'
+import { HomePage, ProductsPage, AboutPage, ContactPage, BudgetPage } from './pages'
 
 const App = () => {
   return (
@@ -20,6 +20,10 @@ const App = () => {
         <Route 
           path='/contacto'
           element={<ContactPage />}
+        />
+        <Route
+          path='/presupuesto'
+          element={<BudgetPage />}
         />
       </Routes>
     </div>
