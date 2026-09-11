@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { products } from '../../constants/data';
 import './multiStep.css'
+import Select from '../select/select';
 
 const MultiStep = () => {
 
@@ -10,11 +11,11 @@ const MultiStep = () => {
   const [formData, setFormData] = useState({
     material: '',
     volume: '',
-    unit: 'm3',
-    freight: true,
+    unit: '',
+    freight: '',
     location: '',
     name: '',
-    firm: '', 
+    firm: '',
     email: '',
     telephone: ''
   })
@@ -26,18 +27,23 @@ const MultiStep = () => {
     { id: 3, title: "Contacto", subtitle: "Dejanos tus datos", completed: false }
   ]
 
+  const unitOptions = [{ id: 0, name: 'Metros Cubicos' }, { id: 1, name: 'Toneladas' }]
+  const freightOptions = [{ id: 0, name: 'Retiro en Planta' },{ id: 1, name: 'Con Flete' }]
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value })
+    console.log(formData)
+  }
+
   const handleNext = () => {
     if (currentStep >= steps.length - 1) return;
 
     const nextStep = currentStep + 1;
     setCurrentStep(nextStep);
-    
-    if (nextStep > maxStepReached) {
+
+    if (nextStep > maxStepReached)
       setMaxStepReached(nextStep);
-      console.log(nextStep);
-    } else {
-      console.log(maxStepReached); 
-    }
   }
 
   const renderStepContent = (step) => {
@@ -46,33 +52,42 @@ const MultiStep = () => {
       return (
         <div className='stepContent'>
           <label>Selecciona el Material</label>
-          <select>
-            {products.map((item) => (
-              <option key={item.id}>{item.name}</option>
-            ))}
-          </select>
+          <Select
+            name='material'
+            value={formData.material}
+            onChange={handleChange}
+            placeholder='Material'
+            items={products}
+          />
         </div>
         );
       case 1:
         return (
           <div className='stepContent'>
             <label>Cantidad</label>
-            <input type='number' name='volume' />
-            <select>
-              <option value='m3'>M3</option>
-              <option value='toneladas'>Toneladas</option>
-            </select>
+            <input type='number' name='volume' required/>
+            <Select
+              name='unit'
+              value={formData.unit}
+              onChange={handleChange}
+              placeholder='Unidad de Medida'
+              items={unitOptions}
+            />
           </div>
         )
-      case 2: 
+      case 2:
         return (
           <div className='stepContent'>
-            <label>
-              Fletobich
-              <input type='checkbox' name='flete' checked={formData.freight} />
-            </label>
-            {formData.freight && (
-              <input type='text' name='location' placeholder='Ubicacion'/>
+            <label>Logistica</label>
+            <Select
+              name='freight'
+              value={formData.freight}
+              onChange={handleChange}
+              placeholder='Modalidad'
+              items={freightOptions}
+            />
+            {formData.freight === freightOptions[1].name && (
+              <input type='text' name='location' placeholder='Ubicacion' required/>
             )}
           </div>
         )
@@ -93,7 +108,26 @@ const MultiStep = () => {
         return <div>Paso no encontrado</div>;
     }
   }
-  
+
+  const validateStep = () => {
+    switch (currentStep) {
+      case 0:
+        return formData.material !== '';
+      case 1:
+        return formData.volume !== '' && formData.unit !== '';
+      case 2: { 
+        const isFreight = formData.freight === freightOptions[1].name;
+        if (isFreight) return formData.location.trim() !== '';
+        return true;
+      }
+      case 3:
+        return formData.name.trim() !== ''
+          && formData.email.trim() !== ''
+          && formData.telephone.trim() !== ''
+      default:
+        return true;
+    }
+  }
 
   return (
     <div className='multiStep'>

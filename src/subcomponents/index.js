@@ -7,7 +7,8 @@ import Images from "./images/images";
 import HeroSlider from "./heroSlider/heroSlider";
 import Curtain from "./curtain/curtain";
 import MultiStep from "./multiStep/multiStep";
+import Select from "./select/select";
 
 export {
-    Button, NavbarLink, Form, SectionH2, SectionH3, Images, HeroSlider, Curtain, MultiStep
+    Button, NavbarLink, Form, SectionH2, SectionH3, Images, HeroSlider, Curtain, MultiStep, Select
 }

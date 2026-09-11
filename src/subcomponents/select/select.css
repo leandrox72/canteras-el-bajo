@@ -1,0 +1,65 @@
+.select__cont {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 2px solid #000;
+    user-select: none;
+}
+
+.select__cont button {
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+}
+
+.select {
+    width: 100%;
+    padding: .75rem 1.25rem;
+    background: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    position: relative;
+}
+
+.open {
+    border-bottom: none;
+}
+
+.select__placeholder {
+    color: #888;    
+}
+
+.select__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    right: .75rem;
+    position: absolute;
+    transition: .25s ease-in-out;
+}
+
+.select__dropdown {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-top: none;
+    overflow: hidden;
+}
+
+.rotated {
+    transform: rotate(180deg);
+}
+
+.select__dropdown button {
+    border: none;
+    background: none;
+    display: flex;
+    padding: .5rem 1.25rem;
+    cursor: pointer;
+}
+
+.select__dropdown button:hover {
+    background-color: #efefef;
+}
