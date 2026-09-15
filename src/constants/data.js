@@ -178,9 +178,32 @@ const footerData = [{
     }, {
         line1: "Canteras El Bajo 2024",
         line2: "Todos los derechos reservados"
-}]
+  }]
+
+const steps = [
+  { 
+    id: 0, 
+    name: "Producto", 
+    title: "¿Qué material estás buscando?" },
+  { 
+    id: 1, 
+    name: "Volumen", 
+    title: "Cantidad" },
+  { 
+    id: 2, 
+    name: "Logistica", 
+    title: "Modalidad del Pedido" },
+  { 
+    id: 3, 
+    name: "Contacto", 
+    title: "Dejanos tus datos", 
+    subtitle: "Te enviaremos la cotización exacta con los costos de envío a tu WhatsApp lo antes posible" }
+]
+
+const unitOptions = [{ id: 0, name: 'Metros Cubicos' }, { id: 1, name: 'Toneladas' }]
+const freightOptions = [{ id: 0, name: 'Retiro en Planta' },{ id: 1, name: 'Con Flete' }]
 
 
 export {
-    pages, products, footerData, gallery, gallery2, generalData
+    pages, products, footerData, gallery, gallery2, generalData, steps, unitOptions, freightOptions
 }
