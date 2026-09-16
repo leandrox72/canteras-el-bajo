@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async';
 import { Navbar, PagesTitle, Footer, Loading, ContactForm, Cta } from '../components'
-import { AnimatePresence } from 'framer-motion';
 
 const ContactPage = () => {
 
@@ -33,9 +32,7 @@ const ContactPage = () => {
       <ContactForm />
       <Footer />
       <Cta />
-      <AnimatePresence mode='wait'>
-        {loading && (<Loading startVisible={startVisible}/>)}
-      </AnimatePresence>  
+      <Loading loading={loading} startVisible={startVisible} /> 
     </>
   )
 }
