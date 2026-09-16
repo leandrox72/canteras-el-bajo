@@ -35,6 +35,15 @@
     object-fit: cover;
 }
 
+.dual__img-el {
+    opacity: 0;
+    transition: opacity 1s ease .25s;
+}
+
+.dual__img-el.is-visible {
+    opacity: 1;
+}
+
 .dual__alt > :first-child {
     order: 2;
 }

@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async';
 import { Navbar, Hero, About, Footer, Loading, DualSection, Cta } from '../components'
 import images from '../constants/images';
-import { AnimatePresence } from 'framer-motion';
 import { localBusinessSchema } from '../constants/seoData';
 
 const HomePage = () => {
@@ -76,9 +75,7 @@ const HomePage = () => {
       />
       <Footer />
       <Cta />
-      <AnimatePresence mode='wait'>
-        {loading && (<Loading startVisible={startVisible}/>)}
-      </AnimatePresence>  
+      <Loading loading={loading} startVisible={startVisible} />  
     </>
   )
 }
