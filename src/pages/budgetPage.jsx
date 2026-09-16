@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { Helmet } from "react-helmet-async";
 import { Navbar, PagesTitle, Loading, Footer, Cta, BudgetMultiStep } from "../components";
-import { AnimatePresence } from "framer-motion";
 
 const BudgetPage = () => {
 
@@ -34,9 +33,7 @@ const BudgetPage = () => {
       <Footer />
       <Cta />
 
-      <AnimatePresence mode='wait'>
-        {loading && (<Loading startVisible={startVisible}/>)}
-      </AnimatePresence> 
+      <Loading loading={loading} startVisible={startVisible} />
     </>
   )
 }
