@@ -133,14 +133,26 @@ const MultiStep = () => {
       case 2: { 
         const isFreight = formData.freight === freightOptions[1].name;
         if (isFreight) return formData.location.trim() !== '';
-        return true;
+        else return formData.freight !== '';
       }
       case 3:
+        if (formData.email !== '') {
+          const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i;
+          if(!regex.test(formData.email)) return
+        }
         return formData.name.trim() !== ''
           && formData.telephone.trim() !== ''
       default:
         return true;
     }
+  }
+
+  const validate = () => {
+    
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
   }
 
   return (
@@ -180,7 +192,7 @@ const MultiStep = () => {
                 Siguiente
               </button>
             ) : (
-              <button type='button' className='multiStep__submit'>
+              <button type='button' className='multiStep__submit' onClick={handleSubmit}>
                 Solicitar Presupuesto
               </button>
           )}

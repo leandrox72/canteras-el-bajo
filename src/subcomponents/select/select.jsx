@@ -46,24 +46,11 @@ const Select = ({ placeholder, items, name, value, onChange }) => {
             }}
           >
             {items?.map((item) => (
-              <motion.button
+              <button
                 type='button' 
                 key={item?.id}
                 onClick={() => handleSelect(item.name)}
-                initial={{
-                  opacity: 0
-                }}
-                animate={{
-                  opacity: 1,
-                  transition: {
-                    delay: .1 + item.id * .1,
-                  }
-                }}
-                exit={{
-                  opacity: 1,
-                  transition: 0
-                }}
-              >{item?.name}</motion.button>
+              >{item?.name}</button>
             ))}
           </motion.ul>
         )}
