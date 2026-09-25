@@ -52,7 +52,7 @@ const MultiStep = () => {
               name='material'
               value={formData.material}
               onChange={handleChange}
-              placeholder='Material'
+              placeholder='Ej: Arena Gruesa'
               items={products}
             />
           </div>
@@ -73,7 +73,7 @@ const MultiStep = () => {
                 name='unit'
                 value={formData.unit}
                 onChange={handleChange}
-                placeholder='Unidad de Medida'
+                placeholder='Ej: Metro Cubico'
                 items={unitOptions}
               />
             </div>
@@ -88,11 +88,11 @@ const MultiStep = () => {
                 name='freight'
                 value={formData.freight}
                 onChange={handleChange}
-                placeholder='Modalidad'
+                placeholder='Ej: Retiro en Planta'
                 items={freightOptions}
               />
               {formData.freight === freightOptions[1].name && (
-                <input type='text' name='location' placeholder='Ubicacion' required/>
+                <input type='text' name='location' placeholder='Ej: Haedo 149' required/>
               )}
             </div>    
           </div>
@@ -102,19 +102,19 @@ const MultiStep = () => {
           <div className='stepContent'>
             <div>
               <label>Nombre</label>
-              <input type='text' name='name' placeholder='Su nombre' required />
+              <input type='text' name='name' placeholder='Ej: Leandro Vaca' required />
             </div>
             <div>
               <label>Empresa (opcional)</label>
-              <input type='text' name='firm' placeholder='Su firma' />
+              <input type='text' name='firm' placeholder='Ej: Canteras El Bajo' />
             </div>
             <div>
               <label>Telefono</label>
-              <input type='tel' name='telephone' placeholder='Su telefono' required />
+              <input type='tel' name='telephone' placeholder='Ej: +54 351 876-2106' required />
             </div>
             <div>
               <label>Email (opcional)</label>
-              <input type='email' name='email' placeholder='Su email' />
+              <input type='email' name='email' placeholder='Ej: gmcanteras@gmail.com' />
             </div>
           </div>
         )
@@ -182,7 +182,7 @@ const MultiStep = () => {
       </div>
       <div className="multiStep__titles">
         <h3>{steps[currentStep].title}</h3>
-        <p>{steps[currentStep]?.subtitle}</p>
+        <p>Te enviaremos la cotización exacta con los costos de envío a tu WhatsApp lo antes posible</p>
       </div>
       <form>
         {renderStepContent(currentStep)}
