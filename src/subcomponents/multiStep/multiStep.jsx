@@ -3,43 +3,102 @@ import { products, steps, unitOptions, freightOptions } from '../../constants/da
 import './multiStep.css'
 import Select from '../select/select';
 
+const DELIVERY_OPTION = freightOptions[1].name;
+
+const validators = {
+  material: (v) => (!v ? 'Selecciona un material' : ''),
+
+  volume: (v) => {
+    if (v === '') return 'Ingresa una cantidad';
+    if (Number(v) <= 0) return 'La cantidad debe ser mayor a 0';
+    return '';
+  },
+
+  unit: (v) => (!v ? 'Selecciona una unidad' : ''),
+
+  freight: (v) => (!v ? 'Selecciona una opcion de logistica' : ''),
+
+  location: () => (v, form) => {
+    if (form.freight !== DELIVERY_OPTION) return '';
+    if (!v?.trim()) return 'Ingresa la direccion de entrega';
+    return '';
+  },
+
+  name: (v) => (!v.trim() ? 'Ingresa tu nombre' : ''),
+  
+  telephone: (v) => {
+    if (!v.trim()) return 'Ingresa tu telefono';
+    return /^[\d\s+()-]{6,}$/.test(v) ? '' : 'Teléfono inválido';
+  },
+
+  email: (v) => {
+    if (!v) return '';
+    return /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(v)
+      ? ''
+      : 'Ingresá un email válido';
+  }
+};
+
+const stepFields = [
+  ['material'],
+  ['volume', 'unit'],
+  ['freight', 'location'],
+  ['name', 'telephone', 'email']
+];
+
 const MultiStep = () => {
 
   const [currentStep, setCurrentStep] = useState(0);
   const [maxStepReached, setMaxStepReached] = useState(0);
 
   const [formData, setFormData] = useState({
-    material: '',
-    volume: '',
-    unit: '',
-    freight: '',
-    location: '',
-    name: '',
-    firm: '',
-    email: '',
-    telephone: ''
+    material: '', volume: '', unit: '', freight: '',
+    location: '', name: '', firm: '', email: '', telephone: ''
   })
+  const [ errors, setErrors ] = useState({})
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value })
-    console.log(formData)
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    // Limpiar el error del campo al escribir
+    setErrors((prev) => {
+      if (!prev[name]) return prev;
+      const { [name]: _omit, ...rest } = prev;
+      return rest;
+    })
+  }
+
+  const validateStep = (step = currentStep) => {
+    const fields = stepFields[step] ?? [];
+    const stepErrors = {};
+
+    for (const field of fields) {
+      const message = validators[field]?.(formData[field], formData) ?? ';';
+      if (message) stepErrors[field] = message;
+    }
+
+    setErrors(stepErrors);
+    return Object.keys(stepErrors).length === 0;
   }
 
   const handleNext = () => {
-    if (!validateStep()) {
-      alert("Por favor, completá los campos requeridos para continuar.");
-      return; 
-    }
-    
+    if (!validateStep()) return;
+
     if (currentStep >= steps.length - 1) return;
 
     const nextStep = currentStep + 1;
     setCurrentStep(nextStep);
-
-    if (nextStep > maxStepReached)
-      setMaxStepReached(nextStep);
+    setMaxStepReached((prev) => Math.max(prev, nextStep));
   }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!validateStep()) return;
+    // enviar formData
+  };
+
+  const fieldError = (field) =>
+    errors[field] ? <p className='field__error'>{errors[field]}</p> : null;
 
   const renderStepContent = (step) => {
     switch (step) {
@@ -55,6 +114,7 @@ const MultiStep = () => {
               placeholder='Ej: Arena Gruesa'
               items={products}
             />
+            {fieldError('material')}
           </div>
         </div>
         );
@@ -69,6 +129,7 @@ const MultiStep = () => {
                 value={formData.volume}
                 onChange={handleChange}
               />
+              {fieldError('volume')}
               <Select
                 name='unit'
                 value={formData.unit}
@@ -76,6 +137,7 @@ const MultiStep = () => {
                 placeholder='Ej: Metro Cubico'
                 items={unitOptions}
               />
+              {fieldError('unit')}
             </div>
           </div>
         )
@@ -91,10 +153,20 @@ const MultiStep = () => {
                 placeholder='Ej: Retiro en Planta'
                 items={freightOptions}
               />
-              {formData.freight === freightOptions[1].name && (
-                <input type='text' name='location' placeholder='Ej: Haedo 149' required/>
+              {fieldError('freight')}
+              {formData.freight === DELIVERY_OPTION && (
+                <>
+                  <input
+                    type='text'
+                    name='location'
+                    value={formData.location}
+                    onChange={handleChange}
+                    placeholder='Ej: Haedo 149'
+                  />
+                  {fieldError('location')}
+                </>
               )}
-            </div>    
+            </div>
           </div>
         )
       case 3:
@@ -103,6 +175,7 @@ const MultiStep = () => {
             <div>
               <label>Nombre</label>
               <input type='text' name='name' placeholder='Ej: Leandro Vaca' required />
+              {fieldError('name')}
             </div>
             <div>
               <label>Empresa (opcional)</label>
@@ -111,48 +184,19 @@ const MultiStep = () => {
             <div>
               <label>Telefono</label>
               <input type='tel' name='telephone' placeholder='Ej: +54 351 876-2106' required />
+              {fieldError('telephone')}
             </div>
             <div>
               <label>Email (opcional)</label>
               <input type='email' name='email' placeholder='Ej: gmcanteras@gmail.com' />
+              {fieldError('email')}
             </div>
           </div>
         )
-      
+
       default:
         return <div>Paso no encontrado</div>;
     }
-  }
-
-  const validateStep = () => {
-    switch (currentStep) {
-      case 0:
-        return formData.material !== '';
-      case 1:
-        return formData.volume !== '' && formData.unit !== '';
-      case 2: { 
-        const isFreight = formData.freight === freightOptions[1].name;
-        if (isFreight) return formData.location.trim() !== '';
-        else return formData.freight !== '';
-      }
-      case 3:
-        if (formData.email !== '') {
-          const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i;
-          if(!regex.test(formData.email)) return
-        }
-        return formData.name.trim() !== ''
-          && formData.telephone.trim() !== ''
-      default:
-        return true;
-    }
-  }
-
-  const validate = () => {
-    
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
   }
 
   return (
@@ -163,7 +207,7 @@ const MultiStep = () => {
             <button
               key={step.id}
               type='button'
-              className={step.id == currentStep && "active"}
+              className={step.id == currentStep ? "active" : ''}
               onClick={() => setCurrentStep(step.id)}
               disabled={maxStepReached < step.id}
             >
