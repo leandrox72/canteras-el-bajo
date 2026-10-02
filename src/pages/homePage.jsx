@@ -66,11 +66,11 @@ const HomePage = () => {
               para garantizar eficiencia en cada proyecto.'
       />
       <DualSection 
-        h3='Contacto' 
-        h2='Ponte en Contacto con Nosotros' 
+        h3='Presupuesto' 
+        h2='Solicita un Presupuesto Personalizado' 
         img={images.Foto17}
-        btn='Hablemos'
-        href='/contacto'
+        btn='Solicitar Presupuesto'
+        href='/presupuesto'
         setLoading={setLoading}
       />
       <Footer />

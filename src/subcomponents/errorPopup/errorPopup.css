@@ -1,0 +1,17 @@
+.errorPopup {
+    padding: 1rem 1.5rem;
+    background: #F00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+}
+
+.errorPopup p {
+    color: #fff;
+    font-weight: 500;
+    font-size: .9rem;
+}

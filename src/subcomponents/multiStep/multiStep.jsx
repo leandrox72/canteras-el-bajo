@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { products, steps, unitOptions, freightOptions } from '../../constants/data';
 import './multiStep.css'
-import Select from '../select/select';
+import { Select, FormSuccess, ErrorPopup } from '../index.js'
+import emailjs from '@emailjs/browser';
 
 const DELIVERY_OPTION = freightOptions[1].name;
 
@@ -18,14 +19,14 @@ const validators = {
 
   freight: (v) => (!v ? 'Selecciona una opcion de logistica' : ''),
 
-  location: () => (v, form) => {
+  location: (v, form) => {
     if (form.freight !== DELIVERY_OPTION) return '';
-    if (!v?.trim()) return 'Ingresa la direccion de entrega';
+    if (!v?.trim()) return 'Ingresá la dirección de entrega';
     return '';
   },
 
   name: (v) => (!v.trim() ? 'Ingresa tu nombre' : ''),
-  
+
   telephone: (v) => {
     if (!v.trim()) return 'Ingresa tu telefono';
     return /^[\d\s+()-]{6,}$/.test(v) ? '' : 'Teléfono inválido';
@@ -54,8 +55,11 @@ const MultiStep = () => {
   const [formData, setFormData] = useState({
     material: '', volume: '', unit: '', freight: '',
     location: '', name: '', firm: '', email: '', telephone: ''
-  })
-  const [ errors, setErrors ] = useState({})
+  });
+
+  const [errors, setErrors] = useState({});
+  const [sending, setSending] = useState(false);
+  const [sended, setSended] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -94,7 +98,21 @@ const MultiStep = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!validateStep()) return;
-    // enviar formData
+    if (sending) return;
+    
+    if (Object.keys(errors).length === 0 && !sended) {
+      setSending(true);
+      emailjs.send(import.meta.env.VITE_SERVICE_KEY, import.meta.env.VITE_TEMPLATE_KEY, formData, import.meta.env.VITE_PUBLIC_KEY)
+        .then((result) => {
+          console.log(result.text);
+          setSending(false);
+          setSended(true);
+        }, (error) => {
+          console.log(error.text);
+          setSending(false);
+          setSended(false);
+        })
+  }
   };
 
   const fieldError = (field) =>
@@ -174,21 +192,45 @@ const MultiStep = () => {
           <div className='stepContent'>
             <div>
               <label>Nombre</label>
-              <input type='text' name='name' placeholder='Ej: Leandro Vaca' required />
+              <input
+                type='text'
+                name='name'
+                placeholder='Ej: Leandro Vaca'
+                value={formData.name}
+                onChange={handleChange}
+              />
               {fieldError('name')}
             </div>
             <div>
               <label>Empresa (opcional)</label>
-              <input type='text' name='firm' placeholder='Ej: Canteras El Bajo' />
+              <input
+                type='text'
+                name='firm'
+                placeholder='Ej: Canteras El Bajo'
+                value={formData.firm}
+                onChange={handleChange}
+              />
             </div>
             <div>
               <label>Telefono</label>
-              <input type='tel' name='telephone' placeholder='Ej: +54 351 876-2106' required />
+              <input
+                type='tel'
+                name='telephone'
+                placeholder='Ej: +54 351 876-2106'
+                value={formData.telephone}
+                onChange={handleChange}
+              />
               {fieldError('telephone')}
             </div>
             <div>
               <label>Email (opcional)</label>
-              <input type='email' name='email' placeholder='Ej: gmcanteras@gmail.com' />
+              <input
+                type='email'
+                name='email'
+                placeholder='Ej: gmcanteras@gmail.com'
+                value={formData.email}
+                onChange={handleChange}
+              />
               {fieldError('email')}
             </div>
           </div>
@@ -240,8 +282,15 @@ const MultiStep = () => {
                 Solicitar Presupuesto
               </button>
           )}
+          <button type='button' onClick={() => setSended(true)}>
+            Testear
+          </button>
         </div>
+        {sended && (
+          <FormSuccess />
+        )}
       </form>
+      <ErrorPopup />
     </div>
   )
 }

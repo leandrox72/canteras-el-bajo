@@ -6,7 +6,7 @@ const BudgetPage = () => {
 
   const [loading, setLoading] = useState(true);
   const [startVisible, setStartVisible] = useState(true);
-  const active = 4;
+  const active = 3;
   const pageTitle = "Presupuesto";
   
   useEffect(() => {   

@@ -8,7 +8,10 @@ import HeroSlider from "./heroSlider/heroSlider";
 import Curtain from "./curtain/curtain";
 import MultiStep from "./multiStep/multiStep";
 import Select from "./select/select";
+import FormSuccess from "./formSuccess/formSuccess";
+import ErrorPopup from "./errorPopup/errrorPopup";
 
 export {
-    Button, NavbarLink, Form, SectionH2, SectionH3, Images, HeroSlider, Curtain, MultiStep, Select
+  Button, NavbarLink, Form, SectionH2, SectionH3, Images, HeroSlider, Curtain, MultiStep, Select,
+  FormSuccess, ErrorPopup
 }

@@ -1,4 +1,3 @@
-import { href } from "react-router"
 import images from "./images"
 
 const pages = [
@@ -19,14 +18,9 @@ const pages = [
       href: "/productos"
     },{
       id: 3,
-      title: "Contacto",
-      subtitle: "Hablemos",
-      href: "/contacto"
-    },{
-    id: 4,
-    title: "Presupuesto",
-    subtitle: "Solicitar Presupuesto",
-    href: "/presupuesto"
+      title: "Presupuesto",
+      subtitle: "Solicitar Presupuesto",
+      href: "/presupuesto"
     }
 ]
 

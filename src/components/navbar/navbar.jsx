@@ -41,9 +41,10 @@ const Navbar = ({ passActive, setLoading, page }) => {
         <p>{page}</p>
       </div>
       <ul className='navbar__links'>
-        {pages.map((link) => (
-          <li 
+        {pages.slice(0,3).map((link) => (
+          <button 
             key={link.id} 
+            type='button'
             onClick={() => passActive != link.id && loading(link.href)}>
               <p 
                 style={{ 
@@ -51,8 +52,14 @@ const Navbar = ({ passActive, setLoading, page }) => {
                   color: passActive == link.id ? '#000' : '#222'
                 }}
               >{link.title}</p>
-          </li>
+          </button>
         ))}
+        <button type='button' onClick={() => passActive != pages[3].id && loading(pages[3].href)}>
+          <p style={{ fontStyle: passActive == pages[3].id && 'oblique',
+            color: passActive == pages[3].id ? '#000' : '#222'}}
+          >{pages[3].title}
+          </p>
+        </button>
       </ul>
       <button className={open ? 'menu menu__open' : 'menu'} onClick={() => setOpen(!open)} type='button'>
         <h4>{open ? 'Cerrar' : 'Menu'}</h4>

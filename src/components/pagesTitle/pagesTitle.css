@@ -9,11 +9,11 @@
 
 .pagesHero__title {
     width: 100%;
-    height: 26vw;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    padding: 1rem 2rem 0 2rem;
 }
 
 .pagesHero__title h1 {
@@ -24,8 +24,9 @@
     font-weight: 800;
     user-select: none;
     white-space: nowrap;
-    margin-bottom: -2.5%;
-    padding: 0 4rem;
+    margin-bottom: 0;
+    padding: 0;
+    line-height: 1;
 }
 
 .pagesHero__alt {

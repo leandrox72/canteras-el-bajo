@@ -41,6 +41,7 @@ a {
   --active: #222;
 }
 
+
 @media screen and (max-width: 1240px) {
   :root {
     --border-size: 3px;

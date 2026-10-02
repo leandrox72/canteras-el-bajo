@@ -77,21 +77,23 @@
     gap: 1rem;
 }
 
-.navbar__links li {
+.navbar__links button {
     cursor: pointer;
+    background: none;
+    border: none;
 }
 
-.navbar__links li:hover p {
-    border-color: var(--border);
-}
-
-.navbar__links li p {
-    font-size: 1.25rem;
+.navbar__links button p {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.1rem;
     text-transform: uppercase;
     line-height: .9;
     font-weight: 700;
-    color: #555;
     border-bottom: 2px solid transparent;
+}
+
+.navbar__links button:hover p {
+    border-color: var(--border);
 }
 
 .navbar__links-link:hover {
