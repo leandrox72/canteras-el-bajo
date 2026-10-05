@@ -60,6 +60,7 @@ const MultiStep = () => {
   const [errors, setErrors] = useState({});
   const [sending, setSending] = useState(false);
   const [sended, setSended] = useState(false);
+  const [sendError, setSendError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -98,22 +99,32 @@ const MultiStep = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!validateStep()) return;
-    if (sending) return;
+    if (sending || sended) return;
     
-    if (Object.keys(errors).length === 0 && !sended) {
-      setSending(true);
-      emailjs.send(import.meta.env.VITE_SERVICE_KEY, import.meta.env.VITE_TEMPLATE_KEY, formData, import.meta.env.VITE_PUBLIC_KEY)
-        .then((result) => {
-          console.log(result.text);
-          setSending(false);
-          setSended(true);
-        }, (error) => {
-          console.log(error.text);
-          setSending(false);
-          setSended(false);
-        })
-  }
+    setSending(true);
+    emailjs.send(import.meta.env.VITE_SERVICE_KEY, import.meta.env.VITE_TEMPLATE_KEY, formData, import.meta.env.VITE_PUBLIC_KEY)
+      .then(() => {
+        setSending(false);
+        setSended(true);
+      }, (error) => {
+        console.log(error);
+        setSending(false);
+        setSended(false);
+        setSendError('No pudimos enviar el formulario. Revisá tu conexión e intentá de nuevo.');
+      })
   };
+
+  const simulateSubmit = () => {
+    setSending(true);
+    setTimeout(() => {
+      setSended(true)
+      setSending(false);
+    },500)
+  }
+
+  const simulateError = () => {
+    setSendError('error')
+  }
 
   const fieldError = (field) =>
     errors[field] ? <p className='field__error'>{errors[field]}</p> : null;
@@ -274,23 +285,28 @@ const MultiStep = () => {
         {renderStepContent(currentStep)}
         <div className='form__actions'>
           {currentStep < steps.length - 1 ? (
-            <button type='button' className="multiStep__nav" onClick={handleNext}>
+              <button type='button' className="multiStep__nav" onClick={handleNext}>
                 Siguiente
               </button>
             ) : (
-              <button type='button' className='multiStep__submit' onClick={handleSubmit}>
+              <button type='button' className='multiStep__submit' onClick={handleSubmit} disabled={sending}>
                 Solicitar Presupuesto
               </button>
           )}
-          <button type='button' onClick={() => setSended(true)}>
+          <button type='button' onClick={simulateError} disabled={sending}>
             Testear
           </button>
         </div>
-        {sended && (
-          <FormSuccess />
-        )}
+        {sended && (<FormSuccess />)}
       </form>
-      <ErrorPopup />
+      {sendError && (
+        <ErrorPopup
+          title="No pudimos enviar el formulario"
+          text={sendError}
+          onClose={() => setSendError(null)}
+          autoDismiss={2000}
+        />
+      )}
     </div>
   )
 }
