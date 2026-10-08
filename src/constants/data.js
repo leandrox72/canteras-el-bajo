@@ -116,6 +116,49 @@ const products = [{
   }
 ]
 
+const productList = [
+  {
+    id: 0,
+    name: "Arena Gruesa"
+  },{
+    id: 1,
+    name: "Arena Fina"
+  },{
+    id: 2,
+    name: "Material de Aporte 0-20"
+  },{
+    id: 3,
+    name: "Grancilla 10-30"
+  },{
+    id: 4,
+    name: "Ripio"
+  },{
+    id: 5,
+    name: "Tierra Comun"
+  },{
+    id: 6,
+    name: "Material en Bruto"
+  },{
+    id: 7,
+    name: "Tierra Negra"
+  },{
+    id: 8,
+    name: "Destape de Cantera"
+  },{
+    id: 9,
+    name: "Arena Entrefina"
+  },{
+    id: 10,
+    name: "Suelo Arena"
+  },{
+    id: 11,
+    name: "Mat. p/relleno de Pozo"
+  },{
+    id: 12,
+    name: "Binder 6-10"
+  }, 
+]
+
 const generalData = [
     [
         {
@@ -199,5 +242,5 @@ const freightOptions = [{ id: 0, name: 'Retiro en Planta' },{ id: 1, name: 'Con 
 
 
 export {
-    pages, products, footerData, gallery, gallery2, generalData, steps, unitOptions, freightOptions
+    pages, products, footerData, gallery, gallery2, generalData, steps, unitOptions, freightOptions, productList
 }

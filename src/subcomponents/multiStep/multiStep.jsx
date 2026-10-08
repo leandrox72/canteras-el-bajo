@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { products, steps, unitOptions, freightOptions } from '../../constants/data';
+import { productList, steps, unitOptions, freightOptions } from '../../constants/data';
 import './multiStep.css'
 import { Select, FormSuccess, ErrorPopup } from '../index.js'
 import emailjs from '@emailjs/browser';
@@ -114,16 +114,8 @@ const MultiStep = () => {
       })
   };
 
-  const simulateSubmit = () => {
-    setSending(true);
-    setTimeout(() => {
-      setSended(true)
-      setSending(false);
-    },500)
-  }
-
   const simulateError = () => {
-    setSendError('error')
+    setSendError('Ha ocurrido un error nigga')
   }
 
   const fieldError = (field) =>
@@ -141,7 +133,7 @@ const MultiStep = () => {
               value={formData.material}
               onChange={handleChange}
               placeholder='Ej: Arena Gruesa'
-              items={products}
+              items={productList}
             />
             {fieldError('material')}
           </div>
