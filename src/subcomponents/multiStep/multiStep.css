@@ -23,6 +23,11 @@
     grid-template-columns: repeat(4, 1fr);
     justify-content: center;
     column-gap: 1rem;
+    overflow: scroll;
+}
+
+.multiStep__steps-btns::-webkit-scrollbar {
+    display: none;
 }
 
 .multiStep__pb {
@@ -143,6 +148,12 @@
 .multiStep__submit:hover {
     background-color: transparent;
     color: #000;
+}
+
+.field__error {
+    color: #f00;
+    font-weight: 500;
+    font-size: .9rem;
 }
 
 .testeardium {
