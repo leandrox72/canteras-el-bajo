@@ -255,6 +255,9 @@ const MultiStep = () => {
               className={step.id == currentStep ? "active" : ''}
               onClick={() => setCurrentStep(step.id)}
               disabled={maxStepReached < step.id}
+              style={{
+                display: step.id <= maxStepReached ? 'flex' : 'none'
+              }}
             >
               {step.name}
             </button>
@@ -285,7 +288,7 @@ const MultiStep = () => {
                 Solicitar Presupuesto
               </button>
           )}
-          <button type='button' onClick={simulateError} disabled={sending}>
+          <button type='button' onClick={simulateError} disabled={sending} className='testeardium'>
             Testear
           </button>
         </div>
