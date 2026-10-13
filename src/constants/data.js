@@ -134,27 +134,6 @@ const productList = [
     name: "Ripio"
   },{
     id: 5,
-    name: "Tierra Comun"
-  },{
-    id: 6,
-    name: "Material en Bruto"
-  },{
-    id: 7,
-    name: "Tierra Negra"
-  },{
-    id: 8,
-    name: "Destape de Cantera"
-  },{
-    id: 9,
-    name: "Arena Entrefina"
-  },{
-    id: 10,
-    name: "Suelo Arena"
-  },{
-    id: 11,
-    name: "Mat. p/relleno de Pozo"
-  },{
-    id: 12,
     name: "Binder 6-10"
   }, 
 ]

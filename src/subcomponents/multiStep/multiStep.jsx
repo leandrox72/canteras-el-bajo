@@ -96,6 +96,13 @@ const MultiStep = () => {
     setMaxStepReached((prev) => Math.max(prev, nextStep));
   }
 
+  const handlePrevious = () => {
+    if (currentStep < 1) return;
+    
+    const previousStep = currentStep - 1;
+    setCurrentStep(previousStep);
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!validateStep()) return;
@@ -244,6 +251,39 @@ const MultiStep = () => {
     }
   }
 
+  const renderNavButtons = (step) => {
+    switch (true) {
+      case step < 1:
+        return (
+          <button type='button' className='multiStep__nav' onClick={handleNext} disabled={sending}>
+            Siguiente
+          </button>
+        )
+      case step === steps.length - 1:
+        return (
+          <>
+            <button type='button' className='multiStep__nav' onClick={handlePrevious} disabled={sending}>
+              Atras
+            </button>
+            <button type='button' className='multiStep__submit' onClick={handleSubmit} disabled={sending}>
+              Solicitar Presupuesto
+            </button>
+          </>
+        )
+      default:
+        return (
+          <>
+            <button type='button' className='multiStep__nav' onClick={handlePrevious} disabled={sending}>
+              Atras
+            </button>
+            <button type='button' className='multiStep__nav' onClick={handleNext} disabled={sending}>
+              Siguiente
+            </button>
+          </>
+        )
+    }
+  }
+
   return (
     <div className='multiStep'>
       <div className='multiStep__steps'>
@@ -263,6 +303,11 @@ const MultiStep = () => {
             </button>
           ))}
         </div>
+        <div className='multiStep__steps-single'>
+          <button type='button' className='active'>
+            {steps[currentStep].name}
+          </button>
+        </div>
         <div className='multiStep__pb'>
           <div
             className='pb__bar'
@@ -278,16 +323,8 @@ const MultiStep = () => {
       </div>
       <form>
         {renderStepContent(currentStep)}
-        <div className='form__actions'>
-          {currentStep < steps.length - 1 ? (
-              <button type='button' className="multiStep__nav" onClick={handleNext}>
-                Siguiente
-              </button>
-            ) : (
-              <button type='button' className='multiStep__submit' onClick={handleSubmit} disabled={sending}>
-                Solicitar Presupuesto
-              </button>
-          )}
+        <div className='form__actions'>          
+          {renderNavButtons(currentStep)}
           <button type='button' onClick={simulateError} disabled={sending} className='testeardium'>
             Testear
           </button>
