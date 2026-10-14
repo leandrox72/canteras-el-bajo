@@ -10,8 +10,9 @@ import MultiStep from "./multiStep/multiStep";
 import Select from "./select/select";
 import FormSuccess from "./formSuccess/formSuccess";
 import ErrorPopup from "./errorPopup/errrorPopup";
+import Checkbox from "./checkbox/checkbox";
 
 export {
   Button, NavbarLink, Form, SectionH2, SectionH3, Images, HeroSlider, Curtain, MultiStep, Select,
-  FormSuccess, ErrorPopup
+  FormSuccess, ErrorPopup, Checkbox
 }
