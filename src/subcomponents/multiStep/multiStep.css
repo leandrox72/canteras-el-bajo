@@ -109,6 +109,11 @@
     cursor: pointer;
 }
 
+.stepContent__volume {
+    display: grid !important;
+    grid-template-columns: 1fr .5fr;
+}
+
 .form__actions button {
     font-family: "Poppins", sans-serif;
     font-size: 1rem;
@@ -165,6 +170,13 @@
 
 .testeardium {
     display: none;
+}
+
+.testground {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 }
 
 @media screen and (max-width: 640px) {

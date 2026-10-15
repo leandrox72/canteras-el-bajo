@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { productList, steps, unitOptions, freightOptions } from '../../constants/data';
 import './multiStep.css'
-import { Select, FormSuccess, ErrorPopup } from '../index.js'
+import { Select, FormSuccess, ErrorPopup, Checkbox } from '../index.js'
 import emailjs from '@emailjs/browser';
 
 const DELIVERY_OPTION = freightOptions[1].name;
@@ -53,8 +53,8 @@ const MultiStep = () => {
   const [maxStepReached, setMaxStepReached] = useState(0);
 
   const [formData, setFormData] = useState({
-    material: '', volume: '', unit: '', freight: '',
-    location: '', name: '', firm: '', email: '', telephone: ''
+    items: [], freight: '', location: '', name: '',
+    firm: '', email: '', telephone: ''
   });
 
   const [errors, setErrors] = useState({});
@@ -62,15 +62,39 @@ const MultiStep = () => {
   const [sended, setSended] = useState(false);
   const [sendError, setSendError] = useState(null);
 
+  const clearError = (key) => {
+    setErrors((prev) => {
+      if (!prev[key]) return prev;
+      const { [key]: _omit, ...rest } = prev;
+      return rest;
+    })
+  }
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Limpiar el error del campo al escribir
-    setErrors((prev) => {
-      if (!prev[name]) return prev;
-      const { [name]: _omit, ...rest } = prev;
-      return rest;
-    })
+    clearError(name);
+  }
+
+  const toggleProduct = (product) => {
+    setFormData((prev) => {
+      const exist = prev.items.some((i) => i.id !== product.id);
+      const items = exist
+        ? prev.items.filter((i) => i.id !== product.id)
+        : [...prev.items, { id: product.id, name: product.name, volume: '', unit: '' }];
+      return { ...prev, items };
+    });
+    clearError('items');
+  }
+
+  const handleItemChange = (id, e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      items: prev.items.map((i) => (i.id === id ?
+        { ...id, [name]: value } : i)),
+    }));
+    clearError(`${name}-${id}`);
   }
 
   const validateStep = (step = currentStep) => {
@@ -149,8 +173,8 @@ const MultiStep = () => {
       case 1:
         return (
           <div className='stepContent'>
-            <div>
-              <label>Cantidad</label>
+            <label>Cantidad</label>
+            <div className='stepContent__volume'>
               <input
                 type='number'
                 name='volume'
@@ -340,6 +364,12 @@ const MultiStep = () => {
         />
       )}
       <div className='testground'>
+        {productList.map((item) => (
+          <Checkbox
+            key={item.id}
+            name={item.name}
+          />
+        ))}
       </div>
     </div>
   )
