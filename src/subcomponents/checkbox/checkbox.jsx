@@ -3,16 +3,6 @@ import { FaCircle, FaRegCircle } from "react-icons/fa";
 
 
 const Checkbox = ({ name, checked = false, onChange }) => {
-  const handleSelect = (selectedValue) => {
-    if (onChange) {
-      onChange({
-        target: {
-          name: name,
-          value: selectedValue
-        }
-      })
-    }
-  }
 
   return (
     <label className='checkbox'>

@@ -17,6 +17,8 @@ const validators = {
 
   unit: (v) => (!v ? 'Selecciona una unidad' : ''),
 
+  items: (v) => (v.length === 0 ? 'Seleccioná al menos un material' : ''),
+  
   freight: (v) => (!v ? 'Selecciona una opcion de logistica' : ''),
 
   location: (v, form) => {
@@ -40,9 +42,18 @@ const validators = {
   }
 };
 
+const validateItem = (item) => {
+  const errs = {};
+  const volumeError = validators.volume(item.volume);
+  const unitError = validators.unit(item.unit);
+  if (volumeError) errs[`volume-${item.id}`] = volumeError;
+  if (unitError) errs[`unit-${item.id}`] = unitError;
+  return errs;
+}
+
 const stepFields = [
-  ['material'],
-  ['volume', 'unit'],
+  ['items'],
+  [],
   ['freight', 'location'],
   ['name', 'telephone', 'email']
 ];
@@ -98,15 +109,18 @@ const MultiStep = () => {
   }
 
   const validateStep = (step = currentStep) => {
-    const fields = stepFields[step] ?? [];
     const stepErrors = {};
 
-    for (const field of fields) {
-      const message = validators[field]?.(formData[field], formData) ?? ';';
-      if (message) stepErrors[field] = message;
+    if (step === 1) {
+      formData.items.forEach((item) => Object.assign(stepErrors, validateItem(item)));
+    } else {
+      for (const field of stepFields[step] ?? []) {
+        const message = validators[field]?.(formData[field], formData) ?? '';
+        if (message) stepErrors[field] = message;
+      }
     }
 
-    setErrors(stepErrors);
+    setErrors(stepErrors)
     return Object.keys(stepErrors).length === 0;
   }
 
@@ -157,40 +171,47 @@ const MultiStep = () => {
       case 0:
       return (
         <div className='stepContent'>
-          <div>
-            <label>Selecciona el Material</label>
-            <Select
-              name='material'
-              value={formData.material}
-              onChange={handleChange}
-              placeholder='Ej: Arena Gruesa'
-              items={productList}
-            />
-            {fieldError('material')}
+          <label>Selecciona los Materiales</label>
+          <div className='stepContent__products'>
+            {productList.map((product) => (
+              <Checkbox
+                key={product.id}
+                name={product.name}
+                checked={formData.items.some((i) => i.id === product.id)}
+                onChange={() => toggleProduct(product)}
+              />
+            ))}
+            {fieldError('items')}
           </div>
         </div>
         );
       case 1:
         return (
           <div className='stepContent'>
-            <label>Cantidad</label>
-            <div className='stepContent__volume'>
-              <input
-                type='number'
-                name='volume'
-                value={formData.volume}
-                onChange={handleChange}
-              />
-              {fieldError('volume')}
-              <Select
-                name='unit'
-                value={formData.unit}
-                onChange={handleChange}
-                placeholder='Ej: Metro Cubico'
-                items={unitOptions}
-              />
-              {fieldError('unit')}
-            </div>
+            {formData.items.map((item) => (
+              <div key={item.id} className='stepContent__item'>
+                <label>{item.name}</label>
+                <div className='stepContent__volume'>
+                  <input
+                    type='number'
+                    name='volume'
+                    min='0'
+                    inputMode='decimal'
+                    value={item.volume}
+                    onChange={(e) => handleItemChange(item.id, e)}
+                  />
+                  <Select
+                    name='unit'
+                    value={item.unit}
+                    onChange={(e) => handleItemChange(item.id, e)}
+                    placeholder='Ej: Metro Cúbico'
+                    items={unitOptions}
+                  />
+                </div>
+                {fieldError(`volume-${item.id}`)}
+                {fieldError(`unit-${item.id}`)}
+              </div>
+            ))}
           </div>
         )
       case 2:
