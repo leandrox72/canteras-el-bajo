@@ -1,6 +1,4 @@
 import './checkbox.css';
-import { FaCircle, FaRegCircle } from "react-icons/fa";
-
 
 const Checkbox = ({ name, checked = false, onChange }) => {
 

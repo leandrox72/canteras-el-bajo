@@ -7,6 +7,7 @@ import emailjs from '@emailjs/browser';
 const DELIVERY_OPTION = freightOptions[1].name;
 
 const validators = {
+  
   material: (v) => (!v ? 'Selecciona un material' : ''),
 
   volume: (v) => {
@@ -89,7 +90,7 @@ const MultiStep = () => {
 
   const toggleProduct = (product) => {
     setFormData((prev) => {
-      const exist = prev.items.some((i) => i.id !== product.id);
+      const exist = prev.items.some((i) => i.id === product.id);
       const items = exist
         ? prev.items.filter((i) => i.id !== product.id)
         : [...prev.items, { id: product.id, name: product.name, volume: '', unit: '' }];
@@ -103,7 +104,7 @@ const MultiStep = () => {
     setFormData((prev) => ({
       ...prev,
       items: prev.items.map((i) => (i.id === id ?
-        { ...id, [name]: value } : i)),
+        { ...i, [name]: value } : i)),
     }));
     clearError(`${name}-${id}`);
   }
@@ -171,7 +172,7 @@ const MultiStep = () => {
       case 0:
       return (
         <div className='stepContent'>
-          <label>Selecciona los Materiales</label>
+          <label className='stepContent__item-label'>Selecciona los Materiales</label>
           <div className='stepContent__products'>
             {productList.map((product) => (
               <Checkbox
@@ -190,7 +191,7 @@ const MultiStep = () => {
           <div className='stepContent'>
             {formData.items.map((item) => (
               <div key={item.id} className='stepContent__item'>
-                <label>{item.name}</label>
+                <label className='stepContent__item-label'>{item.name}</label>
                 <div className='stepContent__volume'>
                   <input
                     type='number'
@@ -217,8 +218,8 @@ const MultiStep = () => {
       case 2:
         return (
           <div className='stepContent'>
-            <div>
-              <label>Logistica</label>
+            <div className='stepContent__item'>
+              <label className='stepContent__item-label'>Logistica</label>
               <Select
                 name='freight'
                 value={formData.freight}
@@ -245,8 +246,8 @@ const MultiStep = () => {
       case 3:
         return (
           <div className='stepContent'>
-            <div>
-              <label>Nombre</label>
+            <div className='stepContent__item'>
+              <label className='stepContent__item-label'>Nombre</label>
               <input
                 type='text'
                 name='name'
@@ -256,8 +257,8 @@ const MultiStep = () => {
               />
               {fieldError('name')}
             </div>
-            <div>
-              <label>Empresa (opcional)</label>
+            <div className='stepContent__item'>
+              <label className='stepContent__item-label'>Empresa (opcional)</label>
               <input
                 type='text'
                 name='firm'
@@ -266,8 +267,8 @@ const MultiStep = () => {
                 onChange={handleChange}
               />
             </div>
-            <div>
-              <label>Telefono</label>
+            <div className='stepC'>
+              <label className='stepContent__item-label'>Telefono</label>
               <input
                 type='tel'
                 name='telephone'
@@ -278,7 +279,7 @@ const MultiStep = () => {
               {fieldError('telephone')}
             </div>
             <div>
-              <label>Email (opcional)</label>
+              <label className='stepContent__item-label'>Email (opcional)</label>
               <input
                 type='email'
                 name='email'
@@ -339,7 +340,7 @@ const MultiStep = () => {
               type='button'
               className={step.id == currentStep ? "active" : ''}
               onClick={() => setCurrentStep(step.id)}
-              disabled={maxStepReached < step.id}
+              disabled={maxStepReached < step.id || (step.id > 0 && formData.items.length === 0)}
               style={{
                 display: step.id <= maxStepReached ? 'flex' : 'none'
               }}
@@ -384,14 +385,6 @@ const MultiStep = () => {
           autoDismiss={2000}
         />
       )}
-      <div className='testground'>
-        {productList.map((item) => (
-          <Checkbox
-            key={item.id}
-            name={item.name}
-          />
-        ))}
-      </div>
     </div>
   )
 }

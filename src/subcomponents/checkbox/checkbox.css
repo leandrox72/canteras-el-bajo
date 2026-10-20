@@ -31,19 +31,19 @@
 }
 
 .checkbox__check-circle {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1rem;
+    height: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     border: 2px solid #000;
+    overflow: hidden;
 }
 
 .checkbox__check-dot {
-    width: .75rem;
-    height: .75rem;
-    border-radius: 50%;
+    width: 100%;
+    height: 100%;
     background-color: #000;
 }
 
@@ -56,5 +56,15 @@
 
 .checkbox__text p {
     font-family: "Poppins", sans-serif;
-    font-size: 1rem;
+    font-size: .9rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #444;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 840px) {
+    .checkbox {
+        grid-template-columns: .2fr 1fr;
+    }
 }

@@ -125,7 +125,7 @@ const productList = [
     name: "Arena Fina"
   },{
     id: 2,
-    name: "Material de Aporte 0-20"
+    name: "Mt. de Aporte 0-20"
   },{
     id: 3,
     name: "Grancilla 10-30"
