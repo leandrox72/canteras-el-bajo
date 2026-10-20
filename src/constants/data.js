@@ -216,7 +216,7 @@ const steps = [
     subtitle: "Te enviaremos la cotización exacta con los costos de envío a tu WhatsApp lo antes posible" }
 ]
 
-const unitOptions = [{ id: 0, name: 'Metros Cubicos' }, { id: 1, name: 'Toneladas' }]
+const unitOptions = [{ id: 0, name: 'M3' }, { id: 1, name: 'Tonelada' }]
 const freightOptions = [{ id: 0, name: 'Retiro en Planta' },{ id: 1, name: 'Con Flete' }]
 
 

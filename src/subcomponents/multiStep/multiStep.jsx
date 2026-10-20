@@ -205,7 +205,7 @@ const MultiStep = () => {
                     name='unit'
                     value={item.unit}
                     onChange={(e) => handleItemChange(item.id, e)}
-                    placeholder='Ej: Metro Cúbico'
+                    placeholder='Ej: M3'
                     items={unitOptions}
                   />
                 </div>
