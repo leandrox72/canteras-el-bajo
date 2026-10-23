@@ -32,13 +32,13 @@
 
 .multiStep__pb {
     width: 100%;
-    height: var(--border-size);
+    height: 2px;
     background-color: #ddd;
 }
 
 .pb__bar {
     width: 40%;
-    height: var(--border-size);
+    height: 2px;
     background-color: #111;
     transition: .25s ease-in-out;
 }
@@ -113,6 +113,11 @@
     display: grid;
     grid-template-columns: 1fr .5fr;
     gap: .5rem;
+}
+
+.stepContent__item {
+    display: flex;
+    flex-direction: column;
 }
 
 .form__actions button {
@@ -196,8 +201,7 @@
     }
 
     .stepContent input,
-    .stepContent select,
-    .form__actions button {
+    .stepContent select {
         padding: .5rem 1rem;
     }
    

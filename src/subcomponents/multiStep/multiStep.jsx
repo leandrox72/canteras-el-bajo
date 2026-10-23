@@ -267,7 +267,7 @@ const MultiStep = () => {
                 onChange={handleChange}
               />
             </div>
-            <div className='stepC'>
+            <div className='stepContent__item'>
               <label className='stepContent__item-label'>Telefono</label>
               <input
                 type='tel'
@@ -278,7 +278,7 @@ const MultiStep = () => {
               />
               {fieldError('telephone')}
             </div>
-            <div>
+            <div className='stepContent__item'>
               <label className='stepContent__item-label'>Email (opcional)</label>
               <input
                 type='email'

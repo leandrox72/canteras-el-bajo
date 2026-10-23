@@ -125,17 +125,23 @@ const productList = [
     name: "Arena Fina"
   },{
     id: 2,
-    name: "Mt. de Aporte 0-20"
+    name: "Arena Comun"
   },{
     id: 3,
-    name: "Grancilla 10-30"
+    name: "Mt. de Aporte 0-20"
   },{
     id: 4,
-    name: "Ripio"
+    name: "Grancilla 10-30"
   },{
     id: 5,
+    name: "Ripio"
+  },{
+    id: 6,
     name: "Binder 6-10"
-  }, 
+  },{
+    id: 7,
+    name: "Suelo Arena"
+  } 
 ]
 
 const generalData = [
